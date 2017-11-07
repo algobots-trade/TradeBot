@@ -130,3 +130,188 @@ INSERT INTO  TBL_PASSCODE   VALUES (0,"admin", "test123") [42122-195]
 	at org.h2.server.web.WebThread.process(WebThread.java:164)
 	at org.h2.server.web.WebThread.run(WebThread.java:89)
 	at java.lang.Thread.run(Thread.java:745)
+2017-11-07 23:50:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_HEADFEEDS (ID BIGINT AUTO_INCREMENT, HEADNAME VARCHAR(255) NOT NULL, SCRIB VARCHAR(255) NOT NULL , MARKETTYPE VARCHAR(255) NOT NULL , EXPDATE VARCHAR(255) NULL , PRICE DOUBLE NULL, RIGHTS VARCHAR(255) NULL, SCRIPTSCRIB  VARCHAR(255) NOT NULL, SHORTCUTKEY  VARCHAR(255) NULL) 
+
+DROP[*] TABLE TBL_HEADFEEDS "; SQL statement:
+Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) not null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) not null, shortcutkey  varchar(255) null) 
+
+drop table tbl_HeadFeeds [42000-195]
+2017-11-07 23:53:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_HEADFEEDS (ID BIGINT AUTO_INCREMENT, HEADNAME VARCHAR(255) NOT NULL, SCRIB VARCHAR(255) NULL , MARKETTYPE VARCHAR(255) NULL , EXPDATE VARCHAR(255) NULL , PRICE DOUBLE NULL, RIGHTS VARCHAR(255) NULL, SCRIPTSCRIB  VARCHAR(255) NULL, SHORTCUTKEY  VARCHAR(255) NULL) 
+
+DROP[*] TABLE TBL_HEADFEEDS
+
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1') "; SQL statement:
+Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) null, shortcutkey  varchar(255) null) 
+
+drop table tbl_HeadFeeds
+
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H1') [42000-195]
+2017-11-07 23:54:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT[*] INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H2')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H3')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H4')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H5')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H6')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H7')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H8')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H9')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H10')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H11')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H11') "; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H2')
+insert into tbl_HeadFeeds (Headname) values ('H3')
+insert into tbl_HeadFeeds (Headname) values ('H4')
+insert into tbl_HeadFeeds (Headname) values ('H5')
+insert into tbl_HeadFeeds (Headname) values ('H6')
+insert into tbl_HeadFeeds (Headname) values ('H7')
+insert into tbl_HeadFeeds (Headname) values ('H8')
+insert into tbl_HeadFeeds (Headname) values ('H9')
+insert into tbl_HeadFeeds (Headname) values ('H10')
+insert into tbl_HeadFeeds (Headname) values ('H11')
+insert into tbl_HeadFeeds (Headname) values ('H11') [42000-195]
+2017-11-07 23:54:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT[*] INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H2')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H3')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H4')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H5')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H6')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H7')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H8')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H9')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H10')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H11')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H12') "; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H2')
+insert into tbl_HeadFeeds (Headname) values ('H3')
+insert into tbl_HeadFeeds (Headname) values ('H4')
+insert into tbl_HeadFeeds (Headname) values ('H5')
+insert into tbl_HeadFeeds (Headname) values ('H6')
+insert into tbl_HeadFeeds (Headname) values ('H7')
+insert into tbl_HeadFeeds (Headname) values ('H8')
+insert into tbl_HeadFeeds (Headname) values ('H9')
+insert into tbl_HeadFeeds (Headname) values ('H10')
+insert into tbl_HeadFeeds (Headname) values ('H11')
+insert into tbl_HeadFeeds (Headname) values ('H12') [42000-195]
+2017-11-07 23:55:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT[*] INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H2')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H3')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H4')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H5')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H6')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H7')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H8')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H9')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H10')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H11')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H12') "; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H2')
+insert into tbl_HeadFeeds (Headname) values ('H3')
+insert into tbl_HeadFeeds (Headname) values ('H4')
+insert into tbl_HeadFeeds (Headname) values ('H5')
+insert into tbl_HeadFeeds (Headname) values ('H6')
+insert into tbl_HeadFeeds (Headname) values ('H7')
+insert into tbl_HeadFeeds (Headname) values ('H8')
+insert into tbl_HeadFeeds (Headname) values ('H9')
+insert into tbl_HeadFeeds (Headname) values ('H10')
+insert into tbl_HeadFeeds (Headname) values ('H11')
+insert into tbl_HeadFeeds (Headname) values ('H12') [42000-195]
+2017-11-07 23:57:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "AUTO_INCREMENT" not found; SQL statement:
+insert into tbl_HeadFeeds (auto_increment, Headname) values ('H1') [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:676)
+	at org.h2.command.Parser.parseColumn(Parser.java:881)
+	at org.h2.command.Parser.parseColumnList(Parser.java:865)
+	at org.h2.command.Parser.parseInsert(Parser.java:1065)
+	at org.h2.command.Parser.parsePrepared(Parser.java:416)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-07 23:57:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+insert into tbl_HeadFeeds (id, Headname) values ('H1') [21002-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-07 23:57:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_HEADFEEDS (ID BIGINT AUTO_INCREMENT, HEADNAME VARCHAR(255) NOT NULL, SCRIB VARCHAR(255) NULL , MARKETTYPE VARCHAR(255) NULL , EXPDATE VARCHAR(255) NULL , PRICE DOUBLE NULL, RIGHTS VARCHAR(255) NULL, SCRIPTSCRIB  VARCHAR(255) NULL, SHORTCUTKEY  VARCHAR(255) NULL) 
+
+DROP[*] TABLE TBL_HEADFEEDS
+
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H2')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H3')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H4')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H5')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H6')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H7')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H8')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H9')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H10')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H11')
+INSERT INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H12')
+
+SELECT * FROM TBL_HEADFEEDS "; SQL statement:
+Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) null, shortcutkey  varchar(255) null) 
+
+drop table tbl_HeadFeeds
+
+insert into tbl_HeadFeeds (Headname) values ('H1')
+insert into tbl_HeadFeeds (Headname) values ('H2')
+insert into tbl_HeadFeeds (Headname) values ('H3')
+insert into tbl_HeadFeeds (Headname) values ('H4')
+insert into tbl_HeadFeeds (Headname) values ('H5')
+insert into tbl_HeadFeeds (Headname) values ('H6')
+insert into tbl_HeadFeeds (Headname) values ('H7')
+insert into tbl_HeadFeeds (Headname) values ('H8')
+insert into tbl_HeadFeeds (Headname) values ('H9')
+insert into tbl_HeadFeeds (Headname) values ('H10')
+insert into tbl_HeadFeeds (Headname) values ('H11')
+insert into tbl_HeadFeeds (Headname) values ('H12')
+
+Select * from tbl_HeadFeeds [42000-195]

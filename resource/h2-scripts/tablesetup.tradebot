@@ -1,0 +1,19 @@
+# Create Table fo Head feed
+---------------------------
+
+$	Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) null, shortcutkey  varchar(255) null) 
+ 
+insert into tbl_HeadFeeds (Headname) values ('H1');
+insert into tbl_HeadFeeds (Headname) values ('H2');
+insert into tbl_HeadFeeds (Headname) values ('H3');
+insert into tbl_HeadFeeds (Headname) values ('H4');
+insert into tbl_HeadFeeds (Headname) values ('H5');
+insert into tbl_HeadFeeds (Headname) values ('H6');
+insert into tbl_HeadFeeds (Headname) values ('H7');
+insert into tbl_HeadFeeds (Headname) values ('H8');
+insert into tbl_HeadFeeds (Headname) values ('H9');
+insert into tbl_HeadFeeds (Headname) values ('H10');
+insert into tbl_HeadFeeds (Headname) values ('H11');
+insert into tbl_HeadFeeds (Headname) values ('H12');
+ 
+************************************************
