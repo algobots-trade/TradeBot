@@ -464,9 +464,10 @@ public class FormulaInputs {
 		tradetoggle.add(lblBuy);
 		
 		JSlider slider = new JSlider();
-		slider.setMaximum(2);
-		slider.setValue(1);
-		slider.setMinimum(1);
+		slider.setSnapToTicks(true);
+		slider.setMinorTickSpacing(1);
+		slider.setMaximum(1);
+		slider.setValue(0);
 		slider.setBounds(0, 31, 321, 27);
 		tradetoggle.add(slider);
 		
@@ -474,14 +475,14 @@ public class FormulaInputs {
 		lblOn.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOn.setForeground(new Color(255, 0, 0));
 		lblOn.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblOn.setBounds(261, 9, 60, 28);
+		lblOn.setBounds(273, 9, 60, 28);
 		tradetoggle.add(lblOn);
 		
 		JLabel lblOff = new JLabel("OFF");
 		lblOff.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOff.setForeground(Color.GREEN);
 		lblOff.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblOff.setBounds(0, 10, 60, 28);
+		lblOff.setBounds(-11, 9, 60, 28);
 		tradetoggle.add(lblOff);
 	
 		
