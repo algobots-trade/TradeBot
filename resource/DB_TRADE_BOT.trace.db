@@ -315,3 +315,132 @@ insert into tbl_HeadFeeds (Headname) values ('H11')
 insert into tbl_HeadFeeds (Headname) values ('H12')
 
 Select * from tbl_HeadFeeds [42000-195]
+2017-11-20 21:11:47 jdbc[5]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-20 21:17:11 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TBL_PASSCODE[*] "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+drop TBL_PASSCODE [42001-195]
+2017-11-20 21:18:22 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_PASSCODE VALUES (PASSCODE, USER) ([*]'test123', 'admin') "; SQL statement:
+insert into TBL_PASSCODE values (passcode, user) ('test123', 'admin') [42000-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_HEADFEEDS (ID BIGINT AUTO_INCREMENT, SUBJECTID VARCHAR(255) NOT NULL, HEADNAME VARCHAR(255) NOT NULL, SCRIB VARCHAR(255) NULL , MARKETTYPE VARCHAR(255) NULL , EXPDATE VARCHAR(255) NULL , PRICE DOUBLE NULL, RIGHTS VARCHAR(255) NULL, SCRIPTSCRIB  VARCHAR(255) NULL, SHORTCUTKEY  VARCHAR(255) NULL) 
+ 
+INSERT[*] INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1') "; SQL statement:
+Create table tbl_HeadFeeds (id bigint auto_increment, subjectid varchar(255) not null, Headname varchar(255) not null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) null, shortcutkey  varchar(255) null) 
+ 
+insert into tbl_HeadFeeds (Headname) values ('H1') [42000-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H2') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H3') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H4') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H5') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H6') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H7') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H8') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H9') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H10') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H11') [42102-195]
+2017-11-20 21:23:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H12') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_HEADFEEDS (ID BIGINT AUTO_INCREMENT, SUBJECTID VARCHAR(255) NULL, HEADNAME VARCHAR(255) NOT NULL, SCRIB VARCHAR(255) NULL , MARKETTYPE VARCHAR(255) NULL , EXPDATE VARCHAR(255) NULL , PRICE DOUBLE NULL, RIGHTS VARCHAR(255) NULL, SCRIPTSCRIB  VARCHAR(255) NULL, SHORTCUTKEY  VARCHAR(255) NULL) 
+ 
+
+
+INSERT[*] INTO TBL_HEADFEEDS (HEADNAME) VALUES ('H1') "; SQL statement:
+Create table tbl_HeadFeeds (id bigint auto_increment, subjectid varchar(255) null, Headname varchar(255) not null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) null, shortcutkey  varchar(255) null) 
+ 
+
+
+insert into tbl_HeadFeeds (Headname) values ('H1') [42000-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H2') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H3') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H4') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H5') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H6') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H7') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H8') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H9') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H10') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H11') [42102-195]
+2017-11-20 21:24:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEEDS" not found; SQL statement:
+insert into tbl_HeadFeeds (Headname) values ('H12') [42102-195]
+2017-11-20 22:03:34 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLETBL_HEADFEEDS[*] "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+drop tableTBL_HEADFEEDS [42001-195]
+2017-11-20 22:03:39 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLETBL_PLAYERS[*] "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+drop tableTBL_PLAYERS [42001-195]
+2017-11-20 22:03:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLETBL_PLAYERS[*] "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+drop tableTBL_PLAYERS [42001-195]
+2017-11-20 22:19:23 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_FORMULAINPUTS (ID BIGINT AUTO_INCREMENT,  HEADNAME VARCHAR(255) NOT NULL   X[*] DOUBLE NULL,    Y DOUBLE NULL,    Z DOUBLE NULL,   T1 VARCHAR(255) NULL,   T2 VARCHAR(255) NULL,   T3 VARCHAR(255) NULL,      T4 VARCHAR(255) NULL,
+   LCOUNT INT NULL,   STOPL DOUBLE NULL, TRADESWITCH VARCHAR(255) NOT NULL) "; expected "AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE tbl_formulainputs (id bigint auto_increment,  headname varchar(255) not null   x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
+   lcount int null,   stopl double null, tradeswitch varchar(255) not null) [42001-195]
+2017-11-21 09:59:47 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_PLAYERS" already exists; SQL statement:
+Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null , playername varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) [42101-195]
+2017-11-21 09:59:56 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_PLAYERS" already exists; SQL statement:
+Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null , playername varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) [42101-195]

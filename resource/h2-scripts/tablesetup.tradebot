@@ -1,8 +1,19 @@
-# Create Table fo Head feed
----------------------------
+# Create Table for authentication with defaults passcode
+---------------------------------------------------------
 
-$	Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, scriptscrib  varchar(255) null, shortcutkey  varchar(255) null) 
+Create table TBL_PASSCODE  (id bigint auto_increment, passcode varchar(255) not null,user varchar(255) not null)
+
+insert into TBL_PASSCODE (passcode, user) values ('test123', 'admin')
+
+***********************************************************
+
+
+# Create Table fo Head feed with default count
+------------------------------------------------
+
+Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) 
  
+
 insert into tbl_HeadFeeds (Headname) values ('H1');
 insert into tbl_HeadFeeds (Headname) values ('H2');
 insert into tbl_HeadFeeds (Headname) values ('H3');
@@ -17,3 +28,15 @@ insert into tbl_HeadFeeds (Headname) values ('H11');
 insert into tbl_HeadFeeds (Headname) values ('H12');
  
 ************************************************
+
+#Create Table for players
+------------------------------------
+
+Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) 
+
+*******************************************************
+
+#Create Formula table
+
+CREATE TABLE tbl_formula (id bigint auto_increment, feedsubjectid varchar(255) not null, playername varchar(255) not null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
+   lcount int null,   stopl double null, tradeswitch varchar(255) not null)

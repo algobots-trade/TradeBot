@@ -94,7 +94,7 @@ public class FormulaInputs {
 		contentPane.getContentPane().setBackground(new Color(51, 51, 51));
 		contentPane.setVisible(true);
 		contentPane.setTitle("Formula Input For  "+strScrib+"-"+strFname);
-		contentPane.setBounds(100, 100, 410, 682);
+		contentPane.setBounds(100, 100, 379, 712);
 		contentPane.setBackground(new Color(36,34,29));
 		contentPane.getContentPane().setLayout(null);
 		contentPane.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -105,12 +105,12 @@ public class FormulaInputs {
 		lblFTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFTitle.setFont(new Font("Verdana", Font.BOLD, 22));
 		lblFTitle.setForeground(new Color(255, 220, 135));
-		lblFTitle.setBounds(6, 6, 398, 43);
+		lblFTitle.setBounds(6, 6, 377, 43);
 		contentPane.getContentPane().add(lblFTitle);
 		
 		JPanel pnlInput = new JPanel();
 		pnlInput.setForeground(Color.WHITE);
-		pnlInput.setBounds(32, 46, 347, 592);
+		pnlInput.setBounds(16, 46, 347, 630);
 		pnlInput.setBackground(new Color(80,75,78));
 		contentPane.getContentPane().add(pnlInput);
 		pnlInput.setLayout(null);
@@ -440,12 +440,12 @@ public class FormulaInputs {
 				//saveFormula();
 			}
 		});
-		btnSave.setBounds(13, 541, 321, 45);
+		btnSave.setBounds(13, 575, 321, 45);
 		pnlInput.add(btnSave);
 		
 		JPanel tradetoggle = new JPanel();
 		tradetoggle.setBackground(new Color(51, 51, 51));
-		tradetoggle.setBounds(13, 473, 321, 64);
+		tradetoggle.setBounds(13, 477, 321, 86);
 		tradetoggle.setLayout(null);
         
 		JLabel lbltoggle = new JLabel("BUY & SELL");
@@ -460,7 +460,7 @@ public class FormulaInputs {
 		lblBuy.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBuy.setForeground(new Color(255, 220, 135));
 		lblBuy.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblBuy.setBounds(90, 0, 131, 28);
+		lblBuy.setBounds(95, 21, 131, 28);
 		tradetoggle.add(lblBuy);
 		
 		JSlider slider = new JSlider();
@@ -468,21 +468,21 @@ public class FormulaInputs {
 		slider.setMinorTickSpacing(1);
 		slider.setMaximum(1);
 		slider.setValue(0);
-		slider.setBounds(0, 31, 321, 27);
+		slider.setBounds(0, 52, 321, 27);
 		tradetoggle.add(slider);
 		
 		JLabel lblOn = new JLabel("ON");
 		lblOn.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOn.setForeground(new Color(255, 0, 0));
 		lblOn.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblOn.setBounds(273, 9, 60, 28);
+		lblOn.setBounds(261, 22, 60, 28);
 		tradetoggle.add(lblOn);
 		
 		JLabel lblOff = new JLabel("OFF");
 		lblOff.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOff.setForeground(Color.GREEN);
 		lblOff.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblOff.setBounds(-11, 9, 60, 28);
+		lblOff.setBounds(0, 22, 60, 28);
 		tradetoggle.add(lblOff);
 	
 		

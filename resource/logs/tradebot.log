@@ -1,0 +1,92 @@
+2017-11-21 23:14:43 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:14:43 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:14:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:14:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2017-11-21 23:16:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:16:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:24:49 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:24:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:36:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:36:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:36:55 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-21 23:36:57 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-21 23:37:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> INDEX
+2017-11-21 23:37:02 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-21 23:37:32 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:37:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:37:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtSTKControls()
+ERROR: java.lang.NullPointerException
+2017-11-21 23:38:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:38:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:38:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:38:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:38:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:38:47 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:38:54 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-21 23:38:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-21 23:40:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:40:55 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:40:58 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-21 23:41:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-21 23:41:02 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-21 23:41:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-21 23:41:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-21 23:41:08 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> INDEX
+2017-11-21 23:41:12 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-21 23:52:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:52:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:52:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:52:47 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:53:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-21 23:55:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:55:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-21 23:55:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE

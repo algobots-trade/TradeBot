@@ -27,14 +27,17 @@ import javax.swing.SwingConstants;
 
 import java.awt.Color;
 import org.pmw.tinylog.*;
+import org.pmw.tinylog.writers.FileWriter;
+
+import com.tradebot.dbcommons.tradebot_utility;
 
 public class LogIn {
 
 	private JFrame LoginFrame;
 	private JPasswordField passwordField;
 	private String logopath;
-	private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
-	
+	String tradelogpath;
+	tradebot_utility utils = new tradebot_utility(); 
 	/**
 	 * Launch the application.
 	 */
@@ -51,41 +54,50 @@ public class LogIn {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
-	public LogIn() {
-		Properties prop = new Properties();
-		InputStream input = null;
-		try
+	public void initialLoad()
+	{
+		try 
 		{
-			input =new FileInputStream(configprop);
-			prop.load(input);
-			logopath = System.getProperty("user.dir")+prop.getProperty("LOGO_PATH").replace("/", File.separator);
-
-			initialize();
+			logopath = System.getProperty("user.dir") + utils.readconfigprop("LOGO_PATH").replace("/", File.separator);
+			utils.configlogfile("TRADEBOT_LOG");
+			Logger.info("Log In Window Triggered");
 		}
 		catch(Exception ex)
 		{
 			
 		}
+		finally 
+		{
+			
+		}
+		
+	}
+	/**
+	 * Create the application.
+	 */
+	public LogIn() {
+		try
+		{
+			initialLoad();
+			initialize();
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex.toString());
+		}
 		finally
 		{
-			if (input != null) {
-				try {
-					input.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+			
 		}
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
 		logindesign();
+		Logger.info("Log-In Window Loaded");
 	}
 	
 	private void logindesign()
@@ -213,7 +225,7 @@ public class LogIn {
 			}
 			else
 			{
-				Logger.warn("Wrong Passcode Attempt..");
+				Logger.warn("Wrong Passcode Attempt.. with passcode --> " + passcode.toString());
 			    JOptionPane.showMessageDialog(LoginFrame,"Invalid Passcode !!", "Authentication Violation",JOptionPane.WARNING_MESSAGE);
 			}	
 		}
