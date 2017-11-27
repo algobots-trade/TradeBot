@@ -24,6 +24,8 @@ public class db_commons {
     private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
     public static String dbName;
     public static String USER, PASS;
+    String tradelogpath;
+	tradebot_utility utils = new tradebot_utility(); 
 
 	public db_commons() {
 		Properties prop = new Properties();
@@ -35,10 +37,11 @@ public class db_commons {
 			dbName = System.getProperty("user.dir")+prop.getProperty("DB_HOST_PATH").replace("/", File.separator);
 			USER = prop.getProperty("DB_USER");
 			PASS = prop.getProperty("DB_PASS");
+			tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 		}
 		catch(Exception ex)
 		{
-			
+			Logger.error(ex);
 		}
 		finally
 		{
@@ -148,7 +151,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
-			
+			Logger.error(ex);
 		}
 		finally {
 			try {

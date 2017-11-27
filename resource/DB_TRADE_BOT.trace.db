@@ -444,3 +444,164 @@ Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not nu
 2017-11-21 09:59:56 jdbc[8]: exception
 org.h2.jdbc.JdbcSQLException: Table "TBL_PLAYERS" already exists; SQL statement:
 Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null , playername varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) [42101-195]
+2017-11-23 13:36:08 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS  SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' WHERE HEADNAME ='H1'
+
+SELECT[*] * FROM TBL_HEADFEEDS "; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' where HEADNAME ='H1'
+
+Select * from TBL_HEADFEEDS [42000-195]
+2017-11-23 13:36:11 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS  SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' WHERE HEADNAME ='H1'
+
+SELECT[*] * FROM TBL_HEADFEEDS "; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' where HEADNAME ='H1'
+
+Select * from TBL_HEADFEEDS [42000-195]
+2017-11-23 13:36:12 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS  SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' WHERE HEADNAME ='H1'
+
+SELECT[*] * FROM TBL_HEADFEEDS "; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' where HEADNAME ='H1'
+
+Select * from TBL_HEADFEEDS [42000-195]
+2017-11-23 13:36:14 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS  SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' WHERE HEADNAME ='H1'
+
+SELECT[*] * FROM TBL_HEADFEEDS "; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' where HEADNAME ='H1'
+
+Select * from TBL_HEADFEEDS [42000-195]
+2017-11-23 13:36:17 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS  SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' WHERE HEADNAME ='H1'
+
+SELECT[*] * FROM TBL_HEADFEEDS "; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = 'NIFTY',MARKETTYPE ='STOCK' where HEADNAME ='H1'
+
+Select * from TBL_HEADFEEDS [42000-195]
+2017-11-23 13:36:39 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Column "NIFTY" not found; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = NIFTY ,MARKETTYPE ='STOCK' where HEADNAME ='H1' [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Update.prepare(Update.java:192)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-23 13:36:50 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS  SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY' ,MARKETTYPE ='STOCK' WHERE HEADNAME ='H1'
+
+SELECT[*] * FROM TBL_HEADFEEDS "; SQL statement:
+update TBL_HEADFEEDS  set FEEDSUBJECTID = 153423, SCRIB = 'NIFTY' ,MARKETTYPE ='STOCK' where HEADNAME ='H1'
+
+Select * from TBL_HEADFEEDS [42000-195]
+2017-11-23 14:40:30 jdbc[7]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-24 00:50:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_HEADFEEDS 
+
+UPDATE TBL_HEADFEEDS[*] SET FEEDSUBJECTID = NULL  WHERE HEADNAME='H1' "; SQL statement:
+SELECT * FROM TBL_HEADFEEDS 
+
+update TBL_HEADFEEDS set FeedSubjectid = null  where Headname='H1' [42000-195]
+2017-11-24 11:46:25 jdbc[22]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-24 15:56:44 jdbc[72]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-24 15:56:44 jdbc[72]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-26 12:07:58 jdbc[77]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEED" not found; SQL statement:
+Select * from Tbl_headfeed [42102-195]
