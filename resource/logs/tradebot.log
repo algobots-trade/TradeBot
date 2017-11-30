@@ -1,92 +1,1572 @@
-2017-11-21 23:14:43 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 10:56:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:14:43 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+2017-11-24 10:56:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 10:56:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
 INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:14:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 10:56:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: 1
+2017-11-24 10:57:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:14:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+2017-11-24 10:57:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 10:57:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
 INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 10:57:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: 1
+2017-11-24 10:58:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
-INFO: Log In Window Triggered
-2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
-INFO: Inizilized Log-In Form
-2017-11-21 23:16:06 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
-INFO: Log-In Window Loaded
-2017-11-21 23:16:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 10:58:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:16:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+2017-11-24 10:58:01 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
 INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:24:49 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 10:58:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:24:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:36:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 10:58:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:36:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+2017-11-24 10:58:34 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
 INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:36:55 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 10:58:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: 1
+2017-11-24 10:58:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 10:58:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 10:58:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:31 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:31 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:31 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@50842494
+2017-11-24 11:01:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:01:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@50ff0e6
+2017-11-24 11:02:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:01 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:02 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@6e8b5187
+2017-11-24 11:02:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:26 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@55a942c7
+2017-11-24 11:02:57 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:57 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:02:57 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:11:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@12a138a3
+2017-11-24 11:44:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:44:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:44:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:44:43 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@14d96929
+2017-11-24 11:44:43 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> STOCK
-2017-11-21 23:36:57 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 11:47:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:47:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:47:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:47:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@14d96929
+2017-11-24 11:49:07 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:49:07 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:49:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:49:08 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@d4fefb8
+2017-11-24 11:49:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 11:49:24 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:49:24 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:49:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:49:25 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@d4fefb8
+2017-11-24 11:49:25 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 11:58:31 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:58:31 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:58:31 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 11:58:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@674c9c41
+2017-11-24 11:58:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:16:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:16:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:16:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:16:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4210a71e
+2017-11-24 12:16:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:22:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:22:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:22:15 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:22:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@79f3de9c
+2017-11-24 12:22:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:22:48 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:22:48 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:22:48 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:22:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@14d96929
+2017-11-24 12:22:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:23:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@50842494
+2017-11-24 12:23:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:23:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@79f3de9c
+2017-11-24 12:23:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:23:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:34 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:23:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@50842494
+2017-11-24 12:23:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:45:54 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:45:54 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:45:54 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:45:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@7c7b91aa
+2017-11-24 12:45:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:45:59 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 12:46:31 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:46:31 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:46:31 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 12:46:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@7c7b91aa
+2017-11-24 12:46:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:46:36 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 12:46:39 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> FUTURE
-2017-11-21 23:37:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 12:46:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> INDEX
-2017-11-21 23:37:02 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 12:46:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 12:46:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 14:14:12 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:14:12 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:14:12 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@447c4d63
+2017-11-24 14:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 14:14:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:14:29 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Value too long for column "EXPDATE VARCHAR(255)": "'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,borde... (2055)"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'test' ,MARKETTYPE ='FUTURE', EXPDATE = 'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@404a25bf,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,69,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@404a25bf,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,121,32,74x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@404a25bf,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=82,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=6,columnWidth=12,command=,horizontalAlignment=CENTER]'where HEADNAME ='H1' [22001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:209)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:192)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:475)
+	at com.tradebot.ui.forms.HeadFeeds$6.actionPerformed(HeadFeeds.java:431)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	...
+2017-11-24 14:18:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:18:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:18:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:18:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@55249d40
+2017-11-24 14:18:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 14:23:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:23:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:23:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:23:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@33b563bc
+2017-11-24 14:23:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:23:35 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Value too long for column "EXPDATE VARCHAR(255)": "'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,borde... (2055)"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'INFY' ,MARKETTYPE ='FUTURE', EXPDATE = 'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@6ee31c09,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,69,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@6ee31c09,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,121,32,74x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@6ee31c09,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=82,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=6,columnWidth=12,command=,horizontalAlignment=CENTER]'where HEADNAME ='H2' [22001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:209)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:192)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:475)
+	at com.tradebot.ui.forms.HeadFeeds$6.actionPerformed(HeadFeeds.java:431)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	...
+2017-11-24 14:25:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:25:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:25:34 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:27:15 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@48ae3149
+2017-11-24 14:27:47 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:29:49 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Value too long for column "EXPDATE VARCHAR(255)": "'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,borde... (2055)"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY' ,MARKETTYPE ='FUTURE', EXPDATE = 'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@306df669,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,69,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@306df669,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,121,32,74x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@306df669,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=82,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=6,columnWidth=12,command=,horizontalAlignment=CENTER]'where HEADNAME ='H2' [22001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:209)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:192)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:475)
+	at com.tradebot.ui.forms.HeadFeeds$6.actionPerformed(HeadFeeds.java:431)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	...
+2017-11-24 14:30:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:30:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:30:03 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:30:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4aa3d4dc
+2017-11-24 14:30:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:30:32 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Value too long for column "EXPDATE VARCHAR(255)": "'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,borde... (2055)"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'NIFTY' ,MARKETTYPE ='FUTURE', EXPDATE = 'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@58e02f59,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,69,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@58e02f59,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,121,32,74x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@58e02f59,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=82,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=6,columnWidth=12,command=,horizontalAlignment=CENTER]'where HEADNAME ='H2' [22001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:209)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:192)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:475)
+	at com.tradebot.ui.forms.HeadFeeds$6.actionPerformed(HeadFeeds.java:431)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	...
+2017-11-24 14:31:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:31:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:31:09 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:31:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@149c4ae
+2017-11-24 14:31:25 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:32:30 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:32:30 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:32:30 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:32:31 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@33b563bc
+2017-11-24 14:32:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:33:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:33:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:33:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:33:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4aa3d4dc
+2017-11-24 14:33:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 14:37:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:37:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:37:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:37:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@49d8a670
+2017-11-24 14:37:25 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 14:37:40 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Value too long for column "EXPDATE VARCHAR(255)": "'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,borde... (2055)"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'NIGFTY50' ,MARKETTYPE ='OPTIONS', EXPDATE = 'javax.swing.JTextField[,17,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@38f78e29,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,69,32,49x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@38f78e29,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=58,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=4,columnWidth=12,command=,horizontalAlignment=CENTER]-javax.swing.JTextField[,121,32,74x43,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=com.apple.laf.AquaTextFieldBorder@38f78e29,flags=288,maximumSize=,minimumSize=,preferredSize=java.awt.Dimension[width=82,height=50],caretColor=java.awt.Color[r=255,g=255,b=255],disabledTextColor=javax.swing.plaf.ColorUIResource[r=128,g=128,b=128],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=0,left=0,bottom=0,right=0],selectedTextColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=0,g=0,b=0],selectionColor=com.apple.laf.AquaImageFactory$SystemColorProxy[r=164,g=205,b=255],columns=6,columnWidth=12,command=,horizontalAlignment=CENTER]', PRICE=30.0,RIGHTS='PUT' where HEADNAME ='H3' [22001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:209)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:192)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:484)
+	at com.tradebot.ui.forms.HeadFeeds$6.actionPerformed(HeadFeeds.java:431)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	...
+2017-11-24 14:37:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:37:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:37:47 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:37:48 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@447c4d63
+2017-11-24 14:40:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:40:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:40:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:40:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@33b563bc
+2017-11-24 14:40:46 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 14:41:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:41:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:41:22 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:41:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4aa3d4dc
+2017-11-24 14:41:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 14:43:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:43:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:43:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:43:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@6bc8d871
+2017-11-24 14:43:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 14:43:26 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "sds"
+2017-11-24 14:43:27 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "sds"
+2017-11-24 14:43:28 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "sds"
+2017-11-24 14:43:29 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "sds"
+2017-11-24 14:43:29 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "sds"
+2017-11-24 14:43:29 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "sds"
+2017-11-24 14:44:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:44:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:44:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 14:44:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@49d8a670
+2017-11-24 14:44:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 14:44:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "we"
+2017-11-24 14:44:21 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "we"
+2017-11-24 14:44:21 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData()
+ERROR: java.lang.NumberFormatException: For input string: "we"
+2017-11-24 15:25:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:25:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:25:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:25:43 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@447c4d63
+2017-11-24 15:25:43 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:26:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> ——
-2017-11-21 23:37:32 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
-INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:37:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:37:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtSTKControls()
-ERROR: java.lang.NullPointerException
-2017-11-21 23:38:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
-INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:38:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:38:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
-INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:38:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:38:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
-INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:38:47 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:38:54 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> STOCK
-2017-11-21 23:38:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> OPTIONS
-2017-11-21 23:40:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
-INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:40:55 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:40:58 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> STOCK
-2017-11-21 23:41:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 15:26:22 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:26:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:26:26 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> FUTURE
-2017-11-21 23:41:02 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 15:26:28 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> OPTIONS
-2017-11-21 23:41:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 15:26:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:26:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:26:55 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:26:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@20d2905
+2017-11-24 15:26:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:27:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:27:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:27:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:27:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@7801ef2f
+2017-11-24 15:27:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:27:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:27:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:27:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:27:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@37794a0d
+2017-11-24 15:27:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:32:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:32:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:32:15 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:32:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4aa3d4dc
+2017-11-24 15:32:26 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> FUTURE
-2017-11-21 23:41:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 15:32:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:32:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 15:33:13 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> OPTIONS
-2017-11-21 23:41:08 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-24 15:41:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:41:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:41:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:41:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4aa3d4dc
+2017-11-24 15:41:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:41:58 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:42:05 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 15:43:08 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:44:32 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:44:32 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:44:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:44:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@1ba7ed31
+2017-11-24 15:44:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:44:36 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 15:44:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:45:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:45:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:45:03 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:45:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@38acbbed
+2017-11-24 15:45:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:45:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:48:44 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:48:44 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:48:44 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:48:45 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4aa3d4dc
+2017-11-24 15:48:45 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:48:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 15:48:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 15:56:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:56:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:56:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:56:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@20b8f93f
+2017-11-24 15:56:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:56:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 15:57:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 15:57:46 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 15:57:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:57:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:57:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 15:57:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@67d6266d
+2017-11-24 15:57:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 15:57:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 16:01:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 16:01:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 16:01:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-24 16:01:36 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@6f5addc9
+2017-11-24 16:01:36 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-24 16:01:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 16:01:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 16:01:51 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-24 16:01:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-24 16:01:58 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> INDEX
-2017-11-21 23:41:12 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> FUTURE
-2017-11-21 23:52:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 16:02:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-24 16:12:36 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:52:33 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
-INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:52:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 16:12:36 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:52:47 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+2017-11-24 16:12:36 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
 INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:53:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> FUTURE
-2017-11-21 23:55:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+2017-11-24 16:12:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@1b5af36f
+2017-11-24 16:12:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-26 12:09:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
 INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:55:37 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.initialLoad()
+2017-11-26 12:09:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:09:38 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
 INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
-2017-11-21 23:55:41 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+2017-11-26 12:09:39 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@1b5af36f
+2017-11-26 12:09:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-26 12:09:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-26 12:10:13 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> FUTURE
+2017-11-26 12:10:24 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'INFY' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,[*]PRICE=NULL,RIGHTS=NULL WHERE HEADNAME ='H4' "; expected "identifier"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'INFY' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,PRICE=null,RIGHTS=null where HEADNAME ='H4' [42001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.prepare(CommandRemote.java:83)
+	at org.h2.command.CommandRemote.<init>(CommandRemote.java:49)
+	at org.h2.engine.SessionRemote.prepareCommand(SessionRemote.java:499)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:490)
+	at com.tradebot.ui.forms.HeadFeeds$7.actionPerformed(HeadFeeds.java:445)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	...
+2017-11-26 12:10:40 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'INFY' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,[*]PRICE=NULL,RIGHTS=NULL WHERE HEADNAME ='H4' "; expected "identifier"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'INFY' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,PRICE=null,RIGHTS=null where HEADNAME ='H4' [42001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.prepare(CommandRemote.java:83)
+	at org.h2.command.CommandRemote.<init>(CommandRemote.java:49)
+	at org.h2.engine.SessionRemote.prepareCommand(SessionRemote.java:499)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:490)
+	at com.tradebot.ui.forms.HeadFeeds$7.actionPerformed(HeadFeeds.java:445)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	...
+2017-11-26 12:10:48 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-26 12:11:10 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-26 12:11:28 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-26 12:11:46 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'kj' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,[*]PRICE=NULL,RIGHTS=NULL WHERE HEADNAME ='H4' "; expected "identifier"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'kj' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,PRICE=null,RIGHTS=null where HEADNAME ='H4' [42001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.prepare(CommandRemote.java:83)
+	at org.h2.command.CommandRemote.<init>(CommandRemote.java:49)
+	at org.h2.engine.SessionRemote.prepareCommand(SessionRemote.java:499)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:490)
+	at com.tradebot.ui.forms.HeadFeeds$7.actionPerformed(HeadFeeds.java:445)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	...
+2017-11-26 12:13:43 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'kj' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,[*]PRICE=NULL,RIGHTS=NULL WHERE HEADNAME ='H4' "; expected "identifier"; SQL statement:
+UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = 'kj' ,MARKETTYPE ='FUTURE', EXPDATE = '21-11-2017',,PRICE=null,RIGHTS=null where HEADNAME ='H4' [42001-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.prepare(CommandRemote.java:83)
+	at org.h2.command.CommandRemote.<init>(CommandRemote.java:49)
+	at org.h2.engine.SessionRemote.prepareCommand(SessionRemote.java:499)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.HeadFeeds.saveHeadFeedData(HeadFeeds.java:490)
+	at com.tradebot.ui.forms.HeadFeeds$7.actionPerformed(HeadFeeds.java:445)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	...
+2017-11-26 12:14:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:14:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:14:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:14:05 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@447c4d63
+2017-11-26 12:14:09 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-26 12:39:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:39:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:39:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-26 12:39:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@1b5af36f
+2017-11-26 12:39:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-26 12:39:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-27 19:26:19 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 19:26:19 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 19:26:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 19:26:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@4bac3fbf
+2017-11-27 19:26:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-27 20:17:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:17:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:17:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:17:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@5bbf0b4
+2017-11-27 20:17:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-11-27 20:18:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-27 20:25:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:25:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:25:26 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:25:27 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@5bbf0b4
+2017-11-27 20:25:27 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-27 20:25:29 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> ——
+2017-11-27 20:26:10 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:26:10 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:26:10 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.<init>()
+INFO: Head Feed Triggered - Log Path --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 20:26:11 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@d2c6749
+2017-11-27 20:26:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> STOCK
+2017-11-27 20:26:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-27 21:31:00 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:31:00 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:31:00 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@3ba4857a
+2017-11-27 21:32:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:32:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:32:04 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7550710e
+2017-11-27 21:32:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:32:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:32:53 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@3ba4857a
+2017-11-27 21:33:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:33:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:33:51 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@354011de
+2017-11-27 21:34:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:34:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:34:14 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@76eaa30b
+2017-11-27 21:36:24 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:36:24 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:36:24 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@354011de
+2017-11-27 21:36:45 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:36:45 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:36:46 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@77bfd731
+2017-11-27 21:37:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:37:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 21:37:26 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@77bfd731
+2017-11-27 22:43:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 22:43:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 22:43:34 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@3ba4857a
+2017-11-27 23:00:11 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 23:00:11 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-27 23:00:12 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@639aadac
+2017-11-28 11:28:11 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 11:28:11 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 11:28:11 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7c6633b5
+2017-11-28 11:29:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 11:29:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 11:29:15 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@4fc83c57
+2017-11-28 11:46:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 11:46:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 11:46:06 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@450d37bc
+2017-11-28 21:52:58 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 21:52:58 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 21:52:58 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@52c502ec
+2017-11-28 21:58:07 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 21:58:07 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 21:58:08 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@c3d05c3
+2017-11-28 22:01:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:01:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:01:21 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7d22b468
+2017-11-28 22:02:02 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.saveFormula()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.FormulaInputs.saveFormula(FormulaInputs.java:638)
+	at com.tradebot.ui.forms.FormulaInputs$2.actionPerformed(FormulaInputs.java:549)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2017-11-28 22:03:00 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:03:00 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:03:00 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@6a802b6e
+2017-11-28 22:03:31 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.saveFormula()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.FormulaInputs.saveFormula(FormulaInputs.java:638)
+	at com.tradebot.ui.forms.FormulaInputs$2.actionPerformed(FormulaInputs.java:549)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2017-11-28 22:04:54 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:04:54 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:04:55 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@68d8b4b1
+2017-11-28 22:05:00 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.saveFormula()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.FormulaInputs.saveFormula(FormulaInputs.java:638)
+	at com.tradebot.ui.forms.FormulaInputs$2.actionPerformed(FormulaInputs.java:549)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2017-11-28 22:06:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:06:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:06:35 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@c3d05c3
+2017-11-28 22:08:48 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.saveFormula()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.FormulaInputs.saveFormula(FormulaInputs.java:638)
+	at com.tradebot.ui.forms.FormulaInputs$2.actionPerformed(FormulaInputs.java:549)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2017-11-28 22:09:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:09:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:11:05 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:11:05 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:11:05 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@530cbb4d
+2017-11-28 22:11:11 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.executeNonQuery()
+ERROR: org.h2.jdbc.JdbcSQLException: Column "FNAME" not found; SQL statement:
+insert into TBL_FORMULA (X,Y,Z,T1,T2,T3,T4,LCOUNT,STOPL,LOTSIZE,TRADESWITCH,FNAME) values (0.4,0.5,1.0,'09:00:00','10:30:00','13:45:45','15:05:10',2,33.0,23,'true','F1') [42122-196]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
+	at org.h2.command.CommandRemote.prepare(CommandRemote.java:83)
+	at org.h2.command.CommandRemote.<init>(CommandRemote.java:49)
+	at org.h2.engine.SessionRemote.prepareCommand(SessionRemote.java:499)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at com.tradebot.dbcommons.db_commons.executeNonQuery(db_commons.java:278)
+	at com.tradebot.ui.forms.FormulaInputs.saveFormula(FormulaInputs.java:656)
+	at com.tradebot.ui.forms.FormulaInputs$2.actionPerformed(FormulaInputs.java:550)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	...
+2017-11-28 22:12:13 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:12:13 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:12:13 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@68d8b4b1
+2017-11-28 22:12:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:12:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:12:23 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@68d8b4b1
+2017-11-28 22:13:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:13:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:13:05 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@4395d932
+2017-11-28 22:18:48 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:18:48 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:18:49 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@530cbb4d
+2017-11-28 22:20:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:20:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:20:05 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@530cbb4d
+2017-11-28 22:20:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:20:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:20:38 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7b34d5ca
+2017-11-28 22:21:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:21:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:21:09 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@68d8b4b1
+2017-11-28 22:21:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:21:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-28 22:21:52 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7b34d5ca
+2017-11-29 22:12:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 22:12:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 22:12:20 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@d66b46c
+2017-11-29 22:17:57 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 22:17:57 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 22:17:58 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@d66b46c
+2017-11-29 23:18:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:18:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:18:01 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@3ae30e10
+2017-11-29 23:18:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:18:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:18:20 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@454b79fa
+2017-11-29 23:22:25 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:22:25 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:22:25 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@454b79fa
+2017-11-29 23:22:37 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7e786ba7
+2017-11-29 23:22:43 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@48e0b5f6
+2017-11-29 23:23:16 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@32f091df
+2017-11-29 23:23:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:23:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:23:52 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@708ecc3a
+2017-11-29 23:24:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:24:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:24:03 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@e5ca5a7
+2017-11-29 23:24:09 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2dcb1085
+2017-11-29 23:24:13 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:24:13 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:24:13 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@454b79fa
+2017-11-29 23:24:39 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:24:39 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:24:39 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7d29a00b
+2017-11-29 23:25:59 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@df6d24b
+2017-11-29 23:29:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:29:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:29:15 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@e5ca5a7
+2017-11-29 23:29:24 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@3a3c5c16
+2017-11-29 23:29:30 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@197b8b7d
+2017-11-29 23:29:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:29:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:29:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:29:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:29:54 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@e5ca5a7
+2017-11-29 23:29:57 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@ceff21b
+2017-11-29 23:30:06 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7da99ad
+2017-11-29 23:32:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:32:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:32:48 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@e5ca5a7
+2017-11-29 23:32:59 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@70325232
+2017-11-29 23:35:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-29 23:35:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 09:13:02 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 09:13:02 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 09:13:03 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@f2f93ca
+2017-11-30 09:13:03 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-11-30 13:21:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:21:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:21:46 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:21:46 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:23:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:23:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:28:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 13:28:01 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:33:36 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:33:36 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:39:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:39:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:43:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:43:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:44:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:44:15 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:47:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:47:18 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:47:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:47:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:48:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:48:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:48:49 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-11-30 14:48:49 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log

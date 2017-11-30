@@ -1,3 +1,4 @@
+
 package com.tradebot.ui.forms;
 
 import java.awt.Color;
@@ -12,12 +13,15 @@ import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import com.tradebot.dbcommons.db_commons;
+import org.pmw.tinylog.Logger;
 
+import com.tradebot.dbcommons.db_commons;
+import com.tradebot.dbcommons.tradebot_utility;
 import com.tradebot.ui.forms.*;
 import javax.swing.JToggleButton;
 import javax.swing.JSlider; 
@@ -45,9 +49,19 @@ public class FormulaInputs {
 	private JTextField txtStopL;
 	private JLabel lblFTitle;
 	private db_commons dbObj;
+	private JSlider slitradeSwitch;
 	public static String dbName= System.getProperty("user.dir")+File.separator+"ovvi_Market_bot;AUTO_SERVER=TRUE";
     public static String USER="admin", PASS="test123";
-
+    private JTextField txtlotsize;
+    
+    private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
+	String tradelogpath;
+    tradebot_utility utils = new tradebot_utility(); 
+	
+	
+	private int colid=0, colfeedsecid=1,colplayersecid=2,colFname=3, colX=4, colY=5, colZ=6, colT1=7, colT2=8,colT3=9,colT4=10, colLcount=11,
+			colStopL=12, collotsize=13, coltradeswitch=14;
+    private String feedsecid,playersecid,Fname;
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +69,7 @@ public class FormulaInputs {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FormulaInputs window = new FormulaInputs("nill","nill");
+					FormulaInputs window = new FormulaInputs("123","321","F1");
 					window.contentPane.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -67,17 +81,140 @@ public class FormulaInputs {
 	/**
 	 * Create the application.
 	 */
-	public FormulaInputs(String strScrib, String strFname) 
+	public FormulaInputs(String strfeedsecId, String strplayersecid, String strFname) 
 	{
 		try
 		{
-			initialize(strScrib, strFname);
+			feedsecid = strfeedsecId; 
+			playersecid= strplayersecid; 
+			Fname=strFname;
+			dbObj=new db_commons();
+			tradelogpath = utils.configlogfile("TRADEBOT_LOG");
+			initialize(strplayersecid, strFname);
+			loadExistingData(strplayersecid, strFname);
 		}
 		catch(Exception ex)
 		{
 			
 		}
 		finally
+		{
+			
+		}
+	}
+	public void loadExistingData(String playersecid, String FName)
+	{
+		String [][] existingdata;
+		try
+		{
+			int count = 0;
+			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"'");
+			if (count != 0)
+			{
+					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"'");
+					Logger.info(existingdata.toString());
+					if (existingdata[0][colFname] != null)
+					{
+						txtX.setText(existingdata[0][colX] == null ? "":existingdata[0][colX]);
+						txtY.setText(existingdata[0][colY] == null ? "":existingdata[0][colY]);
+						txtZ.setText(existingdata[0][colZ] == null ? "":existingdata[0][colZ]);
+						txtLcount.setText(existingdata[0][colLcount] == null ? "":existingdata[0][colLcount]);
+						txtStopL.setText(existingdata[0][colStopL] == null ? "":existingdata[0][colStopL]);
+						txtlotsize.setText(existingdata[0][collotsize] == null ? "":existingdata[0][collotsize]);
+						if (existingdata[0][colT1] != null)
+						{
+							txtT1H.setText(existingdata[0][colT1].split(":")[0]);
+							txtT1M.setText(existingdata[0][colT1].split(":")[1]);
+							txtT1S.setText(existingdata[0][colT1].split(":")[2]);
+						}
+						else
+						{
+							txtT1H.setText("");
+							txtT1M.setText("");
+							txtT1S.setText("");
+						}
+						
+						if (existingdata[0][colT2] != null)
+						{
+							txtT2H.setText(existingdata[0][colT2].split(":")[0]);
+							txtT2M.setText(existingdata[0][colT2].split(":")[1]);
+							txtT2S.setText(existingdata[0][colT2].split(":")[2]);
+						}
+						else
+						{
+							txtT2H.setText("");
+							txtT2M.setText("");
+							txtT2S.setText("");
+						}
+						
+						if (existingdata[0][colT3] != null)
+						{
+							txtT3H.setText(existingdata[0][colT3].split(":")[0]);
+							txtT3M.setText(existingdata[0][colT3].split(":")[1]);
+							txtT3S.setText(existingdata[0][colT3].split(":")[2]);
+						}
+						else
+						{
+							txtT3H.setText("");
+							txtT3M.setText("");
+							txtT3S.setText("");
+						}
+						
+						if (existingdata[0][colT4] != null)
+						{
+							txtT4H.setText(existingdata[0][colT4].split(":")[0]);
+							txtT4M.setText(existingdata[0][colT4].split(":")[1]);
+							txtT4S.setText(existingdata[0][colT4].split(":")[2]);
+						}
+						else
+						{
+							txtT4H.setText("");
+							txtT4M.setText("");
+							txtT4S.setText("");
+						}
+						if (Boolean.parseBoolean(existingdata[0][coltradeswitch]) == true)
+						{
+							slitradeSwitch.setValue(1);
+						}
+						else
+						{
+							slitradeSwitch.setValue(0);
+						}
+					}
+			}
+			else
+			{
+				
+					txtX.setText("");
+					txtY.setText("");
+					txtZ.setText("");
+					txtT1H.setText("");
+					txtT1M.setText("");
+					txtT1S.setText("");
+					txtT2H.setText("");
+					txtT2M.setText("");
+					txtT2S.setText("");
+					txtT3H.setText("");
+					txtT3M.setText("");
+					txtT4S.setText("");
+					txtT4H.setText("");
+					txtT4M.setText("");
+					txtT4S.setText("");
+					txtLcount.setText("");
+					txtStopL.setText("");
+					txtlotsize.setText("");
+					slitradeSwitch.setValue(0);
+					
+				
+			}
+			
+			
+		}
+		catch(Exception ex)
+		{
+			
+		}
+		finally 
 		{
 			
 		}
@@ -94,7 +231,7 @@ public class FormulaInputs {
 		contentPane.getContentPane().setBackground(new Color(51, 51, 51));
 		contentPane.setVisible(true);
 		contentPane.setTitle("Formula Input For  "+strScrib+"-"+strFname);
-		contentPane.setBounds(100, 100, 379, 712);
+		contentPane.setBounds(100, 100, 379, 745);
 		contentPane.setBackground(new Color(36,34,29));
 		contentPane.getContentPane().setLayout(null);
 		contentPane.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -110,13 +247,13 @@ public class FormulaInputs {
 		
 		JPanel pnlInput = new JPanel();
 		pnlInput.setForeground(Color.WHITE);
-		pnlInput.setBounds(16, 46, 347, 630);
+		pnlInput.setBounds(16, 46, 347, 667);
 		pnlInput.setBackground(new Color(80,75,78));
 		contentPane.getContentPane().add(pnlInput);
 		pnlInput.setLayout(null);
 		
 		JLabel lblX = new JLabel("X  =");
-		lblX.setBounds(90, 6, 73, 49);
+		lblX.setBounds(104, 6, 73, 49);
 		lblX.setHorizontalAlignment(SwingConstants.LEFT);
 		lblX.setForeground(Color.WHITE);
 		lblX.setFont(new Font("Verdana", Font.PLAIN, 22));
@@ -126,56 +263,56 @@ public class FormulaInputs {
 		lblX_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblX_1.setForeground(Color.WHITE);
 		lblX_1.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblX_1.setBounds(90, 56, 65, 49);
+		lblX_1.setBounds(106, 56, 65, 49);
 		pnlInput.add(lblX_1);
 		
 		JLabel lblZ = new JLabel("Z  =");
 		lblZ.setHorizontalAlignment(SwingConstants.LEFT);
 		lblZ.setForeground(Color.WHITE);
 		lblZ.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblZ.setBounds(88, 106, 59, 49);
+		lblZ.setBounds(104, 106, 59, 49);
 		pnlInput.add(lblZ);
 		
 		JLabel lblT = new JLabel("T1  =");
 		lblT.setHorizontalAlignment(SwingConstants.LEFT);
 		lblT.setForeground(Color.WHITE);
 		lblT.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblT.setBounds(74, 161, 81, 49);
+		lblT.setBounds(90, 167, 81, 49);
 		pnlInput.add(lblT);
 		
 		JLabel lblT_1 = new JLabel("T2  =");
 		lblT_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblT_1.setForeground(Color.WHITE);
 		lblT_1.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblT_1.setBounds(74, 215, 81, 45);
+		lblT_1.setBounds(90, 215, 81, 45);
 		pnlInput.add(lblT_1);
 		
 		JLabel lblT_2 = new JLabel("T3  =");
 		lblT_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lblT_2.setForeground(Color.WHITE);
 		lblT_2.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblT_2.setBounds(74, 264, 81, 49);
+		lblT_2.setBounds(90, 264, 81, 49);
 		pnlInput.add(lblT_2);
 		
 		JLabel lblT_3 = new JLabel("T4  =");
 		lblT_3.setHorizontalAlignment(SwingConstants.LEFT);
 		lblT_3.setForeground(Color.WHITE);
 		lblT_3.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblT_3.setBounds(74, 311, 81, 49);
+		lblT_3.setBounds(90, 314, 81, 49);
 		pnlInput.add(lblT_3);
 		
 		JLabel lblLcount = new JLabel("LCOUNT  =");
 		lblLcount.setHorizontalAlignment(SwingConstants.LEFT);
 		lblLcount.setForeground(Color.WHITE);
 		lblLcount.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblLcount.setBounds(13, 364, 140, 49);
+		lblLcount.setBounds(28, 363, 140, 49);
 		pnlInput.add(lblLcount);
 		
 		JLabel lblStopl = new JLabel("STOPL  =");
 		lblStopl.setHorizontalAlignment(SwingConstants.LEFT);
 		lblStopl.setForeground(Color.WHITE);
 		lblStopl.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblStopl.setBounds(32, 416, 131, 49);
+		lblStopl.setBounds(46, 416, 131, 49);
 		pnlInput.add(lblStopl);
 		
 		txtX = new JTextField();
@@ -437,15 +574,26 @@ public class FormulaInputs {
 		JButton btnSave = new JButton("SAVE");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//saveFormula();
+				try
+				{
+					saveFormula();
+				}
+				catch(Exception ex)
+				{
+					Logger.error(ex);
+				}
+				finally 
+				{
+					
+				}
 			}
 		});
-		btnSave.setBounds(13, 575, 321, 45);
+		btnSave.setBounds(182, 616, 152, 45);
 		pnlInput.add(btnSave);
 		
 		JPanel tradetoggle = new JPanel();
 		tradetoggle.setBackground(new Color(51, 51, 51));
-		tradetoggle.setBounds(13, 477, 321, 86);
+		tradetoggle.setBounds(13, 524, 321, 86);
 		tradetoggle.setLayout(null);
         
 		JLabel lbltoggle = new JLabel("BUY & SELL");
@@ -463,13 +611,13 @@ public class FormulaInputs {
 		lblBuy.setBounds(95, 21, 131, 28);
 		tradetoggle.add(lblBuy);
 		
-		JSlider slider = new JSlider();
-		slider.setSnapToTicks(true);
-		slider.setMinorTickSpacing(1);
-		slider.setMaximum(1);
-		slider.setValue(0);
-		slider.setBounds(0, 52, 321, 27);
-		tradetoggle.add(slider);
+		slitradeSwitch = new JSlider();
+		slitradeSwitch.setSnapToTicks(true);
+		slitradeSwitch.setMinorTickSpacing(1);
+		slitradeSwitch.setMaximum(1);
+		slitradeSwitch.setValue(0);
+		slitradeSwitch.setBounds(0, 52, 321, 27);
+		tradetoggle.add(slitradeSwitch);
 		
 		JLabel lblOn = new JLabel("ON");
 		lblOn.setHorizontalAlignment(SwingConstants.CENTER);
@@ -484,11 +632,202 @@ public class FormulaInputs {
 		lblOff.setFont(new Font("Verdana", Font.PLAIN, 18));
 		lblOff.setBounds(0, 22, 60, 28);
 		tradetoggle.add(lblOff);
+		
+		JLabel lblLotSize = new JLabel("LOT SIZE  =");
+		lblLotSize.setHorizontalAlignment(SwingConstants.LEFT);
+		lblLotSize.setForeground(Color.WHITE);
+		lblLotSize.setFont(new Font("Verdana", Font.PLAIN, 22));
+		lblLotSize.setBounds(13, 467, 140, 49);
+		pnlInput.add(lblLotSize);
+		
+		txtlotsize = new JTextField();
+		txtlotsize.setHorizontalAlignment(SwingConstants.RIGHT);
+		txtlotsize.setForeground(new Color(255, 220, 135));
+		txtlotsize.setFont(new Font("Verdana", Font.PLAIN, 20));
+		txtlotsize.setColumns(10);
+		txtlotsize.setCaretColor(Color.WHITE);
+		txtlotsize.setBackground(new Color(36, 34, 29));
+		txtlotsize.setBounds(162, 468, 159, 49);
+		pnlInput.add(txtlotsize);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try
+				{
+					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and PLAYERSECID = '"+playersecid+"'");
+					int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and PLAYERSECID = '"+playersecid+"'");
+					if (count == 0)
+					{
+						JOptionPane.showMessageDialog(contentPane,"Formula Deleted Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(contentPane,"Unsuccessfull find the log", "Message",JOptionPane.ERROR_MESSAGE);	
+					}
+					loadExistingData(playersecid, Fname);
+					
+				}
+				catch(Exception ex)
+				{
+					Logger.error(ex);
+				}
+				finally
+				{
+					
+				}
+				
+			}
+		});
+		btnDelete.setBounds(13, 616, 152, 45);
+		pnlInput.add(btnDelete);
 	
 		
 		
 		
 	}
+	public void saveFormula()
+	{ 
+		String[] colvalue = new String[2];
+		colvalue = validateFormulaData();
+		try	{
+			if (colvalue[0] == null)
+			{
+				JOptionPane.showMessageDialog(contentPane,"No Value Entered, Empty Record !!", "Empty Record Alert",JOptionPane.WARNING_MESSAGE);
+			}
+			else
+			{
+				int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and PLAYERSECID = '"+playersecid+"'");
+				if (count == 0)
+				{
+					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
+					if (isSucess ==true)
+					{
+						JOptionPane.showMessageDialog(contentPane,"Formula Added Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
+						//contentPane.dispose();
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(contentPane,"Unsuccessfull find the log", "Message",JOptionPane.ERROR_MESSAGE);	
+					}
+				}
+				else 
+				{
+					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and PLAYERSECID = '"+playersecid+"'");
+					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
+					if (isSucess ==true)
+					{
+						JOptionPane.showMessageDialog(contentPane,"Formula Updated Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
+						contentPane.dispose();
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(contentPane,"Unsuccessfull find the log", "Message",JOptionPane.ERROR_MESSAGE);	
+					}
+				}
+			}			
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+		finally
+		{
+			
+		}
+	}
+	public String [] validateFormulaData()
+	{
+		String [] colval =new String[2];
+		try {
+			String colbuilder="", valueBuilder="";
+			colbuilder=colbuilder+"FEEDSECID,";
+			valueBuilder = valueBuilder + "'"+feedsecid+"'"+",";
+			
+			colbuilder=colbuilder+"PLAYERSECID,";
+			valueBuilder = valueBuilder + "'"+playersecid+"'"+",";
+			
+			
+			if (!txtX.getText().equals(""))
+			{
+				colbuilder=colbuilder+"X,";
+				valueBuilder = valueBuilder + txtX.getText()+",";
+			}
+			if (!txtY.getText().equals(""))
+			{
+				colbuilder=colbuilder+"Y,";
+				valueBuilder = valueBuilder + txtY.getText()+",";
+			}
+			if (!txtZ.getText().equals(""))
+			{
+				colbuilder=colbuilder+"Z,";
+				valueBuilder = valueBuilder + txtZ.getText()+",";
+			}
+			if ((!txtT1H.getText().equals("")) && (!txtT1M.getText().equals("")) && (!txtT1S.getText().equals("")))
+			{
+				colbuilder=colbuilder+"T1,";
+				valueBuilder = valueBuilder +"'"+txtT1H.getText()+":"+txtT1M.getText()+":"+txtT1S.getText()+"',";
+			}
+			if ((!txtT2H.getText().equals("")) && (!txtT2M.getText().equals("")) && (!txtT2S.getText().equals("")))
+			{
+				colbuilder=colbuilder+"T2,";
+				valueBuilder = valueBuilder +"'"+txtT2H.getText()+":"+txtT2M.getText()+":"+txtT2S.getText()+"',";
+			}
+			if ((!txtT3H.getText().equals("")) && (!txtT3M.getText().equals("")) && (!txtT3S.getText().equals("")))
+			{
+				colbuilder=colbuilder+"T3,";
+				valueBuilder = valueBuilder +"'"+txtT3H.getText()+":"+txtT3M.getText()+":"+txtT3S.getText()+"',";
+			}
+			if ((!txtT4H.getText().equals("")) && (!txtT4M.getText().equals("")) && (!txtT4S.getText().equals("")))
+			{
+				colbuilder=colbuilder+"T4,";
+				valueBuilder = valueBuilder +"'"+txtT4H.getText()+":"+txtT4M.getText()+":"+txtT4S.getText()+"',";
+			}
+			if (!txtLcount.getText().equals(""))
+			{
+				colbuilder=colbuilder+"LCOUNT,";
+				valueBuilder = valueBuilder + txtLcount.getText()+",";
+			}
+			if (!txtStopL.getText().equals(""))
+			{
+				colbuilder=colbuilder+"STOPL,";
+				valueBuilder = valueBuilder + txtStopL.getText()+",";
+			}
+			if(!txtlotsize.getText().equals(""))
+			{
+				colbuilder=colbuilder+"LOTSIZE,";
+				valueBuilder = valueBuilder + txtlotsize.getText()+",";
+			}
+			if(slitradeSwitch.getValue() == 0)
+			{
+				colbuilder=colbuilder+"TRADESWITCH,";
+				valueBuilder = valueBuilder + "'false'"+",";
+			}
+			if(slitradeSwitch.getValue() == 1)
+			{
+				colbuilder=colbuilder+"TRADESWITCH,";
+				valueBuilder = valueBuilder + "'true'"+",";
+			}
+			if (!colbuilder.equals(""))
+			{
+				colbuilder = colbuilder + "FORMULANAME";
+				valueBuilder= valueBuilder + "'"+lblFTitle.getText()+"'";
+				colval[0]=colbuilder;//.substring(0, colbuilder.length() - 1);
+				colval[1]=valueBuilder;//.substring(0, valueBuilder.length() - 1);
+			}
+			
+			
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+		finally {
+			
+		}
+		return colval;
+	}
+	
 	
 	class InputHandler implements KeyListener
 	{

@@ -52,9 +52,9 @@ public class HeadFeeds {
 	String tradelogpath;
 	tradebot_utility utils = new tradebot_utility(); 
 	db_commons dbobj=new db_commons();
-	private JLabel lblSecurityId;
 	
 	private int colid=0,colhname=1,colsecid=2,colscrib=3,colmtype=4,colexpdate=5,colprice=6,colrights=7, colinfo =8;
+	private JTextField txtsecId;
 
 	/**
 	 * Launch the application.
@@ -100,11 +100,12 @@ public class HeadFeeds {
 			Logger.info(existingdata.toString());
 			if (existingdata[0][colsecid] != null)
 			{
-				lblSecurityId.setText("SEC ID - "+existingdata[0][colsecid].toString());
+		
 				if ((existingdata[0][colscrib] != null )&&(existingdata[0][colmtype] !=null))
 				{
 					txtscrib.setText(existingdata[0][colscrib]);
 					cmbmarkettype.setSelectedItem(existingdata[0][colmtype].toString().trim());
+					txtsecId.setText(existingdata[0][colsecid]);
 				}
 				switch (existingdata[0][colmtype].toString()) 
 				{
@@ -131,7 +132,6 @@ public class HeadFeeds {
 							txtExpdd.setText(expdate[0]);
 							txtExpmm.setText(expdate[1]);
 							txtExpyyyy.setText(expdate[2]);
-							
 							txtprice.setText(existingdata[0][colprice]);
 							cmbright.setSelectedItem(existingdata[0][colrights]);
 						}
@@ -144,6 +144,7 @@ public class HeadFeeds {
 		}
 		catch(Exception ex)
 		{		
+			Logger.error(ex);
 		}
 		finally
 		{		
@@ -156,7 +157,6 @@ public class HeadFeeds {
 	public HeadFeeds(String headFeedName) 
 	{
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
-		Logger.info("Head Feed Triggered - Log Path --> "+tradelogpath);
 		initialize(headFeedName);
 		initialLoad(headFeedName);
 	}
@@ -253,7 +253,7 @@ public class HeadFeeds {
 		innerpanel.setLayout(null);
 		
 		txtscrib = new JTextField();
-		txtscrib.setBounds(97, 6, 189, 49);
+		txtscrib.setBounds(78, 6, 148, 49);
 		innerpanel.add(txtscrib);
 		txtscrib.setHorizontalAlignment(SwingConstants.LEFT);
 		txtscrib.setForeground(new Color(255, 220, 135));
@@ -263,7 +263,7 @@ public class HeadFeeds {
 		txtscrib.setBackground(new Color(36, 34, 29));
 		
 		lblScrib = new JLabel("SCRIB");
-		lblScrib.setBounds(16, 6, 82, 49);
+		lblScrib.setBounds(6, 6, 82, 49);
 		innerpanel.add(lblScrib);
 		lblScrib.setHorizontalAlignment(SwingConstants.LEFT);
 		lblScrib.setForeground(Color.WHITE);
@@ -296,7 +296,7 @@ public class HeadFeeds {
 			}
 		});
 		cmbmarkettype.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbmarkettype.setBounds(285, 7, 138, 49);
+		cmbmarkettype.setBounds(225, 7, 138, 49);
 		
 		
 		
@@ -450,12 +450,22 @@ public class HeadFeeds {
 		btnSave.setBounds(365, 181, 166, 37);
 		innerpanel.add(btnSave);
 		
-		lblSecurityId = new JLabel("");
-		lblSecurityId.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSecurityId.setForeground(UIManager.getColor("Button.select"));
-		lblSecurityId.setFont(new Font("Verdana", Font.ITALIC, 18));
-		lblSecurityId.setBounds(423, 6, 184, 49);
-		innerpanel.add(lblSecurityId);
+		JLabel lblSecid = new JLabel("SEC-ID");
+		lblSecid.setHorizontalAlignment(SwingConstants.LEFT);
+		lblSecid.setForeground(Color.WHITE);
+		lblSecid.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblSecid.setBounds(375, 6, 82, 49);
+		innerpanel.add(lblSecid);
+		
+		txtsecId = new JTextField();
+		txtsecId.setHorizontalAlignment(SwingConstants.LEFT);
+		txtsecId.setForeground(new Color(255, 220, 135));
+		txtsecId.setFont(new Font("Verdana", Font.PLAIN, 20));
+		txtsecId.setColumns(10);
+		txtsecId.setCaretColor(Color.WHITE);
+		txtsecId.setBackground(new Color(36, 34, 29));
+		txtsecId.setBounds(459, 6, 148, 49);
+		innerpanel.add(txtsecId);
 		
 		lblHead = new JLabel("HEAD FEED - "+headname);
 		lblHead.setHorizontalAlignment(SwingConstants.CENTER);
@@ -478,7 +488,7 @@ public class HeadFeeds {
 			case "STOCK":
 				if (STKvalidations())
 				{
-					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = '"+txtscrib.getText().toString()+"' ,"
+					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
 						+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE=null,PRICE=null,RIGHTS=null where HEADNAME ='"+headname+"'");
 					JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);				
 				}
@@ -487,7 +497,7 @@ public class HeadFeeds {
 				if(FUTvalidations())
 				{
 					String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = '"+txtscrib.getText().toString()+"' ,"
+					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
 							+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE = '"+date+"',PRICE=null,RIGHTS=null where HEADNAME ='"+headname+"'");
 						JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
@@ -496,7 +506,7 @@ public class HeadFeeds {
 				if(OPTvalidations())
 				{
 					String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = '"+txtscrib.getText().toString()+"' ,"
+					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
 							+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE = '"+date+"', PRICE="+Double.parseDouble(txtprice.getText())+",RIGHTS='"+cmbright.getSelectedItem().toString()+"' where HEADNAME ='"+headname+"'");
 						JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
@@ -504,7 +514,7 @@ public class HeadFeeds {
 			case "INDEX":
 				if(INDvalidations())
 				{
-					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = 153423, SCRIB = '"+txtscrib.getText().toString()+"' ,"
+					dbobj.executeNonQuery("UPDATE TBL_HEADFEEDS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
 							+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE=null,PRICE=null,RIGHTS=null where HEADNAME ='"+headname+"'");
 						JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
@@ -525,9 +535,9 @@ public class HeadFeeds {
 		Boolean Isvalid=false;
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedIndex() == 0))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedIndex() == 0)||(txtsecId.getText().equals("")))
 			{
-				JOptionPane.showMessageDialog(headFeed,"Check scrib name field and market type.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(headFeed,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 				Logger.warn("Check scrib name field and market type.");
 			}
 			else
@@ -553,9 +563,9 @@ public class HeadFeeds {
 		DateValidator dv=new DateValidator();
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals(""))))
 			{
-				JOptionPane.showMessageDialog(headFeed,"Check scrib name field and market type.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(headFeed,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 			}
 			else if ((txtExpdd.getText().equals("DD"))||(txtExpmm.getText().equals("MM"))||(txtExpyyyy.getText().equals("YYYY")))
 			{
@@ -591,9 +601,9 @@ public class HeadFeeds {
 		DateValidator dv=new DateValidator();
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals(""))))
 			{
-				JOptionPane.showMessageDialog(headFeed,"Check scrib name field and market type.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(headFeed,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 			}
 			else if ((txtExpdd.getText().equals("DD"))||(txtExpmm.getText().equals("MM"))||(txtExpyyyy.getText().equals("YYYY")))
 			{
@@ -634,10 +644,9 @@ public class HeadFeeds {
 		Boolean Isvalid=false;
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals(""))))
 			{
-				JOptionPane.showMessageDialog(headFeed,"Check scrib name field and market type.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
-				Logger.warn("Check scrib name field and market type.");
+				JOptionPane.showMessageDialog(headFeed,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 			}
 			else
 			{
@@ -659,11 +668,11 @@ public class HeadFeeds {
 	{
 		txtscrib.setText("");
 		cmbmarkettype.setSelectedIndex(0);
-		lblSecurityId.setText("");
 		txtExpdd.setText("DD");
 		txtExpmm.setText("MM");
 		txtExpyyyy.setText("YYYY");
 		txtprice.setText("0.0");
+		txtsecId.setText("");
 		cmbright.setSelectedIndex(0);
 	}
 }

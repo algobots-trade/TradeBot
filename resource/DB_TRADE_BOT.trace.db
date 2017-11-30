@@ -605,3 +605,130 @@ Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the ap
 2017-11-26 12:07:58 jdbc[77]: exception
 org.h2.jdbc.JdbcSQLException: Table "TBL_HEADFEED" not found; SQL statement:
 Select * from Tbl_headfeed [42102-195]
+2017-11-27 21:24:11 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) VALUES ('F2','False')
+INSERT[*] INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) VALUES ('F3','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) VALUES ('F4','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) VALUES ('F5','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) VALUES ('F6','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) VALUES ('F7','False') "; SQL statement:
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F2','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F3','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F4','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F5','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F6','False')
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F7','False') [42000-195]
+2017-11-27 21:29:46 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_FORMULA SET FEEDSECID =123, PLAYERSECID=321, X=0.20,Y=0.50,Z=1.0,T1=09:[*]00:00, T2=10:30:00, T3= 13:45:45, T4= 15:05:10, LCOUNT=2, STOPL=33.00,LOTSIZE=75 WHERE FORMULANAME='F1' "; SQL statement:
+update TBL_FORMULA set Feedsecid =123, playersecid=321, x=0.20,y=0.50,z=1.0,T1=09:00:00, T2=10:30:00, T3= 13:45:45, T4= 15:05:10, Lcount=2, StopL=33.00,LOTsize=75 where FORMULANAME='F1' [42000-195]
+2017-11-27 22:22:48 jdbc[24]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.test(WebApp.java:885)
+	at org.h2.server.web.WebApp.process(WebApp.java:220)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-28 22:11:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_FORMULA 
+
+INSERT INTO[*] TBL_FORMULA (X,Y,Z,T1,T2,T3,T4,LCOUNT,STOPL,LOTSIZE,TRADESWITCH,FNAME) VALUES (0.4,0.5,1.0,'09:00:00','10:30:00','13:45:45','15:05:10',2,33.0,23,'true','F1') "; SQL statement:
+SELECT * FROM TBL_FORMULA 
+
+insert into TBL_FORMULA (X,Y,Z,T1,T2,T3,T4,LCOUNT,STOPL,LOTSIZE,TRADESWITCH,FNAME) values (0.4,0.5,1.0,'09:00:00','10:30:00','13:45:45','15:05:10',2,33.0,23,'true','F1') [42000-195]
+2017-11-28 22:11:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "FNAME" not found; SQL statement:
+insert into TBL_FORMULA (X,Y,Z,T1,T2,T3,T4,LCOUNT,STOPL,LOTSIZE,TRADESWITCH,FNAME) values (0.4,0.5,1.0,'09:00:00','10:30:00','13:45:45','15:05:10',2,33.0,23,'true','F1') [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:676)
+	at org.h2.command.Parser.parseColumn(Parser.java:881)
+	at org.h2.command.Parser.parseColumnList(Parser.java:865)
+	at org.h2.command.Parser.parseInsert(Parser.java:1065)
+	at org.h2.command.Parser.parsePrepared(Parser.java:416)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-30 00:02:30 jdbc[118]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-30 12:47:28 jdbc[122]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-11-30 13:24:51 jdbc[122]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE[*] FEEDSUBJECTID IS NOT NULL "; SQL statement:
+SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE FEEDSUBJECTID is not null [42000-195]
+2017-11-30 13:25:00 jdbc[122]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE[*] FEEDSUBJECTID IS NOTNULL "; SQL statement:
+SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE FEEDSUBJECTID is notnull [42000-195]
+2017-11-30 13:25:49 jdbc[122]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE[*] FEEDSUBJECTID IS NOT NULL"; SQL statement:
+SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE FEEDSUBJECTID IS NOT NULL [42000-195]

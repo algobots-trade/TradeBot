@@ -38,5 +38,17 @@ Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not nu
 
 #Create Formula table
 
-CREATE TABLE tbl_formula (id bigint auto_increment, feedsubjectid varchar(255) not null, playername varchar(255) not null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
-   lcount int null,   stopl double null, tradeswitch varchar(255) not null)
+CREATE TABLE tbl_formula (id bigint auto_increment, feedsecid varchar(255) null, playersecid varchar(255) null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
+   lcount int null,   stopl double null, lotsize int null,tradeswitch varchar(255) not null)
+
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F1','False');
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F2','False');
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F3','False');
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F4','False');
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F5','False');
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F6','False');
+INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F7','False');
+
+update TBL_FORMULA set Feedsecid =123, playersecid=321, x=0.20,y=0.50,z=1.0,T1='09:00:00', T2='10:30:00', T3= '13:45:45', T4= '15:05:10', Lcount=2, StopL=33.00,LOTsize=75 where FORMULANAME='F1'
+
+*********************************************************
