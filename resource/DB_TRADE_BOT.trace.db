@@ -732,3 +732,46 @@ SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE FEEDSUBJECTID is notnull [42000-19
 2017-11-30 13:25:49 jdbc[122]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE[*] FEEDSUBJECTID IS NOT NULL"; SQL statement:
 SELECT * FROM TBL_HEADFEEDS ORDER BY ID WHERE FEEDSUBJECTID IS NOT NULL [42000-195]
+2017-12-01 22:49:40 jdbc[134]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:100)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-12-21 09:26:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIP,MARKETTYPE) VALUES ('1234',''NIFTY','323','dsd','STOCK[*]')"; SQL statement:
+INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIP,MARKETTYPE) VALUES ('1234',''NIFTY','323','dsd','STOCK') [42000-195]
+2017-12-21 09:27:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIP,MARKETTYPE) VALUES ('1234',''NIFTY','323','dsd','STOCK[*]')"; SQL statement:
+INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIP,MARKETTYPE) VALUES ('1234',''NIFTY','323','dsd','STOCK') [42000-195]
+2017-12-21 09:54:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE) VALUES ('H4',''1234','2312','INFFY','STOCK[*]')"; SQL statement:
+INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE) VALUES ('H4',''1234','2312','INFFY','STOCK') [42000-195]
+2017-12-21 09:55:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_PLAYERS (HEADNAME ,FEEDSUBJECTID ,TRADESUBJECTID , SCRIB ,MARKETTYPE ) VALUES ('H4',''1234','2312','INFFY','STOCK[*]')"; SQL statement:
+INSERT INTO TBL_PLAYERS (HEADNAME ,FEEDSUBJECTID ,TRADESUBJECTID , SCRIB ,MARKETTYPE ) VALUES ('H4',''1234','2312','INFFY','STOCK') [42000-195]

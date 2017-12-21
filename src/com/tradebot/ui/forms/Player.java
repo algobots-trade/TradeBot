@@ -24,6 +24,8 @@ import com.tradebot.dbcommons.tradebot_utility;
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class Player {
 
@@ -57,7 +59,7 @@ public class Player {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Player window = new Player();
+					Player window = new Player("678");
 					window.playerframe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -69,18 +71,20 @@ public class Player {
 	/**
 	 * Create the application.
 	 */
-	public Player() {
+	public Player(String playerId) {
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 		initialize();
-		
-		//initialLoad("1213");
+		if (playerId !=null)
+		{
+			initialLoad(playerId);
+		}
 	}
 	public void initialLoad(String playersecid)
 	{
 		
 		try
 		{
-			loadExistingData("" , playersecid);
+			loadExistingData(playersecid);
 		}
 		catch(Exception ex)
 		{
@@ -115,16 +119,16 @@ public class Player {
 		}
 	}
 	
-	public void loadExistingData(String Hname, String psecid)
+	public void loadExistingData(String psecid)
 	{
 		String [][] existingdata;
 		try
 		{	
 			int count = 0;
-			count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE FEEDSUBJECTID = '"+psecid+"'");
+			count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+psecid+"'");
 			if (count != 0)
 			{
-				existingdata = dbobj.getMultiColumnRecords("SELECT * FROM TBL_PLAYERS WHERE FEEDSUBJECTID = '"+psecid+"'");
+				existingdata = dbobj.getMultiColumnRecords("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+psecid+"'");
 				Logger.info(existingdata.toString());
 				if (existingdata[0][colplayersecid] != null)
 				{
@@ -134,6 +138,15 @@ public class Player {
 						txtscrib.setText(existingdata[0][colscrib]);
 						cmbmarkettype.setSelectedItem(existingdata[0][colmtype].toString().trim());
 						txtsecId.setText(existingdata[0][colplayersecid]);
+						for (int i=0; i< cmbheadfeed.getItemCount(); i++)
+						{
+							String item = cmbheadfeed.getItemAt(i).toString();
+				            if (item.contains(existingdata[0][colfeedsecid]))
+				            {
+				                cmbheadfeed.setSelectedIndex(i);
+				                break;
+				            }
+						}
 					}
 					switch (existingdata[0][colmtype].toString()) 
 					{
@@ -313,13 +326,33 @@ public class Player {
 		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 20));
 		
 		cmbmarkettype = new JComboBox<Object>(new String[] {"—SELECT—", "STOCK", "FUTURE", "OPTIONS", "INDEX"});
-		//cmbmarkettype.setModel(new DefaultComboBoxModel<Object>(new String[] {"—SELECT—", "STOCK", "FUTURE", "OPTIONS", "INDEX"}));
+		cmbmarkettype.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Logger.info("Market type set to --> "+cmbmarkettype.getSelectedItem().toString());
+				switch (cmbmarkettype.getSelectedItem().toString()) {
+				case "STOCK":
+					builtSTKControls();
+					break;
+				case "FUTURE":
+					builtFUTControls();
+					break;
+				case "OPTIONS":
+					builtOPTControls();
+					break;
+				case "INDEX":
+					builtINDControls();
+					break;
+				case "——":
+					builtSTKControls();
+					break;
+				default:
+					builtSTKControls();
+					break;
+				}
+			}
+		});
 		cmbmarkettype.setFont(new Font("Verdana", Font.PLAIN, 18));
 		cmbmarkettype.setBounds(210, 7, 160, 49);
-		//cmbmarkettype.addItem("STOCK");
-		//cmbmarkettype.addItem("FUTURE");
-		//cmbmarkettype.addItem("OPTIONS");
-		//cmbmarkettype.addItem("INDEX");
 		
 		
 		innerpanel.add(cmbmarkettype);
@@ -403,6 +436,32 @@ public class Player {
 		futopt_panel.add(cmbright);
 		
 		JButton btnDelete = new JButton("DELETE");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				int count = 0;
+				count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+txtsecId.getText()+"'");
+				if (count != 0)
+				{
+					dbobj.executeNonQuery("DELETE FROM TBL_PLAYERS WHERE TRADESUBJECTID='"+txtsecId.getText()+"'");
+					count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+txtsecId.getText()+"'");
+					if (count !=0)
+					{
+						JOptionPane.showMessageDialog(playerframe,"Record not Deleted !! Please check Data !!", "Error",JOptionPane.ERROR_MESSAGE);	
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(playerframe,"Player Deleted Sucessfully !!", "Sucess",JOptionPane.INFORMATION_MESSAGE);	
+						resetfields();
+					}
+					
+				}
+				else
+				{	
+					JOptionPane.showMessageDialog(playerframe,"No Records to Delete", "Error",JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		btnDelete.setPreferredSize(new Dimension(180, 50));
 		btnDelete.setBounds(77, 241, 166, 37);
 		innerpanel.add(btnDelete);
@@ -410,7 +469,19 @@ public class Player {
 		JButton btnSave = new JButton("SAVE");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				saveformula();
+				if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedIndex() == 0)||(txtscrib.getText().equals("")))
+				{
+					JOptionPane.showMessageDialog(playerframe,"Check scrib name field, sec-Id and market type.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
+				}
+				else
+				{
+					saveTradeData(cmbmarkettype.getSelectedItem().toString(),txtsecId.getText().toString());
+				}
+				//if (STKvalidations())
+				//{
+				 //saveTradeData(cmbmarkettype.getSelectedItem().toString(),txtsecId.getText().toString());
+				 
+				//}
 			}
 		});
 		btnSave.setPreferredSize(new Dimension(180, 50));
@@ -467,43 +538,53 @@ public class Player {
 		Boolean Isvalid=false;
 		try
 		{
-			String hname = "";
-			String feedsecId ="";
+			int count = 0;
+			count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+playerid+"'");
+			if (count != 0)
+			{
+				dbobj.executeNonQuery("DELETE FROM TBL_PLAYERS WHERE TRADESUBJECTID='"+txtsecId.getText()+"'");
+				count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+playerid+"'");
+				if (count !=0)
+				{
+					JOptionPane.showMessageDialog(playerframe,"Record not saved !! Please check Data !!", "Error",JOptionPane.ERROR_MESSAGE);	
+				}
+				
+			}
+			String hname = cmbheadfeed.getSelectedItem().toString().split("-")[0].trim();
+			String feedsecId =cmbheadfeed.getSelectedItem().toString().split("-")[1].trim();
 			switch (markettype) {
 			case "STOCK":
 				if (STKvalidations())
 				{
-					dbobj.executeNonQuery("UPDATE TBL_PLAYERS SET HEADNAME = '"+hname+"', FEEDSUBJECTID = '"+feedsecId+"', TRADESUBJECTID = '"+playerid+"', SCRIB = '"+txtscrib.getText()+"',");
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"')");
 					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);				
 				}
-				break;
+				break; 
 			case "FUTURE":
 				if(FUTvalidations())
 				{
 					String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-					dbobj.executeNonQuery("UPDATE TBL_PLAYERS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
-							+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE = '"+date+"',PRICE=null,RIGHTS=null where HEADNAME ='"+headname+"'");
-						JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,EXPDATE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"')");
+					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
 				break;
 			case "OPTIONS":
 				if(OPTvalidations())
 				{
 					String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-					dbobj.executeNonQuery("UPDATE TBL_PLAYERS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
-							+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE = '"+date+"', PRICE="+Double.parseDouble(txtprice.getText())+",RIGHTS='"+cmbright.getSelectedItem().toString()+"' where HEADNAME ='"+headname+"'");
-						JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',"+txtprice.getText()+",'"+cmbright.getSelectedItem().toString()+"')");
+					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
 				break;
 			case "INDEX":
 				if(INDvalidations())
 				{
-					dbobj.executeNonQuery("UPDATE TBL_PLAYERS SET FEEDSUBJECTID = '"+txtsecId.getText().toString()+"', SCRIB = '"+txtscrib.getText().toString()+"' ,"
-							+ "MARKETTYPE ='"+cmbmarkettype.getSelectedItem().toString()+"', EXPDATE=null,PRICE=null,RIGHTS=null where HEADNAME ='"+headname+"'");
-						JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"')");
+					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
 				break;
 			}
+			resetfields();
 		}
 		catch(Exception ex)
 		{
