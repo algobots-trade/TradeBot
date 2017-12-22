@@ -33,6 +33,7 @@ import com.tradebot.dbcommons.DateValidator;
 import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
 import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
 
 public class HeadFeeds {
 
@@ -55,6 +56,7 @@ public class HeadFeeds {
 	
 	private int colid=0,colhname=1,colsecid=2,colscrib=3,colmtype=4,colexpdate=5,colprice=6,colrights=7, colinfo =8;
 	private JTextField txtsecId;
+	private JLabel lblMarket;
 
 	/**
 	 * Launch the application.
@@ -156,9 +158,12 @@ public class HeadFeeds {
 	 */
 	public HeadFeeds(String headFeedName) 
 	{
+		//HeadFeeds window = new HeadFeeds(headFeedName);
+		//window.headFeed.setVisible(true);
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 		initialize(headFeedName);
 		initialLoad(headFeedName);
+		
 	}
 	/**
 	 * set proper control visibility according to the market type selection
@@ -241,19 +246,20 @@ public class HeadFeeds {
 		
 		headFeed = new JFrame();
 		headFeed.setTitle(headname);
-		headFeed.setBounds(100, 100, 665, 357);
+		headFeed.setBounds(100, 100, 665, 340);
 		headFeed.getContentPane().setLayout(null);
 		headFeed.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		headFeed.getContentPane().setBackground(new Color(51, 51, 51));
+		headFeed.setVisible(true);
 		
 		innerpanel = new JPanel();
-		innerpanel.setBounds(26, 68, 613, 230);
+		innerpanel.setBounds(26, 53, 613, 245);
 		innerpanel.setBackground(new Color(80,75,78));
 		headFeed.getContentPane().add(innerpanel);
 		innerpanel.setLayout(null);
 		
 		txtscrib = new JTextField();
-		txtscrib.setBounds(78, 6, 148, 49);
+		txtscrib.setBounds(18, 42, 179, 37);
 		innerpanel.add(txtscrib);
 		txtscrib.setHorizontalAlignment(SwingConstants.LEFT);
 		txtscrib.setForeground(new Color(255, 220, 135));
@@ -263,11 +269,11 @@ public class HeadFeeds {
 		txtscrib.setBackground(new Color(36, 34, 29));
 		
 		lblScrib = new JLabel("SCRIB");
-		lblScrib.setBounds(6, 6, 82, 49);
+		lblScrib.setBounds(75, 0, 82, 49);
 		innerpanel.add(lblScrib);
 		lblScrib.setHorizontalAlignment(SwingConstants.LEFT);
 		lblScrib.setForeground(Color.WHITE);
-		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 16));
 		
 		cmbmarkettype = new JComboBox(new DefaultComboBoxModel(new String[] {"——", "STOCK", "FUTURE","OPTIONS","INDEX"}));
 		cmbmarkettype.addActionListener(new ActionListener() {
@@ -296,7 +302,7 @@ public class HeadFeeds {
 			}
 		});
 		cmbmarkettype.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbmarkettype.setBounds(225, 7, 138, 49);
+		cmbmarkettype.setBounds(219, 37, 205, 49);
 		
 		
 		
@@ -304,8 +310,8 @@ public class HeadFeeds {
 		
 		futopt_panel = new JPanel();
 		futopt_panel.setBackground(Color.DARK_GRAY);
-		futopt_panel.setBorder(null);
-		futopt_panel.setBounds(16, 67, 573, 89);
+		futopt_panel.setBorder(new LineBorder(Color.LIGHT_GRAY));
+		futopt_panel.setBounds(18, 91, 573, 89);
 		innerpanel.add(futopt_panel);
 		futopt_panel.setLayout(null);
 		
@@ -313,7 +319,7 @@ public class HeadFeeds {
 		lblDate.setBounds(78, 6, 64, 26);
 		lblDate.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDate.setForeground(Color.WHITE);
-		lblDate.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblDate.setFont(new Font("Verdana", Font.PLAIN, 16));
 		futopt_panel.add(lblDate);
 		
 		txtExpdd = new JTextField();
@@ -391,7 +397,7 @@ public class HeadFeeds {
 	    lblPrice = new JLabel("PRICE");
 		lblPrice.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPrice.setForeground(Color.WHITE);
-		lblPrice.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblPrice.setFont(new Font("Verdana", Font.PLAIN, 16));
 		lblPrice.setBounds(286, 6, 64, 26);
 		futopt_panel.add(lblPrice);
 		
@@ -409,7 +415,7 @@ public class HeadFeeds {
 		lblRight = new JLabel("RIGHT");
 		lblRight.setHorizontalAlignment(SwingConstants.LEFT);
 		lblRight.setForeground(Color.WHITE);
-		lblRight.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblRight.setFont(new Font("Verdana", Font.PLAIN, 16));
 		lblRight.setBounds(453, 6, 80, 26);
 		futopt_panel.add(lblRight);
 		
@@ -429,7 +435,7 @@ public class HeadFeeds {
 			}
 		});
 		btnDelete.setPreferredSize(new Dimension(180, 50));
-		btnDelete.setBounds(78, 181, 166, 37);
+		btnDelete.setBounds(78, 192, 166, 37);
 		innerpanel.add(btnDelete);
 		
 		btnSave = new JButton("SAVE");
@@ -447,14 +453,14 @@ public class HeadFeeds {
 			}
 		});
 		btnSave.setPreferredSize(new Dimension(180, 50));
-		btnSave.setBounds(365, 181, 166, 37);
+		btnSave.setBounds(365, 192, 166, 37);
 		innerpanel.add(btnSave);
 		
 		JLabel lblSecid = new JLabel("SEC-ID");
 		lblSecid.setHorizontalAlignment(SwingConstants.LEFT);
 		lblSecid.setForeground(Color.WHITE);
-		lblSecid.setFont(new Font("Verdana", Font.PLAIN, 20));
-		lblSecid.setBounds(375, 6, 82, 49);
+		lblSecid.setFont(new Font("Verdana", Font.PLAIN, 16));
+		lblSecid.setBounds(479, 0, 82, 49);
 		innerpanel.add(lblSecid);
 		
 		txtsecId = new JTextField();
@@ -464,14 +470,21 @@ public class HeadFeeds {
 		txtsecId.setColumns(10);
 		txtsecId.setCaretColor(Color.WHITE);
 		txtsecId.setBackground(new Color(36, 34, 29));
-		txtsecId.setBounds(459, 6, 148, 49);
+		txtsecId.setBounds(443, 44, 148, 31);
 		innerpanel.add(txtsecId);
+		
+		lblMarket = new JLabel("MARKET");
+		lblMarket.setHorizontalAlignment(SwingConstants.LEFT);
+		lblMarket.setForeground(Color.WHITE);
+		lblMarket.setFont(new Font("Verdana", Font.PLAIN, 16));
+		lblMarket.setBounds(273, 0, 116, 49);
+		innerpanel.add(lblMarket);
 		
 		lblHead = new JLabel("HEAD FEED - "+headname);
 		lblHead.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHead.setForeground(new Color(255, 220, 135));
 		lblHead.setFont(new Font("Verdana", Font.BOLD, 22));
-		lblHead.setBounds(6, 13, 653, 43);
+		lblHead.setBounds(6, -2, 653, 43);
 		headFeed.getContentPane().add(lblHead);
 		headFeed.setVisible(true);
 		

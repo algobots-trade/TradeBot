@@ -31,8 +31,7 @@ insert into tbl_HeadFeeds (Headname) values ('H12');
 
 #Create Table for players
 ------------------------------------
-
-Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) 
+Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, lotsize int not null,contractinfo varchar(255) null) 
 
 *******************************************************
 
@@ -52,3 +51,26 @@ INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F7','False');
 update TBL_FORMULA set Feedsecid =123, playersecid=321, x=0.20,y=0.50,z=1.0,T1='09:00:00', T2='10:30:00', T3= '13:45:45', T4= '15:05:10', Lcount=2, StopL=33.00,LOTsize=75 where FORMULANAME='F1'
 
 *********************************************************
+# Create Trade Borad Table
+
+Create Table tbl_tradeboard (id bigint auto_increment, Tscrib varchar(255) not null, Feedsecid varchar(255) not null, Tradesecid varchar(255) not null, 
+F1PC double null, F1TC double null, F1PL double null,
+F2PC double null, F2TC double null, F2PL double null,
+F3PC double null, F3TC double null, F3PL double null,
+F4PC double null, F4TC double null, F4PL double null,
+F5PC double null, F5TC double null, F5PL double null,
+F6PC double null, F6TC double null, F6PL double null,
+F7PC double null, F7TC double null, F7PL double null);
+
+insert into TBL_TRADEBOARD (Tscrib, Feedsecid , Tradesecid, F1PL,F1PC, F1TC , F2PL ,F2PC , F2TC ,F3PL,F3PC, F3TC,F4PL, F4PC, F4TC, F5PL,F5PC, F5TC,  F6PL,F6PC, F6TC, F7PL,F7PC, F7TC)
+Values ('INFY', 1234, 4321,20.0,0.5,2,-30.2323,0.22,2,20.0,0.5,2,-30.2323,0.22,2,20.0,0.5,2,-30.2323,0.22,2,150.345,8.2,2)
+
+SELECT TSCRIB as SCRIB
+, F1PL as "F1 P/L", F1PC as "F1 %", F1TC as "F1 COUNT"
+, F2PL as "F2 P/L",F2PC as "F2 %", F2TC as "F2 COUNT"
+, F3PL as "F3 P/L",F3PC as "F3 %", F3TC as "F3 COUNT"
+, F4PL as "F4 P/L",F4PC as "F4 %", F4TC as "F4 COUNT"
+, F5PL as "F5 P/L",F5PC as "F5 %", F5TC as "F5 COUNT"
+, F6PL as "F6 P/L", F6PC as "F6 %", F6TC as "F6 COUNT"
+,F7PL as "F7 P/L", F7PC as "F7 %", F7TC as "F7 COUNT"
+from TBL_TRADEBOARD order by ID ASC ;

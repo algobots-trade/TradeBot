@@ -775,3 +775,126 @@ INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE)
 2017-12-21 09:55:25 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TBL_PLAYERS (HEADNAME ,FEEDSUBJECTID ,TRADESUBJECTID , SCRIB ,MARKETTYPE ) VALUES ('H4',''1234','2312','INFFY','STOCK[*]')"; SQL statement:
 INSERT INTO TBL_PLAYERS (HEADNAME ,FEEDSUBJECTID ,TRADESUBJECTID , SCRIB ,MARKETTYPE ) VALUES ('H4',''1234','2312','INFFY','STOCK') [42000-195]
+2017-12-22 13:07:36 jdbc[95]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_TRADEBOARD 
+
+INSERT INTO[*] TBL_TRADEBOARD (TSCRIB, FEEDSECID , TRADESECID,F1PC, F1TC , F1PL ,F2PC , F2TC , F2PL ,F3PC, F3TC, F3PL,F4PC, F4TC, F4PL,F5PC, F5TC, F5PL,F6PC, F6TC, F6PL,F7PC, F7TC, F7PL,FIRST, LAST)
+VALUES ('INFY', 1234, 4321,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2323.3,3434.4) "; SQL statement:
+SELECT * FROM TBL_TRADEBOARD 
+
+insert into TBL_TRADEBOARD (Tscrib, Feedsecid , Tradesecid,F1PC, F1TC , F1PL ,F2PC , F2TC , F2PL ,F3PC, F3TC, F3PL,F4PC, F4TC, F4PL,F5PC, F5TC, F5PL,F6PC, F6TC, F6PL,F7PC, F7TC, F7PL,first, last)
+Values ('INFY', 1234, 4321,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2323.3,3434.4) [42000-195]
+2017-12-22 21:13:55 jdbc[99]: exception
+org.h2.jdbc.JdbcSQLException: Column "FIRST" not found; SQL statement:
+insert into TBL_TRADEBOARD (Tscrib, Feedsecid , Tradesecid,F1PC, F1TC , F1PL ,F2PC , F2TC , F2PL ,F3PC, F3TC, F3PL,F4PC, F4TC, F4PL,F5PC, F5TC, F5PL,F6PC, F6TC, F6PL,F7PC, F7TC, F7PL,first, last)
+Values ('INFY', 1234, 4321,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0) [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:676)
+	at org.h2.command.Parser.parseColumn(Parser.java:881)
+	at org.h2.command.Parser.parseColumnList(Parser.java:865)
+	at org.h2.command.Parser.parseInsert(Parser.java:1065)
+	at org.h2.command.Parser.parsePrepared(Parser.java:416)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-12-22 21:29:53 jdbc[99]: exception
+org.h2.jdbc.JdbcSQLException: Column "SCRIB" not found; SQL statement:
+delete from TBL_TRADEBOARD where scrib='INFY' [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.command.dml.Delete.prepare(Delete.java:131)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-12-23 00:21:34 jdbc[151]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-12-23 00:21:51 jdbc[151]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(F1PL) AS F1SUM, SUM(F2PL) AS F2SUM, SUM(F3PL) AS F3SUM, SUM(F4PL) AS F4SUM, SUM(F5PL) AS F5SUM"" + 
+			       	         		""[*], SUM(F6PL) AS F6SUM, SUM(F7PL) AS F7SUMFROM TBL_TRADEBOARD "; SQL statement:
+SELECT SUM(F1PL) as F1Sum, SUM(F2PL) as F2Sum, SUM(F3PL) as F3Sum, SUM(F4PL) as F4Sum, SUM(F5PL) as F5Sum" + 
+			       	         		", SUM(F6PL) as F6Sum, SUM(F7PL) as F7SumFROM TBL_TRADEBOARD [42000-195]
+2017-12-23 00:22:22 jdbc[151]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_TRADEBOARD 
+
+SELECT[*] SUM(F1PL) AS F1SUM, SUM(F2PL) AS F2SUM, SUM(F3PL) AS F3SUM, SUM(F4PL) AS F4SUM, SUM(F5PL) AS F5SUM, SUM(F6PL) AS F6SUM, SUM(F7PL) AS F7SUMFROM TBL_TRADEBOARD "; SQL statement:
+SELECT * FROM TBL_TRADEBOARD 
+
+SELECT SUM(F1PL) as F1Sum, SUM(F2PL) as F2Sum, SUM(F3PL) as F3Sum, SUM(F4PL) as F4Sum, SUM(F5PL) as F5Sum, SUM(F6PL) as F6Sum, SUM(F7PL) as F7SumFROM TBL_TRADEBOARD [42000-195]
+2017-12-23 00:22:28 jdbc[151]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(F1PL) AS F1SUM, SUM(F2PL) AS F2SUM, SUM(F3PL) AS F3SUM, SUM(F4PL) AS F4SUM, SUM(F5PL) AS F5SUM, SUM(F6PL) AS F6SUM, SUM(F7PL) AS F7SUMFROM TBL_TRADEBOARD[*] "; SQL statement:
+SELECT SUM(F1PL) as F1Sum, SUM(F2PL) as F2Sum, SUM(F3PL) as F3Sum, SUM(F4PL) as F4Sum, SUM(F5PL) as F5Sum, SUM(F6PL) as F6Sum, SUM(F7PL) as F7SumFROM TBL_TRADEBOARD [42000-195]
+2017-12-23 00:22:34 jdbc[151]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT SUM(F1PL) AS F1SUM, SUM(F2PL) AS F2SUM, SUM(F3PL) AS F3SUM, SUM(F4PL) AS F4SUM, SUM(F5PL) AS F5SUM, SUM(F6PL) AS F6SUM, SUM(F7PL) AS F7SUMFROM TBL_TRADEBOARD[*] "; SQL statement:
+SELECT SUM(F1PL) as F1Sum, SUM(F2PL) as F2Sum, SUM(F3PL) as F3Sum, SUM(F4PL) as F4Sum, SUM(F5PL) as F5Sum, SUM(F6PL) as F6Sum, SUM(F7PL) as F7SumFROM TBL_TRADEBOARD [42000-195]
+2017-12-23 01:21:09 jdbc[250]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT TSCRIB AS SCRIB"" + ""[*], FEEDSECID, TRADESECID"" 
+								"", F1PL AS \""F1 P/L\"", F1PC AS \""F1 %\"", F1TC AS \""F1 COUNT\"""" 
+								"", F2PL AS \""F2 P/L\"",F2PC AS \""F2 %\"", F2TC AS \""F2 COUNT\""""  
+								"", F3PL AS \""F3 P/L\"",F3PC AS \""F3 %\"", F3TC AS \""F3 COUNT\""""  
+								"", F4PL AS \""F4 P/L\"",F4PC AS \""F4 %\"", F4TC AS \""F4 COUNT\""""  
+								"", F5PL AS \""F5 P/L\"",F5PC AS \""F5 %\"", F5TC AS \""F5 COUNT\""""  
+								"", F6PL AS \""F6 P/L\"", F6PC AS \""F6 %\"", F6TC AS \""F6 COUNT\""""  
+								"",F7PL AS \""F7 P/L\"", F7PC AS \""F7 %\"", F7TC AS \""F7 COUNT\""""  
+								""FROM TBL_TRADEBOARD ORDER BY ID ASC "; SQL statement:
+SELECT TSCRIB as SCRIB" + ", Feedsecid, Tradesecid" 
+								", F1PL as \"F1 P/L\", F1PC as \"F1 %\", F1TC as \"F1 COUNT\"" 
+								", F2PL as \"F2 P/L\",F2PC as \"F2 %\", F2TC as \"F2 COUNT\""  
+								", F3PL as \"F3 P/L\",F3PC as \"F3 %\", F3TC as \"F3 COUNT\""  
+								", F4PL as \"F4 P/L\",F4PC as \"F4 %\", F4TC as \"F4 COUNT\""  
+								", F5PL as \"F5 P/L\",F5PC as \"F5 %\", F5TC as \"F5 COUNT\""  
+								", F6PL as \"F6 P/L\", F6PC as \"F6 %\", F6TC as \"F6 COUNT\""  
+								",F7PL as \"F7 P/L\", F7PC as \"F7 %\", F7TC as \"F7 COUNT\""  
+								"from TBL_TRADEBOARD order by ID ASC [42000-195]
+2017-12-23 03:10:39 jdbc[616]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT CONCAT(TSCRIB, ' -', FEEDSECID) * FROM TBL_TRADEBOARD [*]"; expected "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, SELECT"; SQL statement:
+select concat(TSCRIB, ' -', FEEDSECID) * from TBL_TRADEBOARD [42001-195]
+2017-12-23 03:15:48 jdbc[616]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PREP0[*]: SELECT CONCAT(FEEDSECID,'-',TSCRIB,'-',TRADESECID) AS SCRIB, F1PL AS ""F1 P/L"", F1PC AS ""F1 %"", F1TC AS ""F1 COUNT"", F2PL AS ""F2 P/L"",F2PC AS ""F2 %"", F2TC AS ""F2 COUNT"", F3PL AS ""F3 P/L"",F3PC AS ""F3 %"", F3TC AS ""F3 COUNT"", F4PL AS ""F4 P/L"",F4PC AS ""F4 %"", F4TC AS ""F4 COUNT"", F5PL AS ""F5 P/L"",F5PC AS ""F5 %"", F5TC AS ""F5 COUNT"", F6PL AS ""F6 P/L"",F6PC AS ""F6 %"", F6TC AS ""F6 COUNT"",F7PL AS ""F7 P/L"", F7PC AS ""F7 %"", F7TC AS ""F7 COUNT""FROM TBL_TRADEBOARD ORDER BY ID ASC "; expected "PREPARE, {"; SQL statement:
+prep0: SELECT concat(FEEDSECID,'-',TSCRIB,'-',TRADESECID) as SCRIB, F1PL as "F1 P/L", F1PC as "F1 %", F1TC as "F1 COUNT", F2PL as "F2 P/L",F2PC as "F2 %", F2TC as "F2 COUNT", F3PL as "F3 P/L",F3PC as "F3 %", F3TC as "F3 COUNT", F4PL as "F4 P/L",F4PC as "F4 %", F4TC as "F4 COUNT", F5PL as "F5 P/L",F5PC as "F5 %", F5TC as "F5 COUNT", F6PL as "F6 P/L",F6PC as "F6 %", F6TC as "F6 COUNT",F7PL as "F7 P/L", F7PC as "F7 %", F7TC as "F7 COUNT"from TBL_TRADEBOARD order by ID ASC [42001-195]
+2017-12-23 03:15:59 jdbc[616]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PREP0[*]: SELECT CONCAT(FEEDSECID,'-',TSCRIB,'-',TRADESECID) AS SCRIB, F1PL AS ""F1 P/L"", F1PC AS ""F1 %"", F1TC AS ""F1 COUNT"", F2PL AS ""F2 P/L"",F2PC AS ""F2 %"", F2TC AS ""F2 COUNT"", F3PL AS ""F3 P/L"",F3PC AS ""F3 %"", F3TC AS ""F3 COUNT"", F4PL AS ""F4 P/L"",F4PC AS ""F4 %"", F4TC AS ""F4 COUNT"", F5PL AS ""F5 P/L"",F5PC AS ""F5 %"", F5TC AS ""F5 COUNT"", F6PL AS ""F6 P/L"",F6PC AS ""F6 %"", F6TC AS ""F6 COUNT"",F7PL AS ""F7 P/L"", F7PC AS ""F7 %"", F7TC AS ""F7 COUNT"" FROM TBL_TRADEBOARD ORDER BY ID ASC "; expected "PREPARE, {"; SQL statement:
+prep0: SELECT concat(FEEDSECID,'-',TSCRIB,'-',TRADESECID) as SCRIB, F1PL as "F1 P/L", F1PC as "F1 %", F1TC as "F1 COUNT", F2PL as "F2 P/L",F2PC as "F2 %", F2TC as "F2 COUNT", F3PL as "F3 P/L",F3PC as "F3 %", F3TC as "F3 COUNT", F4PL as "F4 P/L",F4PC as "F4 %", F4TC as "F4 COUNT", F5PL as "F5 P/L",F5PC as "F5 %", F5TC as "F5 COUNT", F6PL as "F6 P/L",F6PC as "F6 %", F6TC as "F6 COUNT",F7PL as "F7 P/L", F7PC as "F7 %", F7TC as "F7 COUNT" from TBL_TRADEBOARD order by ID ASC [42001-195]
