@@ -898,3 +898,61 @@ prep0: SELECT concat(FEEDSECID,'-',TSCRIB,'-',TRADESECID) as SCRIB, F1PL as "F1 
 2017-12-23 03:15:59 jdbc[616]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PREP0[*]: SELECT CONCAT(FEEDSECID,'-',TSCRIB,'-',TRADESECID) AS SCRIB, F1PL AS ""F1 P/L"", F1PC AS ""F1 %"", F1TC AS ""F1 COUNT"", F2PL AS ""F2 P/L"",F2PC AS ""F2 %"", F2TC AS ""F2 COUNT"", F3PL AS ""F3 P/L"",F3PC AS ""F3 %"", F3TC AS ""F3 COUNT"", F4PL AS ""F4 P/L"",F4PC AS ""F4 %"", F4TC AS ""F4 COUNT"", F5PL AS ""F5 P/L"",F5PC AS ""F5 %"", F5TC AS ""F5 COUNT"", F6PL AS ""F6 P/L"",F6PC AS ""F6 %"", F6TC AS ""F6 COUNT"",F7PL AS ""F7 P/L"", F7PC AS ""F7 %"", F7TC AS ""F7 COUNT"" FROM TBL_TRADEBOARD ORDER BY ID ASC "; expected "PREPARE, {"; SQL statement:
 prep0: SELECT concat(FEEDSECID,'-',TSCRIB,'-',TRADESECID) as SCRIB, F1PL as "F1 P/L", F1PC as "F1 %", F1TC as "F1 COUNT", F2PL as "F2 P/L",F2PC as "F2 %", F2TC as "F2 COUNT", F3PL as "F3 P/L",F3PC as "F3 %", F3TC as "F3 COUNT", F4PL as "F4 P/L",F4PC as "F4 %", F4TC as "F4 COUNT", F5PL as "F5 P/L",F5PC as "F5 %", F5TC as "F5 COUNT", F6PL as "F6 P/L",F6PC as "F6 %", F6TC as "F6 COUNT",F7PL as "F7 P/L", F7PC as "F7 %", F7TC as "F7 COUNT" from TBL_TRADEBOARD order by ID ASC [42001-195]
+2017-12-23 19:46:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "F1" not found; SQL statement:
+update TBL_FORMULA set Feedsecid='1234', playersecid='4321' where FORMULANAME = "F1" [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:180)
+	at org.h2.command.dml.Update.prepare(Update.java:185)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-12-23 19:47:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "F1" not found; SQL statement:
+update TBL_FORMULA set Feedsecid='1234', playersecid='4321' where FORMULANAME = "F1" [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:180)
+	at org.h2.command.dml.Update.prepare(Update.java:185)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2017-12-23 19:49:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_FORMULA 
+
+UPDATE TBL_FORMULA[*] SET FEEDSECID='1234', PLAYERSECID='4321' WHERE FORMULANAME = 'F1' "; SQL statement:
+SELECT * FROM TBL_FORMULA 
+
+update TBL_FORMULA set Feedsecid='1234', playersecid='4321' where FORMULANAME = 'F1' [42000-195]
+2017-12-23 19:50:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_FORMULA 
+
+UPDATE TBL_FORMULA[*] SET FEEDSECID='1234', PLAYERSECID='4321' WHERE FORMULANAME = 'F1' "; SQL statement:
+SELECT * FROM TBL_FORMULA 
+
+update TBL_FORMULA set Feedsecid='1234', playersecid='4321' where FORMULANAME = 'F1' [42000-195]

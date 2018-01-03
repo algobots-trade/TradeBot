@@ -217,7 +217,6 @@ public class TradeBoard {
         		    mainTable.add(grid);
         		    mainTable.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         		    mainTable.setBackground(new Color(36,34,29));
-	    	    		//frmOvviMarketBot.getContentPane().add(grid);
     	    	
          }
         });
@@ -625,21 +624,69 @@ public class TradeBoard {
 							HeadFeeds hf=new HeadFeeds("H12");
 			            }
 						
-						else if (e.isAltDown() && e.getKeyCode() == 65)
+						else if (e.isControlDown() && e.getKeyCode() == 65)
 						{
-							// Alt + a 
+							// CTRL + a 
 							// Add new player
 							Player pl=new Player(null);
 						}
-						else if (e.isAltDown() && e.getKeyCode() == 69)
+						else if (e.isControlDown() && e.getKeyCode() == 69)
 						{
-							// Alt + E 
+							// CTRL + E 
 							// Add Edit/Delete Existing player
-							
 							Player pl=new Player((table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2]));
 						}
-						
-						
+						else if (e.isControlDown() && e.getKeyCode() == 49)
+						{
+							// CTRL + 1
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F1");
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 50)
+						{
+							// CTRL + 2
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F2");
+							
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 51)
+						{
+							// CTRL + 3
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F3");
+							
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 52)
+						{
+							// CTRL + 4
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F4");
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 53)
+						{
+							// CTRL + 5
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F5");
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 54)
+						{
+							// CTRL + 6
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F6");
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 55)
+						{
+							// CTRL + 7
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F7");
+						}
 					}
 				
 					@Override
@@ -686,7 +733,7 @@ public class TradeBoard {
 			       	        	    else
 			       	        	    {
 			       	        	    		lblPandL.setForeground(Color.RED);
-			       	        	    		lblPandL.setText("++ " + String.valueOf(overallpl));
+			       	        	    		lblPandL.setText("-- " + String.valueOf(overallpl));
 			       	        	    }
 			       	        	    
 			       	        	    
@@ -870,7 +917,7 @@ public class TradeBoard {
 			        public void refresh() throws SQLException 
 			        {
 			            List<String> values = new ArrayList<>(100);
-			            try (PreparedStatement ps = con.prepareStatement("SELECT concat(FEEDSECID,'-',TSCRIB,'-',TRADESECID) as TSCRIB" + 
+			            try (PreparedStatement ps = con.prepareStatement("SELECT concat(FEEDSECID,'-',TSCRIB,'-',TRADESECID) as SCRIB" + 
 			            		", F1PL as \"F1 P/L\",F1PC as \"F1 %\", F1TC as \"F1 COUNT\"" + 
 			            		", F2PL as \"F2 P/L\",F2PC as \"F2 %\", F2TC as \"F2 COUNT\"" + 
 			            		", F3PL as \"F3 P/L\",F3PC as \"F3 %\", F3TC as \"F3 COUNT\"" + 
@@ -886,7 +933,7 @@ public class TradeBoard {
 			                        values.add(md.getColumnLabel(col + 1));
 			                    }
 			                    while (rs.next()) {
-			                    		Pldata list = new Pldata(rs.getString("TSCRIB"), rs.getDouble("F1PL"), rs.getDouble("F1PC"),rs.getInt("F1TC")
+			                    		Pldata list = new Pldata(rs.getString("SCRIB"), rs.getDouble("F1PL"), rs.getDouble("F1PC"),rs.getInt("F1TC")
 			                    					  ,rs.getDouble("F2PL"), rs.getDouble("F2PC"),rs.getInt("F2TC"), rs.getDouble("F3PL"), rs.getDouble("F3PC"),rs.getInt("F3TC")
 			                    					  ,rs.getDouble("F4PL"), rs.getDouble("F4PC"),rs.getInt("F4TC"), rs.getDouble("F5PL"), rs.getDouble("F5PC"),rs.getInt("F5TC")
 			                    					  ,rs.getDouble("F6PL"), rs.getDouble("F6PC"),rs.getInt("F6TC"), rs.getDouble("F7PL"), rs.getDouble("F7PC"),rs.getInt("F7TC")

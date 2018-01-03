@@ -91,7 +91,7 @@ public class FormulaInputs {
 			dbObj=new db_commons();
 			tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 			initialize(strplayersecid, strFname);
-			loadExistingData(strplayersecid, strFname);
+			loadExistingData(strfeedsecId, strplayersecid, strFname);
 		}
 		catch(Exception ex)
 		{
@@ -102,16 +102,16 @@ public class FormulaInputs {
 			
 		}
 	}
-	public void loadExistingData(String playersecid, String FName)
+	public void loadExistingData(String feedid, String playersecid, String FName)
 	{
 		String [][] existingdata;
 		try
 		{
 			int count = 0;
-			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"'");
+			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
 			if (count != 0)
 			{
-					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"'");
+					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
 					Logger.info(existingdata.toString());
 					if (existingdata[0][colFname] != null)
 					{
@@ -196,6 +196,7 @@ public class FormulaInputs {
 					txtT2S.setText("");
 					txtT3H.setText("");
 					txtT3M.setText("");
+					txtT3S.setText("");
 					txtT4S.setText("");
 					txtT4H.setText("");
 					txtT4M.setText("");
@@ -236,6 +237,7 @@ public class FormulaInputs {
 		contentPane.getContentPane().setLayout(null);
 		contentPane.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		contentPane.addKeyListener(keyhand);
+		
 		
 
 		lblFTitle = new JLabel(strFname);
@@ -665,7 +667,7 @@ public class FormulaInputs {
 					{
 						JOptionPane.showMessageDialog(contentPane,"Unsuccessfull find the log", "Message",JOptionPane.ERROR_MESSAGE);	
 					}
-					loadExistingData(playersecid, Fname);
+					loadExistingData(feedsecid,playersecid, Fname);
 					
 				}
 				catch(Exception ex)

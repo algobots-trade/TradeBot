@@ -1,0 +1,336 @@
+2017-12-23 11:36:45 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:36:58 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:36:58 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:36:58 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@78ea6eae
+2017-12-23 11:37:02 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:02 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:02 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@491e9bef
+2017-12-23 11:37:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:04 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@52470a98
+2017-12-23 11:37:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:06 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@d6d6e26
+2017-12-23 11:37:06 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2017-12-23 11:37:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:09 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@2c720e3f
+2017-12-23 11:37:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:20 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:25 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:25 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:25 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@15eaf9f8
+2017-12-23 11:37:25 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 11:37:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:33 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:33 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@b8d8c6d
+2017-12-23 11:37:33 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 11:37:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:38 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:38 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@1c2180d4
+2017-12-23 11:37:38 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 11:37:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:41 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:44 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:44 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 11:37:44 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@1f1424bb
+2017-12-23 11:37:44 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 14:36:40 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:47 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:49 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:49 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:49 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@237c3cf6
+2017-12-23 14:36:49 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 14:36:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 14:36:53 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@4d0e262e
+2017-12-23 14:36:53 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 19:45:09 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:45:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:45:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:45:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:45:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:21 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:23 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@71a15cf5
+2017-12-23 19:50:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:26 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:28 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:50:28 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:55:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:55:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:55:55 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@5d1fbbc6
+2017-12-23 19:56:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:56:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:56:50 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2810cfe3
+2017-12-23 19:56:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:56:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:57:11 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:57:11 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:57:11 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2a8fd626
+2017-12-23 19:57:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:57:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 19:57:14 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@3615074d
+2017-12-23 23:05:48 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:48 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:51 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:51 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.loadExistingData()
+INFO: [[Ljava.lang.String;@3d25fc0a
+2017-12-23 23:05:51 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2017-12-23 23:05:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:52 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:54 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:54 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:54 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@1bd48a91
+2017-12-23 23:05:56 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:56 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:57 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:57 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:59 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:05:59 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:03 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@83d81f1
+2017-12-23 23:06:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:24 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-23 23:06:24 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-25 12:32:28 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-25 12:33:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2017-12-25 12:33:42 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:18:22 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:14 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@b5b6077
+2018-01-03 22:19:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@1a5d608d
+2018-01-03 22:19:19 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:19 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@692ec41a
+2018-01-03 22:19:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:23 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:30 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:30 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:30 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@706edd1b
+2018-01-03 22:19:32 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:32 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:34 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:35 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:37 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:39 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:39 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:43 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:43 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:50 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:50 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@51074aa7
+2018-01-03 22:19:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:53 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:19:55 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:01 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> STOCK
+2018-01-03 22:20:02 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> FUTURE
+2018-01-03 22:20:04 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> OPTIONS
+2018-01-03 22:20:05 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> INDEX
+2018-01-03 22:20:13 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:13 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:13 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@70f41246
+2018-01-03 22:20:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:16 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@400a0e04
+2018-01-03 22:20:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:17 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@14426e91
+2018-01-03 22:20:19 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:19 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:20:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.loadExistingData()
+INFO: [[Ljava.lang.String;@3d800a37
+2018-01-03 22:20:19 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
+INFO: Market type set to --> FUTURE
+2018-01-03 22:22:16 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:22:16 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-01-03 22:22:16 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-01-03 22:22:16 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-01-03 22:22:27 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:22:27 [AWT-EventQueue-0] com.tradebot.dbcommons.tradebot_utility.configlogfile()
+INFO: Log Initiated --> /Users/sivaamur/eclipse-workspace/TradeBot/resource/logs/tradebot.log
+2018-01-03 22:22:28 [AWT-EventQueue-0] com.tradebot.ui.forms.Player.actionPerformed()
+INFO: Market type set to --> —SELECT—
