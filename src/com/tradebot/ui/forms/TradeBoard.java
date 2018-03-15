@@ -12,6 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
@@ -27,6 +29,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimerTask;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,6 +47,8 @@ import javax.swing.border.Border;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 import org.h2.jdbcx.JdbcDataSource;
 import org.pmw.tinylog.Logger;
@@ -49,6 +56,8 @@ import org.pmw.tinylog.Logger;
 import com.tradebot.dbcommons.ClockLabel;
 import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
+import com.tradebot.presto.presto_commons;
+import com.tradebot.presto.presto_data_feeder;
 import com.tradebot.ui.forms.*;
 //import Forms.FormulaInputs;
 //import Forms.SymbolMgmt;
@@ -78,17 +87,24 @@ public class TradeBoard {
 	private ClockLabel dayLable;
 	private JPanel mainTable;
 	private Connection con;
+	//C:\Users\admin\Desktop\Workspace\TradeBot\resource\DB_TRADE_BOT;AUTO_SERVER=TRUE
 	public static String dbName= System.getProperty("user.dir")+"/resource/DB_TRADE_BOT;AUTO_SERVER=TRUE";
 	public static String url = "jdbc:h2:"+System.getProperty("user.dir")+File.separator+"/resource/DB_TRADE_BOT;AUTO_SERVER=TRUE";
 	private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
-	public static String USER="admin", PASS="test123";
+	public static String USER="admin", PASS="test123"; 
 	private JPanel totalpanel;
 	private Label lbltotal;
 	private JButton btnRun,btnDcsv,btnClear;
 	JLabel lblPandL;
 	private Label f1PL,f2PL,f3PL,f4PL,f5PL,f6PL,f7PL;
 	String tradelogpath;
+	db_commons dbobj=new db_commons();
 	tradebot_utility utils = new tradebot_utility(); 
+	private JButton btnstop;
+	private String [][] headfeeditems;
+	presto_data_feeder pfd;
+	
+	presto_commons objPresto;
 	
 	/**
 	 * Launch the application.
@@ -105,17 +121,37 @@ public class TradeBoard {
 			}
 		});
 	}
-
+   public void dummyclean()
+   {
+     try
+     {
+    	 String [] cleanstmts = new String[4];
+    	 cleanstmts[0]="Update TBL_F1_TRADES set Buyprice = null , sellprice=null where tradesubjectid=11536;";
+    	 cleanstmts[1]="Update TBL_F1_TRADES set Buyprice = null , sellprice=null where tradesubjectid=57025;";
+    	 cleanstmts[2]="update TBL_TRADEBOARD set F1PC = null, F1TC=null, f1pl=null where tradesecid=11536;";
+    	 cleanstmts[3]="update TBL_TRADEBOARD set F1PC = null, F1TC=null, f1pl=null where tradesecid=57025;";
+    	 dbobj.executeBatchStatement(cleanstmts);
+     }
+     catch(Exception ex)
+     {
+    	 
+     }
+   }
 	/**
 	 * Create the application.
 	 */
 	public TradeBoard() 
 	{
+		//frmTradeBoard.setVisible(true);
+		//dummyclean();
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 		USER = utils.readconfigprop("DB_USER");
 		PASS = utils.readconfigprop("DB_PASS");
 		dbName =System.getProperty("user.dir")+ utils.readconfigprop("DB_HOST_PATH");
+		objPresto = new presto_commons();
 		url= "jdbc:h2:"+System.getProperty("user.dir")+ utils.readconfigprop("DB_HOST_PATH");
+		headfeeditems = dbobj.getMultiColumnRecords("SELECT  TBL_HEADFEEDS.FEEDSUBJECTID, TBL_HEADFEEDS.SCRIB FROM TBL_HEADFEEDS " + 
+				"INNER JOIN TBL_PLAYERS ON TBL_HEADFEEDS.FEEDSUBJECTID = TBL_PLAYERS.FEEDSUBJECTID;");
 		try {
 			initialize();
 		} catch (SQLException e) {
@@ -131,6 +167,7 @@ public class TradeBoard {
 	private void initialize() throws SQLException {
 		
 		frmTradeBoard = new JFrame();
+		frmTradeBoard.setTitle("TRADE BOT DASHBOARD");
 		frmTradeBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTradeBoard.setBackground(new Color(36,34,29));
 		frmTradeBoard.getContentPane().setBackground(new Color(51, 51, 51));
@@ -143,7 +180,7 @@ public class TradeBoard {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	    double width = screenSize.getWidth();
 	    double height = screenSize.getHeight();
-	    frmTradeBoard.setSize((int)width, (int)height);
+	    frmTradeBoard.setSize((int)width, (int)height-40);
 	    
 	    JPanel pnlbody = new JPanel();
 	    pnlbody.setBackground(new Color(36,34,29));
@@ -155,7 +192,7 @@ public class TradeBoard {
 		pnlHead.setBackground(new Color(36,34,29));
 		pnlHead.setLayout(new BorderLayout());
 		
-		JLabel lblLiveTradeDashboard = new JLabel("\t\t                          Live Trade Dashboard");
+		JLabel lblLiveTradeDashboard = new JLabel("\t\t                          Mathart'z Trade Board");
 		lblLiveTradeDashboard.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLiveTradeDashboard.setFont(new Font("Tsukushi A Round Gothic", Font.BOLD, 26));
 		lblLiveTradeDashboard.setForeground(new Color(240,159,108));
@@ -163,9 +200,8 @@ public class TradeBoard {
 		
 		lblPandL = new JLabel("+ 000.00");
 		lblPandL.setFont(new Font("Tsukushi A Round Gothic", Font.BOLD, 22));
-		//lblPandL.setForeground(SystemColor.desktop);
-		lblPandL.setVisible(true);
-		pnlHead.add(lblPandL, BorderLayout.WEST);
+		//pnlHead.add(lblPandL, BorderLayout.WEST);
+		//lblPandL.setVisible(false);
 		
 		
 		dateLable = new ClockLabel("date");
@@ -278,28 +314,27 @@ public class TradeBoard {
 		pnltotvalues.add(f7PL);
 		
 		JPanel pnlControls=new JPanel();
-		GridBagLayout gbl_pnlControls = new GridBagLayout();
-		gbl_pnlControls.columnWidths = new int[]{617, 180, 180, 76, 0};
-		gbl_pnlControls.rowHeights = new int[]{50, 0};
-		gbl_pnlControls.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_pnlControls.rowWeights = new double[]{0.0, Double.MIN_VALUE};
-		pnlControls.setLayout(gbl_pnlControls);
+		pnlControls.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		btnRun = new JButton("RUN");
-		btnRun.setPreferredSize(new Dimension(180, 50));
-		GridBagConstraints gbc_btnRun = new GridBagConstraints();
-		gbc_btnRun.anchor = GridBagConstraints.NORTHWEST;
-		gbc_btnRun.insets = new Insets(0, 0, 0, 5);
-		gbc_btnRun.gridx = 1;
-		gbc_btnRun.gridy = 0;
-		pnlControls.add(btnRun, gbc_btnRun);
+		btnRun.setPreferredSize(new Dimension(150, 35));
+		pnlControls.add(btnRun);
 		btnRun.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
-			{    					
+			{    		
+				//dummyExecution();
+				// Original Code Will Enable later
+				pfd = new presto_data_feeder();
+			    Thread pfdsubscriber = new Thread(new Runnable() {
+			         public void run() {
+			        	 pfd.presto_start_data_feeder(headfeeditems);
+			         }
+			    });  
+			    pfdsubscriber.start();
 			}
 		});
 		btnDcsv = new JButton("D-CSV");
-		btnDcsv.setPreferredSize(new Dimension(180, 50));
+		btnDcsv.setPreferredSize(new Dimension(150, 35));
 		btnDcsv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -330,30 +365,187 @@ public class TradeBoard {
 								
 			}
 		});
-		GridBagConstraints gbc_btnDcsv = new GridBagConstraints();
-		gbc_btnDcsv.anchor = GridBagConstraints.NORTHWEST;
-		gbc_btnDcsv.insets = new Insets(0, 0, 0, 5);
-		gbc_btnDcsv.gridx = 2;
-		gbc_btnDcsv.gridy = 0;
-		pnlControls.add(btnDcsv, gbc_btnDcsv);
+		pnlControls.add(btnDcsv);
 		pnlControls.setBackground(new Color(36,34,29));
 		
 		
 		pnlbody.add(pnlControls, BorderLayout.SOUTH);
 		btnClear = new JButton("Clear");
+		btnClear.setPreferredSize(new Dimension(150, 35));
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 			});
-		GridBagConstraints gbc_btnClear = new GridBagConstraints();
-		gbc_btnClear.anchor = GridBagConstraints.WEST;
-		gbc_btnClear.gridx = 3;
-		gbc_btnClear.gridy = 0;
-		pnlControls.add(btnClear, gbc_btnClear);
+		pnlControls.add(btnClear);
+		
+		btnstop = new JButton("STOP");
+		btnstop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				
+				Thread pfdunsubscriber = new Thread(new Runnable() {
+			         public void run() {
+			        	 pfd.presto_stop_data_feeder(headfeeditems);
+			         }
+			    });  
+				pfdunsubscriber.start();
+				
+			}
+		});
+		btnstop.setPreferredSize(new Dimension(150, 35));
+		pnlControls.add(btnstop);
 		pnlbody.add(pnlgridpanel);
 		pnlbody.setBackground(new Color(36,34,29));
+		
     
 	}
+	///////////////////Dummy Execution Startss /////////////////
+	public void dummyExecution()
+	{
+		// RELIANCE-CM, ACC-FUT, NIFTY-FUT
+		try
+		{
+			String strScrib1 = "RELIANCE", strScrib2 = "ACC",  strScrib3 = "NIFTY";
+			int   intSecid1 = 2885, intsecid2 = 57060, intsecid3 = 57025 ;
+			double dblBuy1 = 500.99 ,dblBuy2 = 400.99 , dblBuy3 = 2500.45;
+			double dblSell1 = 500.99 ,dblSell2 = 400.99 , dblSell3 = 2540.45;
+			Date date = new Date();
+			System.out.print("/n Watching Started:" + date);
+			new java.util.Timer().schedule( 
+			        new java.util.TimerTask() {
+			            @Override
+			            public void run() {
+			            	Date date1 = new Date();
+			                System.out.print("Logging into Broker ...");
+			                objPresto.checkandLoginFinvasia();
+			            	System.out.print("\n Triggered First Buy at :" + date1);
+			                //firstBuy();
+			                //secandBuy();
+			                secandSell();
+			            }
+			            
+			        }, 
+			        3000 
+			);
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+	}
+	
+	public void firstBuy()
+	{
+		String strScrib1 = "RELIANCE";
+		int   intSecid1 = 11536;
+		double dblBuy1 = 925.50;
+		double dblSell1 = 924.20;
+		int Qty1 = 75;
+				
+		try
+		{
+
+            Thread.sleep(4000);
+        	Date date = new Date();
+        	objPresto.PlaceOrder("omnesys","CM",strScrib1,String.valueOf(intSecid1) ,"22-02-2018","A29",String.valueOf(Qty1),"0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
+            System.out.print("\n First Buy Order Placed at :" + date);
+            dbobj.executeNonQuery("INSERT INTO TBL_F1_TRADES (FEEDSUBJECTID,TRADESUBJECTID,BUYPRICE) VALUES ('"+String.valueOf(intSecid1)+"','"+String.valueOf(intSecid1)+"','"+String.valueOf(dblBuy1)+"') ");
+            firstSell();
+
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+		
+	}
+	
+	public void firstSell()
+	{
+		String strScrib1 = "RELIANCE";
+		int   intSecid1 = 11536;
+		double dblBuy1 = 925.50;
+		double dblSell1 = 924.20;
+		int Qty2 = 75;
+		try
+		{
+			Thread.sleep(3000);
+        	Date date = new Date();
+        	objPresto.PlaceOrder("omnesys","CM",strScrib1,String.valueOf(intSecid1) ,"22-09-2018","A29",String.valueOf(Qty2),"0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrder2","DAY","SELL");
+            dbobj.executeNonQuery("UPDATE TBL_F1_TRADES set SELLPRICE ='"+String.valueOf(dblSell1)+"' WHERE TRADESUBJECTID='"+String.valueOf(intSecid1)+"'");
+            DecimalFormat df = new DecimalFormat();
+        	df.setMaximumFractionDigits(2);
+            double F1PC=0.0, F1TC=2, F1PL=0.01 ;
+        	F1PL = dblSell1 - dblBuy1;
+        	double avg = (dblSell1+dblBuy1) / 2;
+        	F1PC = (F1PL * 100) / avg;
+        	dbobj.executeNonQuery("UPDATE TBL_TRADEBOARD SET F1PC="+df.format(F1PC)+" , F1TC= "+F1TC+", F1PL="+df.format(F1PL)+"  WHERE TRADESECID ='"+String.valueOf(intSecid1)+"'");
+            System.out.print("\n First Sell Order Placed at :" + date);
+            //secandBuy();
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+		
+	}
+	
+	public void secandBuy()
+	{
+		String strScrib2 = "NIFTY";
+		int   intSecid2 = 57025;
+		double dblBuy2 = 10780.60;
+		int lotsize = 1;
+		try
+		{
+			Thread.sleep(3000);
+        	Date date = new Date();
+        	objPresto.PlaceOrder("omnesys","FUT",strScrib2,String.valueOf(intSecid2) ,"22-02-2018","A29",String.valueOf(lotsize),"0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrder3","DAY","BUY");
+            dbobj.executeNonQuery("INSERT INTO TBL_F1_TRADES (FEEDSUBJECTID,TRADESUBJECTID,BUYPRICE) VALUES ('"+String.valueOf(intSecid2)+"','"+String.valueOf(intSecid2)+"','"+String.valueOf(dblBuy2)+"') ");           
+        	System.out.print("\n Secand Buy Order Placed at :" + date);
+            secandSell();
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+		
+	}
+	
+	public void secandSell()
+	{
+		String strScrib2 = "NIFTY";
+		int   intSecid2 = 57025;
+		double dblBuy2 = 10780.60;
+		double dblSell2 = 10784.91;
+		int lotsize = 1;
+		try
+		{
+			Thread.sleep(3000);
+        	Date date = new Date();
+        	objPresto.PlaceOrder("omnesys","FUT",strScrib2,String.valueOf(intSecid2) ,"22-02-2018","A29",String.valueOf(lotsize),"0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrder4","DAY","SELL");
+        	dbobj.executeNonQuery("UPDATE TBL_F1_TRADES set SELLPRICE ='"+String.valueOf(dblSell2)+"' WHERE TRADESUBJECTID='"+String.valueOf(intSecid2)+"'");	            	
+        	DecimalFormat df = new DecimalFormat();
+        	df.setMaximumFractionDigits(2);
+        	double F1PC=0.0, F1TC=2, F1PL=0.01 ;
+        	F1PL = dblSell2 - dblBuy2;
+
+        	double avg = (dblSell2+dblBuy2) / 2;
+        	F1PC = (F1PL * 100) / avg;
+        	dbobj.executeNonQuery("UPDATE TBL_TRADEBOARD SET F1PC="+df.format(F1PC)+" , F1TC= "+F1TC+", F1PL="+df.format(F1PL)+"  WHERE TRADESECID ='"+String.valueOf(intSecid2)+"'");
+        	System.out.print("\n Secand Sell Order Placed at :" + date);         
+		}
+		catch(Exception ex)
+		{
+			Logger.error(ex);
+		}
+		
+	}
+	
+	
+	///////////////////Dummy Execution Ends ///////////////////////
+	
+	
 	private void dCSV(String [][] recs)
     {
 	    	String dir = System.getProperty("user.dir");
@@ -484,12 +676,21 @@ public class TradeBoard {
 						table.addKeyListener(this);
 						table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 						//table.setBackground(new Color(36,34,29));
-						
+						table.addMouseListener(new MouseAdapter(){
+						     public void mouseClicked(MouseEvent e){
+						      if (e.getClickCount() == 2){
+						    	  Player pl=new Player((table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2]));
+						         //loadExistingData(table.getValueAt(table.getSelectedRow(), 0).toString());
+						         }
+						      }
+						     } );
 						
 						JTableHeader header = table.getTableHeader();
-					    header.setBackground(new Color(36,34,29));
-					    header.setForeground(new Color(255,220,135));
-					    header.setFont(new Font("Tahoma", Font.PLAIN, 14));
+						//header.setBackground(new Color(36,34,29));
+					    header.setForeground(new Color(36,34,29));
+					    header.setFont(new Font("Tahoma", Font.BOLD, 13));
+					   // table.add(header);
+					    
 					    
 					    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 					    double width = frmTradeBoard.getWidth();
@@ -523,6 +724,8 @@ public class TradeBoard {
 				                		            }
 				                				   model.clear();
 											   model.refresh();
+											   TableColumn column = table.getColumnModel().getColumn(0);
+											    column.setPreferredWidth(225);
 											   model.SumPL();
 											    if (selectedrow != -1)
 									            {
@@ -563,78 +766,27 @@ public class TradeBoard {
 					public void keyPressed(KeyEvent e) {
 						// TODO Auto-generated method stub
 						
-						if ( e.getKeyCode() == 112) 
+						if (e.isControlDown() && e.getKeyCode() == 72) 
 						{
-							// F1
-							HeadFeeds hf=new HeadFeeds("H1");
+							// CTRL + h
+							HeadFeeds hf=new HeadFeeds(null);
 			            }
-						else if( e.getKeyCode() == 113) 
+						else if (e.isControlDown() && e.getKeyCode() == 80)
 						{
-							// F2
-							HeadFeeds hf=new HeadFeeds("H2");
-			            }
-						else if( e.getKeyCode() == 114) 
-						{
-							// F3
-							HeadFeeds hf=new HeadFeeds("H3");
-			            }
-						else if( e.getKeyCode() == 115) 
-						{
-							// F4
-							HeadFeeds hf=new HeadFeeds("H4");
-			            }
-						else if( e.getKeyCode() == 116) 
-						{
-							// F5
-							HeadFeeds hf=new HeadFeeds("H5");
-			            }
-						else if( e.getKeyCode() == 117) 
-						{
-							// F6
-							HeadFeeds hf=new HeadFeeds("H6");
-			            }
-						else if( e.getKeyCode() == 118) 
-						{
-							// F7
-							HeadFeeds hf=new HeadFeeds("H7");
-			            }
-						else if( e.getKeyCode() == 119) 
-						{
-							// F8
-							HeadFeeds hf=new HeadFeeds("H8");
-			            }
-						else if( e.getKeyCode() == 120) 
-						{
-							// F9
-							HeadFeeds hf=new HeadFeeds("H9");
-			            }
-						else if( e.getKeyCode() == 121) 
-						{
-							// F10
-							HeadFeeds hf=new HeadFeeds("H10");
-			            }
-						else if( e.getKeyCode() == 122) 
-						{
-							// F11
-							HeadFeeds hf=new HeadFeeds("H11");
-			            }
-						else if( e.getKeyCode() == 123) 
-						{
-							// F12
-							HeadFeeds hf=new HeadFeeds("H12");
-			            }
-						
-						else if (e.isControlDown() && e.getKeyCode() == 65)
-						{
-							// CTRL + a 
+							// CTRL + P
 							// Add new player
 							Player pl=new Player(null);
 						}
-						else if (e.isControlDown() && e.getKeyCode() == 69)
+						else if (e.isControlDown() && e.getKeyCode() == 68)
 						{
-							// CTRL + E 
-							// Add Edit/Delete Existing player
-							Player pl=new Player((table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2]));
+							// CTRL + D 
+							// Delete Existing player
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
+							if (opcion == 0) { //The ISSUE is here
+								dbobj.executeNonQuery("DELETE FROM TBL_PLAYERS WHERE TRADESUBJECTID='"+playerid+"'");
+								dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+playerid+"'");
+							} 
 						}
 						else if (e.isControlDown() && e.getKeyCode() == 49)
 						{

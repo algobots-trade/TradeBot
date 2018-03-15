@@ -221,7 +221,7 @@ public class LogIn {
 			{
 				Logger.info("Logged in Sucessfully !!");
 				LoginFrame.dispose();
-				//ResearchDashboard mainwin=new ResearchDashboard(researchtype.getSelectedItem().toString());
+				TradeBoard tbd=new TradeBoard();
 			}
 			else
 			{

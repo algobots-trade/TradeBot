@@ -11,8 +11,9 @@ insert into TBL_PASSCODE (passcode, user) values ('test123', 'admin')
 # Create Table fo Head feed with default count
 ------------------------------------------------
 
-Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) 
- 
+#Create table tbl_HeadFeeds (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) 
+
+Create table tbl_HeadFeeds (id bigint auto_increment, feedsubjectid varchar(255) null, scrib varchar(255) null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, contractinfo varchar(255) null) 
 
 insert into tbl_HeadFeeds (Headname) values ('H1');
 insert into tbl_HeadFeeds (Headname) values ('H2');
@@ -31,13 +32,16 @@ insert into tbl_HeadFeeds (Headname) values ('H12');
 
 #Create Table for players
 ------------------------------------
-Create Table tbl_players (id bigint auto_increment, Headname varchar(255) not null, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null, lotsize int not null,contractinfo varchar(255) null) 
+Create Table tbl_players (id bigint auto_increment, feedsubjectid varchar(255) not null, tradesubjectid varchar(255) not null, scrib varchar(255) not null , markettype varchar(255) null , expdate varchar(255) null , price double null, rights varchar(255) null,contractinfo varchar(255) null) 
 
 *******************************************************
 
 #Create Formula table
 
-CREATE TABLE tbl_formula (id bigint auto_increment, feedsecid varchar(255) null, playersecid varchar(255) null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
+##CREATE TABLE tbl_formula (id bigint auto_increment, feedsecid varchar(255) null, playersecid varchar(255) null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
+   lcount int null,   stopl double null, lotsize int null,tradeswitch varchar(255) not null)
+   
+CREATE TABLE tbl_formula (id bigint auto_increment, feedsubjectid varchar(255) null, tradesubjectid varchar(255) null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
    lcount int null,   stopl double null, lotsize int null,tradeswitch varchar(255) not null)
 
 INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F1','False');
@@ -51,7 +55,7 @@ INSERT INTO TBL_FORMULA (FORMULANAME, TRADESWITCH) values ('F7','False');
 update TBL_FORMULA set Feedsecid =123, playersecid=321, x=0.20,y=0.50,z=1.0,T1='09:00:00', T2='10:30:00', T3= '13:45:45', T4= '15:05:10', Lcount=2, StopL=33.00,LOTsize=75 where FORMULANAME='F1'
 
 *********************************************************
-# Create Trade Borad Table
+# Create Trade Board Table
 
 Create Table tbl_tradeboard (id bigint auto_increment, Tscrib varchar(255) not null, Feedsecid varchar(255) not null, Tradesecid varchar(255) not null, 
 F1PC double null, F1TC double null, F1PL double null,
@@ -74,3 +78,19 @@ SELECT TSCRIB as SCRIB
 , F6PL as "F6 P/L", F6PC as "F6 %", F6TC as "F6 COUNT"
 ,F7PL as "F7 P/L", F7PC as "F7 %", F7TC as "F7 COUNT"
 from TBL_TRADEBOARD order by ID ASC ;
+
+***********************************************************
+
+#create table tbl_F1_TRADE 
+
+CREATE TABLE tbl_F1_TRADES (ID bigint auto_increment, FEEDSUBJECTID varchar(255) null, TRADESUBJECTID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
+SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null);
+
+insert into TBL_F1_TRADES (FEEDSUBJECTID, TRADESUBJECTID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE ) values
+('2885','2885', '12:00:00',100.00, 120.00,'13:00:00', 'false', 120, 95, 'true', 'true', 119,'PROFIT',2,'true')
+
+***********************************************************
+#Create table tbl_F1_HRun_TRADES
+
+CREATE TABLE tbl_F1_HRun_TRADES (ID bigint auto_increment, FEEDSUBJECTID varchar(255) null, TRADESUBJECTID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
+SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
