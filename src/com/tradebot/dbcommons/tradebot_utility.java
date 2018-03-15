@@ -1,10 +1,15 @@
 package com.tradebot.dbcommons;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 import org.pmw.tinylog.Configurator;
 import org.pmw.tinylog.Logger;
@@ -52,7 +57,7 @@ public class tradebot_utility
 			{
 				path = System.getProperty("user.dir") + readconfigprop(logname).replace("/", File.separator);
 				Configurator.defaultConfig().writer(new FileWriter(path,false,true)).activate();
-				Logger.info("Log Initiated --> "+path);
+				//Logger.info("Log Initiated --> "+path);
 			
 			}
 			catch(Exception ex)
@@ -77,6 +82,34 @@ public class tradebot_utility
 		    return false;  
 		  }  
 		  return true;  
+		}
+		
+		public void setmessage(JLabel lbl, String msgtype, String message)
+		{
+			try
+			{
+				switch (msgtype) {
+				case "infp":
+					
+					lbl.setText(message);
+					lbl.setForeground(new Color(124, 252, 0));
+					break;
+
+				case "warn":
+					lbl.setText(message);
+					lbl.setForeground(Color.red);
+					break;
+				default:
+					break;
+				}
+				lbl.setFont(new Font("Tahoma", Font.BOLD, 15));
+				lbl.setHorizontalAlignment(SwingConstants.CENTER);
+			}
+			catch(Exception ex)
+			{
+				Logger.error(ex.toString());
+			}
+			
 		}
 
 }

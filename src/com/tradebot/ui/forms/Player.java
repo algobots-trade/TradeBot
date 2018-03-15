@@ -51,8 +51,7 @@ public class Player {
 	tradebot_utility utils = new tradebot_utility(); 
 	db_commons dbobj=new db_commons();
 	
-	private int colid=0,colhname=1,colfeedsecid=2,colplayersecid =3, colscrib=4,colmtype=5,colexpdate=6,colprice=7,colrights=8,collotsize=9,colinfo=10;
-	private JTextField txtlotsize;
+	private int colid=0,colfeedsecid=1,colplayersecid =2, colscrib=3,colmtype=4,colexpdate=5,colprice=6,colrights=7,collotsize=8,colinfo=9;
 	
 
 	/**
@@ -141,7 +140,6 @@ public class Player {
 						txtscrib.setText(existingdata[0][colscrib]);
 						cmbmarkettype.setSelectedItem(existingdata[0][colmtype].toString().trim());
 						txtsecId.setText(existingdata[0][colplayersecid]);
-						txtlotsize.setText(existingdata[0][collotsize]);
 						for (int i=0; i< cmbheadfeed.getItemCount(); i++)
 						{
 							String item = cmbheadfeed.getItemAt(i).toString();
@@ -301,20 +299,20 @@ public class Player {
 		
 		playerframe = new JFrame();
 		playerframe.setTitle("Player - Details");
-		playerframe.setBounds(100, 100, 665, 404);
+		playerframe.setBounds(100, 100, 649, 404);
 		playerframe.getContentPane().setLayout(null);
 		playerframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		playerframe.getContentPane().setBackground(new Color(51, 51, 51));
 		playerframe.setVisible(true);
 		
 		JPanel innerpanel = new JPanel();
-		innerpanel.setBounds(26, 61, 622, 299);
+		innerpanel.setBounds(6, 61, 620, 299);
 		innerpanel.setBackground(new Color(80,75,78));
 		playerframe.getContentPane().add(innerpanel);
 		innerpanel.setLayout(null);
 		
 		txtscrib = new JTextField();
-		txtscrib.setBounds(110, 46, 214, 37);
+		txtscrib.setBounds(6, 46, 166, 37);
 		innerpanel.add(txtscrib);
 		txtscrib.setHorizontalAlignment(SwingConstants.LEFT);
 		txtscrib.setForeground(new Color(255, 220, 135));
@@ -324,13 +322,13 @@ public class Player {
 		txtscrib.setBackground(new Color(36, 34, 29));
 		
 		JLabel lblScrib = new JLabel("SCRIB");
-		lblScrib.setBounds(6, 40, 74, 49);
+		lblScrib.setBounds(58, 0, 74, 49);
 		innerpanel.add(lblScrib);
 		lblScrib.setHorizontalAlignment(SwingConstants.LEFT);
 		lblScrib.setForeground(Color.WHITE);
 		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 18));
 		
-		cmbmarkettype = new JComboBox<Object>(new String[] {"—SELECT—", "STOCK", "FUTURE", "OPTIONS", "INDEX"});
+		cmbmarkettype = new JComboBox<Object>(new String[] {"--Select--", "STOCK", "FUTURE", "OPTIONS", "INDEX"});
 		cmbmarkettype.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Logger.info("Market type set to --> "+cmbmarkettype.getSelectedItem().toString());
@@ -357,7 +355,7 @@ public class Player {
 			}
 		});
 		cmbmarkettype.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbmarkettype.setBounds(110, 1, 214, 49);
+		cmbmarkettype.setBounds(197, 49, 183, 31);
 		
 		
 		innerpanel.add(cmbmarkettype);
@@ -365,7 +363,7 @@ public class Player {
 		futopt_panel = new JPanel();
 		futopt_panel.setBackground(Color.DARK_GRAY);
 		futopt_panel.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		futopt_panel.setBounds(21, 96, 573, 89);
+		futopt_panel.setBounds(6, 96, 606, 89);
 		innerpanel.add(futopt_panel);
 		futopt_panel.setLayout(null);
 		
@@ -384,7 +382,7 @@ public class Player {
 		txtExpdd.setColumns(4);
 		txtExpdd.setCaretColor(Color.WHITE);
 		txtExpdd.setBackground(new Color(80, 75, 78));
-		txtExpdd.setBounds(17, 32, 49, 43);
+		txtExpdd.setBounds(17, 32, 49, 34);
 		txtExpdd.addFocusListener(new FocusListener() {
 		    public void focusGained(FocusEvent e) {
 		    	txtExpdd.setText("");
@@ -408,7 +406,7 @@ public class Player {
 		txtExpmm.setColumns(4);
 		txtExpmm.setCaretColor(Color.WHITE);
 		txtExpmm.setBackground(new Color(80, 75, 78));
-		txtExpmm.setBounds(69, 32, 49, 43);
+		txtExpmm.setBounds(69, 32, 49, 34);
 		txtExpmm.addFocusListener(new FocusListener() {
 		    public void focusGained(FocusEvent e) {
 		    	txtExpmm.setText("");
@@ -419,7 +417,6 @@ public class Player {
 		    	    {
 		    	    	txtExpmm.setText("MM");
 		    	    }
-		        // nothing
 		    }
 		});
 		futopt_panel.add(txtExpmm);
@@ -432,7 +429,7 @@ public class Player {
 		txtExpyyyy.setColumns(6);
 		txtExpyyyy.setCaretColor(Color.WHITE);
 		txtExpyyyy.setBackground(new Color(80, 75, 78));
-		txtExpyyyy.setBounds(121, 32, 74, 43);
+		txtExpyyyy.setBounds(121, 32, 74, 34);
 		txtExpyyyy.addFocusListener(new FocusListener() {
 		    public void focusGained(FocusEvent e) {
 		    	txtExpyyyy.setText("");
@@ -463,7 +460,7 @@ public class Player {
 		txtprice.setColumns(6);
 		txtprice.setCaretColor(Color.WHITE);
 		txtprice.setBackground(new Color(80, 75, 78));
-		txtprice.setBounds(230, 32, 168, 43);
+		txtprice.setBounds(230, 32, 168, 34);
 		futopt_panel.add(txtprice);
 		
 		lblRight = new JLabel("RIGHT");
@@ -473,10 +470,9 @@ public class Player {
 		lblRight.setBounds(465, 6, 80, 26);
 		futopt_panel.add(lblRight);
 		
-		cmbright = new JComboBox<Object>((new String[] {"——", "PUT", "CALL"}));
-		//cmbright.setModel(new DefaultComboBoxModel<Object>(new String[] {"——", "PUT", "CALL"}));
+		cmbright = new JComboBox<Object>((new String[] {"--Select--", "PUT", "CALL"}));
 		cmbright.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbright.setBounds(442, 27, 114, 49);
+		cmbright.setBounds(442, 33, 154, 34);
 		futopt_panel.add(cmbright);
 		
 		JButton btnDelete = new JButton("DELETE");
@@ -488,6 +484,7 @@ public class Player {
 				if (count != 0)
 				{
 					dbobj.executeNonQuery("DELETE FROM TBL_PLAYERS WHERE TRADESUBJECTID='"+txtsecId.getText()+"'");
+					dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+txtsecId.getText()+"'");
 					count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+txtsecId.getText()+"'");
 					if (count !=0)
 					{
@@ -540,7 +537,7 @@ public class Player {
 		panel_1.setLayout(null);
 		
 		loadHeadCombo();
-		cmbheadfeed.setBounds(162, 6, 362, 37);
+		cmbheadfeed.setBounds(160, 7, 362, 32);
 		panel_1.add(cmbheadfeed);
 		cmbheadfeed.setFont(new Font("Verdana", Font.PLAIN, 18));
 		
@@ -548,14 +545,14 @@ public class Player {
 		lblHeadFeed.setHorizontalAlignment(SwingConstants.LEFT);
 		lblHeadFeed.setForeground(Color.WHITE);
 		lblHeadFeed.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblHeadFeed.setBounds(23, 10, 127, 26);
+		lblHeadFeed.setBounds(23, 10, 127, 28);
 		panel_1.add(lblHeadFeed);
 		
 		JLabel label = new JLabel("SEC-ID");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Verdana", Font.PLAIN, 18));
-		label.setBounds(352, 0, 82, 49);
+		label.setBounds(425, 0, 82, 49);
 		innerpanel.add(label);
 		
 		txtsecId = new JTextField();
@@ -565,32 +562,19 @@ public class Player {
 		txtsecId.setColumns(10);
 		txtsecId.setCaretColor(Color.WHITE);
 		txtsecId.setBackground(new Color(36, 34, 29));
-		txtsecId.setBounds(464, 6, 148, 37);
+		txtsecId.setBounds(406, 46, 127, 37);
 		innerpanel.add(txtsecId);
 		
 		JLabel lblMarket = new JLabel("MARKET");
 		lblMarket.setHorizontalAlignment(SwingConstants.LEFT);
 		lblMarket.setForeground(Color.WHITE);
 		lblMarket.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblMarket.setBounds(6, 0, 100, 49);
+		lblMarket.setBounds(258, 0, 100, 49);
 		innerpanel.add(lblMarket);
 		
-		JLabel lblLotsize = new JLabel("LOT-SIZE");
-		lblLotsize.setHorizontalAlignment(SwingConstants.LEFT);
-		lblLotsize.setForeground(Color.WHITE);
-		lblLotsize.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblLotsize.setBounds(352, 40, 100, 49);
-		innerpanel.add(lblLotsize);
-		
-		txtlotsize = new JTextField();
-		txtlotsize.setHorizontalAlignment(SwingConstants.LEFT);
-		txtlotsize.setForeground(new Color(255, 220, 135));
-		txtlotsize.setFont(new Font("Verdana", Font.PLAIN, 20));
-		txtlotsize.setColumns(10);
-		txtlotsize.setCaretColor(Color.WHITE);
-		txtlotsize.setBackground(new Color(36, 34, 29));
-		txtlotsize.setBounds(464, 46, 148, 37);
-		innerpanel.add(txtlotsize);
+		JButton button = new JButton("Check");
+		button.setBounds(543, 49, 61, 31);
+		innerpanel.add(button);
 		
 		JLabel lblHead = new JLabel("Player Details");
 		lblHead.setHorizontalAlignment(SwingConstants.CENTER);
@@ -611,6 +595,7 @@ public class Player {
 			if (count != 0)
 			{
 				dbobj.executeNonQuery("DELETE FROM TBL_PLAYERS WHERE TRADESUBJECTID='"+txtsecId.getText()+"'");
+				dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+txtsecId.getText()+"'");
 				count = dbobj.getRowCount("SELECT * FROM TBL_PLAYERS WHERE TRADESUBJECTID = '"+playerid+"'");
 				if (count !=0)
 				{
@@ -618,13 +603,14 @@ public class Player {
 				}
 				
 			}
-			String hname = cmbheadfeed.getSelectedItem().toString().split("-")[0].trim();
-			String feedsecId =cmbheadfeed.getSelectedItem().toString().split("-")[1].trim();
+			//String hname = cmbheadfeed.getSelectedItem().toString().split("-")[0].trim();
+			String feedsecId =cmbheadfeed.getSelectedItem().toString().split("-")[0].trim();
 			switch (markettype) {
 			case "STOCK":
 				if (STKvalidations())
 				{
-					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,LOTSIZE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"',"+txtlotsize.getText()+")");
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE) VALUES ('"+feedsecId+"','"+txtsecId.getText().trim()+"','"+txtscrib.getText().trim()+"','"+cmbmarkettype.getSelectedItem().toString().trim()+"')");
+					dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB, FEEDSECID, TRADESECID) VALUES ('"+txtscrib.getText()+"', '"+cmbheadfeed.getSelectedItem().toString().split("-")[0].trim()+"', '"+txtsecId.getText().trim()+"');");
 					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);				
 				}
 				break; 
@@ -632,7 +618,9 @@ public class Player {
 				if(FUTvalidations())
 				{
 					String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,EXPDATE,LOTSIZE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',"+txtlotsize.getText()+")");
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,EXPDATE) VALUES ('"+feedsecId+"','"+txtsecId.getText().trim()+"','"+txtscrib.getText().trim()+"','"+cmbmarkettype.getSelectedItem().toString().trim()+"','"+date+"')");
+					dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB, FEEDSECID, TRADESECID) VALUES ('"+txtscrib.getText()+"', '"+cmbheadfeed.getSelectedItem().toString().split("-")[0].trim()+"', '"+txtsecId.getText().trim()+"');");
+					
 					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
 				break;
@@ -640,14 +628,18 @@ public class Player {
 				if(OPTvalidations())
 				{
 					String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS,LOTSIZE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',"+txtprice.getText()+",'"+cmbright.getSelectedItem().toString()+"',"+txtlotsize.getText()+")");
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS) VALUES ('"+feedsecId.trim()+"','"+txtsecId.getText().trim()+"','"+txtscrib.getText().trim()+"','"+cmbmarkettype.getSelectedItem().toString().trim()+"','"+date+"',"+txtprice.getText().trim()+",'"+cmbright.getSelectedItem().toString().trim()+"')");
+					dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB, FEEDSECID, TRADESECID) VALUES ('"+txtscrib.getText().trim()+"', '"+cmbheadfeed.getSelectedItem().toString().split("-")[0].trim()+"', '"+txtsecId.getText().trim()+"');");
+					
 					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
 				break;
 			case "INDEX":
 				if(INDvalidations())
 				{
-					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (HEADNAME,FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE,LOTSIZE) VALUES ('"+hname+"','"+feedsecId+"','"+txtsecId.getText()+"','"+txtscrib.getText()+"','"+cmbmarkettype.getSelectedItem().toString()+"',"+txtlotsize.getText()+")");
+					dbobj.executeNonQuery("INSERT INTO TBL_PLAYERS (FEEDSUBJECTID,TRADESUBJECTID,SCRIB,MARKETTYPE) VALUES ('"+feedsecId+"','"+txtsecId.getText().trim()+"','"+txtscrib.getText().trim()+"','"+cmbmarkettype.getSelectedItem().toString().trim()+"')");
+					dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB, FEEDSECID, TRADESECID) VALUES ('"+txtscrib.getText().trim()+"', '"+cmbheadfeed.getSelectedItem().toString().split("-")[0].trim()+"', '"+txtsecId.getText().trim()+"');");
+					
 					JOptionPane.showMessageDialog(playerframe,"Record Saved !!", "Success",JOptionPane.WARNING_MESSAGE);	
 				}
 				break;
@@ -669,7 +661,7 @@ public class Player {
 		Boolean Isvalid=false;
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedIndex() == 0)||(txtsecId.getText().equals("")) || txtlotsize.getText().equals(""))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedIndex() == 0)||(txtsecId.getText().equals("")))
 			{
 				JOptionPane.showMessageDialog(playerframe,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 				Logger.warn("Check scrib name field and market type.");
@@ -701,7 +693,7 @@ public class Player {
 		DateValidator dv=new DateValidator();
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals("")))|| txtlotsize.getText().equals(""))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals(""))))
 			{
 				JOptionPane.showMessageDialog(playerframe,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 			}
@@ -743,7 +735,7 @@ public class Player {
 		DateValidator dv=new DateValidator();
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals("")))|| txtlotsize.getText().equals(""))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals(""))))
 			{
 				JOptionPane.showMessageDialog(playerframe,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 			}
@@ -790,7 +782,7 @@ public class Player {
 		Boolean Isvalid=false;
 		try
 		{
-			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals("")))|| txtlotsize.getText().equals(""))
+			if ((txtscrib.getText().equals(""))||(cmbmarkettype.getSelectedItem().equals("——")||(txtsecId.getText().equals(""))))
 			{
 				JOptionPane.showMessageDialog(playerframe,"Invalid Inputs.", "Invalid Inputs",JOptionPane.WARNING_MESSAGE);
 			}
@@ -823,7 +815,7 @@ public class Player {
 		txtExpmm.setText("MM");
 		txtExpyyyy.setText("YYYY");
 		txtprice.setText("0.0");
-		txtlotsize.setText("0");
+		//txtlotsize.setText("0");
 		txtsecId.setText("");
 		cmbright.setSelectedIndex(0);
 		cmbheadfeed.setSelectedIndex(0);

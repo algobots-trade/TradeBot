@@ -24,7 +24,9 @@ import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
 import com.tradebot.ui.forms.*;
 import javax.swing.JToggleButton;
-import javax.swing.JSlider; 
+import javax.swing.JSlider;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent; 
 
 public class FormulaInputs {
 
@@ -69,7 +71,7 @@ public class FormulaInputs {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FormulaInputs window = new FormulaInputs("123","321","F1");
+					FormulaInputs window = new FormulaInputs("","","");
 					window.contentPane.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -85,13 +87,13 @@ public class FormulaInputs {
 	{
 		try
 		{
-			feedsecid = strfeedsecId; 
-			playersecid= strplayersecid; 
-			Fname=strFname;
+			feedsecid = strfeedsecId.trim(); 
+			playersecid= strplayersecid.trim(); 
+			Fname=strFname.trim();
 			dbObj=new db_commons();
 			tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 			initialize(strplayersecid, strFname);
-			loadExistingData(strfeedsecId, strplayersecid, strFname);
+			loadExistingData(strfeedsecId.trim(), strplayersecid.trim(), strFname.trim());
 		}
 		catch(Exception ex)
 		{
@@ -108,10 +110,10 @@ public class FormulaInputs {
 		try
 		{
 			int count = 0;
-			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
+			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedid+"'");
 			if (count != 0)
 			{
-					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and PLAYERSECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
+					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedid+"'");
 					Logger.info(existingdata.toString());
 					if (existingdata[0][colFname] != null)
 					{
@@ -232,7 +234,7 @@ public class FormulaInputs {
 		contentPane.getContentPane().setBackground(new Color(51, 51, 51));
 		contentPane.setVisible(true);
 		contentPane.setTitle("Formula Input For  "+strScrib+"-"+strFname);
-		contentPane.setBounds(100, 100, 379, 745);
+		contentPane.setBounds(100, 100, 379, 774);
 		contentPane.setBackground(new Color(36,34,29));
 		contentPane.getContentPane().setLayout(null);
 		contentPane.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -249,7 +251,7 @@ public class FormulaInputs {
 		
 		JPanel pnlInput = new JPanel();
 		pnlInput.setForeground(Color.WHITE);
-		pnlInput.setBounds(16, 46, 347, 667);
+		pnlInput.setBounds(16, 46, 347, 690);
 		pnlInput.setBackground(new Color(80,75,78));
 		contentPane.getContentPane().add(pnlInput);
 		pnlInput.setLayout(null);
@@ -303,11 +305,11 @@ public class FormulaInputs {
 		lblT_3.setBounds(90, 314, 81, 49);
 		pnlInput.add(lblT_3);
 		
-		JLabel lblLcount = new JLabel("LCOUNT  =");
+		JLabel lblLcount = new JLabel("Loop  =");
 		lblLcount.setHorizontalAlignment(SwingConstants.LEFT);
 		lblLcount.setForeground(Color.WHITE);
 		lblLcount.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblLcount.setBounds(28, 363, 140, 49);
+		lblLcount.setBounds(67, 363, 95, 49);
 		pnlInput.add(lblLcount);
 		
 		JLabel lblStopl = new JLabel("STOPL  =");
@@ -590,12 +592,12 @@ public class FormulaInputs {
 				}
 			}
 		});
-		btnSave.setBounds(182, 616, 152, 45);
+		btnSave.setBounds(182, 634, 152, 45);
 		pnlInput.add(btnSave);
 		
 		JPanel tradetoggle = new JPanel();
 		tradetoggle.setBackground(new Color(51, 51, 51));
-		tradetoggle.setBounds(13, 524, 321, 86);
+		tradetoggle.setBounds(13, 527, 321, 86);
 		tradetoggle.setLayout(null);
         
 		JLabel lbltoggle = new JLabel("BUY & SELL");
@@ -614,6 +616,19 @@ public class FormulaInputs {
 		tradetoggle.add(lblBuy);
 		
 		slitradeSwitch = new JSlider();
+//		slitradeSwitch.addChangeListener(new ChangeListener() {
+//			public void stateChanged(ChangeEvent arg0) {
+//				int option = JOptionPane.showConfirmDialog(null, "Are you sure, Want to turn on the Trade ", "Buy/Sell Switch Confirmation", JOptionPane.YES_NO_OPTION);
+//				if (option == 0)
+//				{
+//					
+//				}
+//				else
+//				{
+//					
+//				}
+//			}
+//		});
 		slitradeSwitch.setSnapToTicks(true);
 		slitradeSwitch.setMinorTickSpacing(1);
 		slitradeSwitch.setMaximum(1);
@@ -635,21 +650,22 @@ public class FormulaInputs {
 		lblOff.setBounds(0, 22, 60, 28);
 		tradetoggle.add(lblOff);
 		
-		JLabel lblLotSize = new JLabel("LOT SIZE  =");
+		JLabel lblLotSize = new JLabel("SIZE/LOT  =");
 		lblLotSize.setHorizontalAlignment(SwingConstants.LEFT);
 		lblLotSize.setForeground(Color.WHITE);
 		lblLotSize.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblLotSize.setBounds(13, 467, 140, 49);
+		lblLotSize.setBounds(10, 474, 143, 42);
 		pnlInput.add(lblLotSize);
 		
 		txtlotsize = new JTextField();
+		txtlotsize.setText("1");
 		txtlotsize.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtlotsize.setForeground(new Color(255, 220, 135));
 		txtlotsize.setFont(new Font("Verdana", Font.PLAIN, 20));
 		txtlotsize.setColumns(10);
 		txtlotsize.setCaretColor(Color.WHITE);
 		txtlotsize.setBackground(new Color(36, 34, 29));
-		txtlotsize.setBounds(162, 468, 159, 49);
+		txtlotsize.setBounds(162, 476, 104, 41);
 		pnlInput.add(txtlotsize);
 		
 		JButton btnDelete = new JButton("Delete");
@@ -657,11 +673,12 @@ public class FormulaInputs {
 			public void actionPerformed(ActionEvent e) {
 				try
 				{
-					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and PLAYERSECID = '"+playersecid+"'");
-					int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and PLAYERSECID = '"+playersecid+"'");
+					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
+					int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
 					if (count == 0)
 					{
 						JOptionPane.showMessageDialog(contentPane,"Formula Deleted Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
+						Logger.info("Player "+playersecid+" Formula data Deleted Successfully for feed "+feedsecid);
 					}
 					else
 					{
@@ -681,7 +698,7 @@ public class FormulaInputs {
 				
 			}
 		});
-		btnDelete.setBounds(13, 616, 152, 45);
+		btnDelete.setBounds(13, 634, 152, 45);
 		pnlInput.add(btnDelete);
 	
 		
@@ -699,7 +716,7 @@ public class FormulaInputs {
 			}
 			else
 			{
-				int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and PLAYERSECID = '"+playersecid+"'");
+				int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
 				if (count == 0)
 				{
 					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
@@ -715,7 +732,7 @@ public class FormulaInputs {
 				}
 				else 
 				{
-					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and PLAYERSECID = '"+playersecid+"'");
+					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
 					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
 					if (isSucess ==true)
 					{
@@ -743,62 +760,62 @@ public class FormulaInputs {
 		String [] colval =new String[2];
 		try {
 			String colbuilder="", valueBuilder="";
-			colbuilder=colbuilder+"FEEDSECID,";
-			valueBuilder = valueBuilder + "'"+feedsecid+"'"+",";
+			colbuilder=colbuilder+"FEEDSUBJECTID,";
+			valueBuilder = valueBuilder + "'"+feedsecid.trim()+"'"+",";
 			
-			colbuilder=colbuilder+"PLAYERSECID,";
-			valueBuilder = valueBuilder + "'"+playersecid+"'"+",";
+			colbuilder=colbuilder+"TRADESUBJECTID,";
+			valueBuilder = valueBuilder + "'"+playersecid.trim()+"'"+",";
 			
 			
 			if (!txtX.getText().equals(""))
 			{
 				colbuilder=colbuilder+"X,";
-				valueBuilder = valueBuilder + txtX.getText()+",";
+				valueBuilder = valueBuilder + txtX.getText().trim()+",";
 			}
 			if (!txtY.getText().equals(""))
 			{
 				colbuilder=colbuilder+"Y,";
-				valueBuilder = valueBuilder + txtY.getText()+",";
+				valueBuilder = valueBuilder + txtY.getText().trim()+",";
 			}
 			if (!txtZ.getText().equals(""))
 			{
 				colbuilder=colbuilder+"Z,";
-				valueBuilder = valueBuilder + txtZ.getText()+",";
+				valueBuilder = valueBuilder + txtZ.getText().trim()+",";
 			}
 			if ((!txtT1H.getText().equals("")) && (!txtT1M.getText().equals("")) && (!txtT1S.getText().equals("")))
 			{
 				colbuilder=colbuilder+"T1,";
-				valueBuilder = valueBuilder +"'"+txtT1H.getText()+":"+txtT1M.getText()+":"+txtT1S.getText()+"',";
+				valueBuilder = valueBuilder +"'"+txtT1H.getText().trim()+":"+txtT1M.getText().trim()+":"+txtT1S.getText().trim()+"',";
 			}
 			if ((!txtT2H.getText().equals("")) && (!txtT2M.getText().equals("")) && (!txtT2S.getText().equals("")))
 			{
 				colbuilder=colbuilder+"T2,";
-				valueBuilder = valueBuilder +"'"+txtT2H.getText()+":"+txtT2M.getText()+":"+txtT2S.getText()+"',";
+				valueBuilder = valueBuilder +"'"+txtT2H.getText().trim()+":"+txtT2M.getText().trim()+":"+txtT2S.getText().trim()+"',";
 			}
 			if ((!txtT3H.getText().equals("")) && (!txtT3M.getText().equals("")) && (!txtT3S.getText().equals("")))
 			{
 				colbuilder=colbuilder+"T3,";
-				valueBuilder = valueBuilder +"'"+txtT3H.getText()+":"+txtT3M.getText()+":"+txtT3S.getText()+"',";
+				valueBuilder = valueBuilder +"'"+txtT3H.getText().trim()+":"+txtT3M.getText().trim()+":"+txtT3S.getText().trim()+"',";
 			}
 			if ((!txtT4H.getText().equals("")) && (!txtT4M.getText().equals("")) && (!txtT4S.getText().equals("")))
 			{
 				colbuilder=colbuilder+"T4,";
-				valueBuilder = valueBuilder +"'"+txtT4H.getText()+":"+txtT4M.getText()+":"+txtT4S.getText()+"',";
+				valueBuilder = valueBuilder +"'"+txtT4H.getText().trim()+":"+txtT4M.getText().trim()+":"+txtT4S.getText().trim()+"',";
 			}
 			if (!txtLcount.getText().equals(""))
 			{
 				colbuilder=colbuilder+"LCOUNT,";
-				valueBuilder = valueBuilder + txtLcount.getText()+",";
+				valueBuilder = valueBuilder + txtLcount.getText().trim()+",";
 			}
 			if (!txtStopL.getText().equals(""))
 			{
 				colbuilder=colbuilder+"STOPL,";
-				valueBuilder = valueBuilder + txtStopL.getText()+",";
+				valueBuilder = valueBuilder + txtStopL.getText().trim()+",";
 			}
 			if(!txtlotsize.getText().equals(""))
 			{
 				colbuilder=colbuilder+"LOTSIZE,";
-				valueBuilder = valueBuilder + txtlotsize.getText()+",";
+				valueBuilder = valueBuilder + txtlotsize.getText().trim()+",";
 			}
 			if(slitradeSwitch.getValue() == 0)
 			{
@@ -813,9 +830,9 @@ public class FormulaInputs {
 			if (!colbuilder.equals(""))
 			{
 				colbuilder = colbuilder + "FORMULANAME";
-				valueBuilder= valueBuilder + "'"+lblFTitle.getText()+"'";
-				colval[0]=colbuilder;//.substring(0, colbuilder.length() - 1);
-				colval[1]=valueBuilder;//.substring(0, valueBuilder.length() - 1);
+				valueBuilder= valueBuilder + "'"+lblFTitle.getText().trim()+"'";
+				colval[0]=colbuilder;
+				colval[1]=valueBuilder;
 			}
 			
 			
