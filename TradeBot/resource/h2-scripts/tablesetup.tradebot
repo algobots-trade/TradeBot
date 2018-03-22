@@ -38,9 +38,6 @@ Create Table tbl_players (id bigint auto_increment, feedsubjectid varchar(255) n
 
 #Create Formula table
 
-##CREATE TABLE tbl_formula (id bigint auto_increment, feedsecid varchar(255) null, playersecid varchar(255) null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
-   lcount int null,   stopl double null, lotsize int null,tradeswitch varchar(255) not null)
-   
 CREATE TABLE tbl_formula (id bigint auto_increment, feedsubjectid varchar(255) null, tradesubjectid varchar(255) null, formulaname varchar(255) not null,  x double null,    y double null,    z double null,   t1 varchar(255) null,   t2 varchar(255) null,   t3 varchar(255) null,      t4 varchar(255) null,
    lcount int null,   stopl double null, lotsize int null,tradeswitch varchar(255) not null)
 
