@@ -16,7 +16,7 @@ public class F1_HRun_Algo
 {
 	public double x,y,z,C=0,LC=0,S=0;
 	public Date t1,t2,t3,t4;
-	public int maxtradecount =0, TCount=0;
+	public int maxtradecount =0, TCount=0, Lcount=0;
 	public boolean isBought =false, isSell = false, isShotsell=false, istradeswitch=false;
 	public double buyPrice,sellPrice,low=0.0,high=0.0,Mpoint,stopl=0.0;
 	public Date fst1, fst2;
@@ -231,6 +231,7 @@ public class F1_HRun_Algo
 					if(tickprice > high){high = tickprice;dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET HIGH ="+ high +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}
 					if(tickprice < low) {low = tickprice;dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET LOW ="+ low +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}   
 				}
+				
 				if (isBought == true)
 				{
 					if(ticktime.after(t4))
@@ -257,6 +258,51 @@ public class F1_HRun_Algo
     	    			}
     	    			calculatefigure(feedid,tradeid);
 					}
+					else if(tickprice < (Mpoint*(y/100)))
+					{
+						String orderid = null;
+						sellPrice =tickprice;				    	    			
+    	    			fst2 = ticktime;
+    	    			Logger.info("long buy and sell Condition3:"+ticktime);
+    	    			TCount =TCount +1;
+    	    			
+    	    			if (istradeswitch ==true)
+    	    			{
+    	    				if (bidvolume >= 1)
+        	    			{
+    	    					orderid = LoadDataandOrder(feedid, tradeid, "SELL");
+    	    					dbObj.executeNonQuery("UPDATE TBL_F1_TRADES  SET EXITCONDITION='2nd Condition',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", "
+    	    							+ "Tcount="+TCount+", ISBUYSELLDONE = 'true' ,EXITID='"+orderid+"' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+    	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
+    	    				}
+    	    			}
+    	    			else 
+    	    			{
+    	    				dbObj.executeNonQuery("UPDATE TBL_F1_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+    	    			}
+    	    			calculatefigure(feedid,tradeid);
+    	    			
+    	    			Mpoint = Mpoint +(Mpoint*(y/100));
+    	    			C = C - 1;
+    	    			if (C == -1)
+    	    			{
+    	    				LC = LC + 1;
+    	    			}
+    	    			if(LC == Lcount )
+    	    			{
+    	    				// goto end
+    	    				// ** Need to implement on production
+    	    				S = S +1;
+    	    			}
+    	    			if(S == stopl)
+    	    			{
+    	    				// goto end
+    	    				// ** Need to implement on production
+    	    				C=0;
+    	    			}
+    	    			
+    	    			
+					}
 					
 				}
 				else if (isSell == true)
@@ -273,6 +319,7 @@ public class F1_HRun_Algo
         	    		{
         	    			
         	    			//goto end;
+        	    			// ** Need to implement on production
         	    		}
         	    		else {
         	    			String orderid=null;
@@ -310,6 +357,7 @@ public class F1_HRun_Algo
         	    		{
         	    			
         	    			//goto end;
+        	    			// ** Need to implement on production
         	    		}
         	    		else {
         	    			//sell command later
