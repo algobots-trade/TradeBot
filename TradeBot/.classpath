@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="ExLibrary/activemq-all-5.4.1.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/apache-mime4j-0.5.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/commons-logging-api-1.1.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/h2-1.4.196.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/httpclient-4.0-beta2.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/httpcore-4.0-beta3.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/httpmime-4.0-beta2.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/presto-d-1.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/PrestoESBClient.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-asm-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-beans-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-context-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-core-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-expression-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-jms-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/spring-tx-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="ExLibrary/tinylog-1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
