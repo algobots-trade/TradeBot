@@ -680,8 +680,8 @@ public class HeadFeeds {
 					case "STOCK":
 						if (STKvalidations())
 						{
-							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
-									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"',null,null,null);");
+							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS,ISPLAYING) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
+									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"',null,null,null,'true');");
 							JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.INFORMATION_MESSAGE);	
 							if (chksameplayer.isSelected() == true)
 							{
@@ -698,8 +698,8 @@ public class HeadFeeds {
 						if(FUTvalidations())
 						{
 							String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
-									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',null,null);");
+							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS, ISPLAYING) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
+									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',null,null,'true');");
 								JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.INFORMATION_MESSAGE);	
 								if (chksameplayer.isSelected() == true)
 								{
@@ -716,8 +716,8 @@ public class HeadFeeds {
 						if(OPTvalidations())
 						{
 							String date = txtExpdd.getText()+"-"+txtExpmm.getText()+"-"+txtExpyyyy.getText();
-							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
-									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',"+Double.parseDouble(txtprice.getText())+",'"+cmbright.getSelectedItem().toString()+"');");
+							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS,ISPLAYING) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
+									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"','"+date+"',"+Double.parseDouble(txtprice.getText())+",'"+cmbright.getSelectedItem().toString()+"','true');");
 							JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.INFORMATION_MESSAGE);	
 							if (chksameplayer.isSelected() == true)
 							{
@@ -733,8 +733,8 @@ public class HeadFeeds {
 					case "INDEX":
 						if(INDvalidations())
 						{
-							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
-									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"',null,null,null);");
+							dbobj.executeNonQuery("INSERT INTO TBL_HEADFEEDS (FEEDSUBJECTID,SCRIB,MARKETTYPE,EXPDATE,PRICE,RIGHTS,ISPLAYING) VALUES ('"+txtsecId.getText().toString()+"','"+txtscrib.getText().toString()+"'"
+									+ ",'"+cmbmarkettype.getSelectedItem().toString()+"',null,null,null,'true');");
 								JOptionPane.showMessageDialog(headFeed,"Record Saved !!", "Success",JOptionPane.INFORMATION_MESSAGE);	
 								if (chksameplayer.isSelected() == true)
 								{
@@ -751,14 +751,8 @@ public class HeadFeeds {
 			}
 			else
 			{
-				//int opcion = JOptionPane.showConfirmDialog(null, "Head feed ID is already exist, Do you want to update ? ('Yes' will update & 'No' will Load existing record)", "Confrimation", JOptionPane.YES_NO_OPTION);
 				JOptionPane.showMessageDialog(headFeed,"Head feed ID is already exists", "Success",JOptionPane.INFORMATION_MESSAGE);
-//				if (opcion == 0) {
-//					JOptionPane.showMessageDialog(headFeed,"Head Feed Updated !! ", "Success",JOptionPane.WARNING_MESSAGE);	
-//				} 
-//				else {
-//					loadExistingData(txtsecId.getText());
-//				}
+//				
 	
 			}
 			 records = dbobj.getMultiColumnRecords("SELECT FEEDSUBJECTID, SCRIB, MARKETTYPE, EXPDATE, PRICE, RIGHTS FROM TBL_HEADFEEDS;");
