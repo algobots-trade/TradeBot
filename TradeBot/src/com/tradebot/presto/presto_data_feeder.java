@@ -113,8 +113,10 @@ public class presto_data_feeder implements FeedService {
 		
 		System.out.print("\n"+symbol + " , LTP : " + ltp + " , ASK VOLUME : " + asksize +  " , BID VALOUME : " + bidsize +" , LTT :  " + monthyearDayCon.format(dtformat));
 		
-		
-		F1Algo f1obj =new F1Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		if  ("true" == dbobj.getSingleCell("SELECT ISPLAYING  FROM TBL_HEADFEEDS WHERE FEEDSUBJECTID ='"+symbol+"'"))
+		{
+			F1Algo f1obj =new F1Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		}
 	}
 
 }
