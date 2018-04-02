@@ -312,7 +312,7 @@ public class Player {
 		innerpanel.setLayout(null);
 		
 		txtscrib = new JTextField();
-		txtscrib.setBounds(6, 46, 166, 37);
+		txtscrib.setBounds(21, 48, 166, 32);
 		innerpanel.add(txtscrib);
 		txtscrib.setHorizontalAlignment(SwingConstants.LEFT);
 		txtscrib.setForeground(new Color(255, 220, 135));
@@ -562,7 +562,7 @@ public class Player {
 		txtsecId.setColumns(10);
 		txtsecId.setCaretColor(Color.WHITE);
 		txtsecId.setBackground(new Color(36, 34, 29));
-		txtsecId.setBounds(406, 46, 127, 37);
+		txtsecId.setBounds(403, 48, 127, 31);
 		innerpanel.add(txtsecId);
 		
 		JLabel lblMarket = new JLabel("MARKET");
@@ -573,7 +573,7 @@ public class Player {
 		innerpanel.add(lblMarket);
 		
 		JButton button = new JButton("Check");
-		button.setBounds(543, 49, 61, 31);
+		button.setBounds(532, 48, 61, 32);
 		innerpanel.add(button);
 		
 		JLabel lblHead = new JLabel("Player Details");
