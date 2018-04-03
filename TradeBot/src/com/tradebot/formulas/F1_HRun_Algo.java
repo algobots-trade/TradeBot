@@ -290,19 +290,25 @@ public class F1_HRun_Algo
     	    			if(LC == Lcount )
     	    			{
     	    				// goto end
-    	    				S = S +1;
     	    				//Ending Execution for HEAD FEED
         	    			dbObj.executeNonQuery("UPDATE TBL_HEADFEEDS SET ISPLAYING='false' WHERE FEEDSUBJECTID ='"+feedid+"'");
         	    			Logger.info("Head Feed ("+feedid+") Achived End point.");
     	    			}
+    	    			else
+    	    			{
+    	    				S = S +1;
+    	    			}
     	    			if(S == stopl)
     	    			{
     	    				// goto end
-    	    				C=0;
     	    				//Ending Execution for HEAD FEED
         	    			dbObj.executeNonQuery("UPDATE TBL_HEADFEEDS SET ISPLAYING='false' WHERE FEEDSUBJECTID ='"+feedid+"'");
         	    			Logger.info("Head Feed ("+feedid+") Achived End point.");
     	    			}	
+    	    			else
+    	    			{
+    	    				C=0;
+    	    			}
     	    			if (istradeswitch ==true)
     	    			{
     	    				if (bidvolume >= 1)
@@ -322,9 +328,9 @@ public class F1_HRun_Algo
     	    			
 					}
 					// Box 4
-					else if(tickprice >= Mpoint + (Mpoint*(y/100)))
+					else if(tickprice >= Mpoint + (Mpoint*(z/100)))
 					{
-						Mpoint= Mpoint + (Mpoint*(y/100));
+						Mpoint= Mpoint + (Mpoint*(z/100));
 						C=C+1;
 						dbObj.executeNonQuery("UPDATE TBL_F1_TRADES SET LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    			
@@ -333,9 +339,9 @@ public class F1_HRun_Algo
 				}
 				else if (isSell == true)
 	    	    {
-					if (tickprice <= (Mpoint - (Mpoint*(y/100))))
+					if (tickprice <= (Mpoint - (Mpoint*(z/100))))
 					{
-						Mpoint = Mpoint - (Mpoint*(y/100));
+						Mpoint = Mpoint - (Mpoint*(z/100));
 						C=C+1;
 						dbObj.executeNonQuery("UPDATE TBL_F1_TRADES SET LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
 					}
@@ -355,15 +361,22 @@ public class F1_HRun_Algo
     	    			if (LC == Lcount)
     	    			{
     	    				//Ending Execution for HEAD FEED
-    	    				S = S + 1;
         	    			dbObj.executeNonQuery("UPDATE TBL_HEADFEEDS SET ISPLAYING='false' WHERE FEEDSUBJECTID ='"+feedid+"'");
         	    			Logger.info("Head Feed ("+feedid+") Achived End point.");
     	    			}
+    	    			else
+    	    			{
+    	    				S = S + 1;
+    	    			}
     	    			if(S == stopl)
     	    			{
-    	    				C =0 ;
+    	    				
     	    				dbObj.executeNonQuery("UPDATE TBL_HEADFEEDS SET ISPLAYING='false' WHERE FEEDSUBJECTID ='"+feedid+"'");
         	    			Logger.info("Head Feed ("+feedid+") Achived End point.");
+    	    			}
+    	    			else
+    	    			{
+    	    				C =0;
     	    			}
     	    			
     	    			if (istradeswitch ==true)
