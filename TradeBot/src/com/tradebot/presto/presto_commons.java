@@ -4,6 +4,7 @@ import java.io.File;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.util.GregorianCalendar;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -57,13 +58,19 @@ public class presto_commons {
 	static BigDecimal ESBPRICE, ESBSTOPPRICE;
 	static Integer ESBQUANTITY;
 	
-	static Date ESBEXPDATE;;
+	static Date ESBEXPDATE;
 	static GregorianCalendar gcal;
 	static XMLGregorianCalendar xgcal = null;
 	static Scanner IN = new Scanner(System.in);
 	static EsbConnection esbConnect;
 	static Iterator<byte[]> iter;
 	ReportHandler reportHandler;
+	
+	static String FutOptExchange = "NSEFO", EquExchange = "NSECM", ComExchange = "NSEDC", McxExchange = "MCX";	
+	static String FutSegment = "FUT", optSegment = "OPT", EquSegment = "CM";
+	static String FutIdxInsttype = "FUTIDX", FutStkInsttype = "FUTSTK", OptIdxInsttype = "OPTIDX", 
+			OptStkInsttype = "OPTSTK", EquInsttype = "Equities", FutComInsttype = "FUTCOM";
+	
 	
 	 
 	
@@ -84,10 +91,6 @@ public class presto_commons {
 			esbConnect = new EsbConnection();
 			esbConnect.initialize(reportHandler);
 			logintopresto();
-			//esbConnect.setDealerName(USERNAME);
-			//esbConnect.setDealerPassword(PASSWORD);
-			//esbConnect.forceLogoutFromORS(USERNAME, PASSWORD);
-			//esbConnect.loginToOrs(USERNAME, PASSWORD);
 		}
 		catch(Exception ex)
 		{
@@ -118,6 +121,73 @@ public class presto_commons {
 			System.out.print("Is Connected to Broker : "+ connected); 
 	    }
 		return connected;
+	}
+	public Hashtable InstValues_inter(String [] InstValues)
+	{
+		Hashtable insts = new Hashtable();
+		try
+		{
+			switch (InstValues[1]) {
+			case "STOCK":
+				insts.put("ESBEXCHANGE", EquExchange);
+				insts.put("ESBSYMBOL", InstValues[0]);
+				insts.put("SEGMENT", EquSegment);
+				insts.put("INSTRUMENTTYPE", EquInsttype);
+				break;
+			
+			case "INDEX":
+				//Need to be implemented
+				break;
+				
+			case "FUTURE":
+				insts.put("ESBEXCHANGE", FutOptExchange);
+				insts.put("ESBSYMBOL", InstValues[0]);
+				insts.put("SEGMENT", FutSegment);
+				insts.put("INSTRUMENTTYPE", FutStkInsttype);
+				break;
+			
+			case "OPTIONS":
+				insts.put("ESBEXCHANGE", FutOptExchange);
+				insts.put("ESBSYMBOL", InstValues[0]);
+				insts.put("SEGMENT", optSegment);
+				insts.put("INSTRUMENTTYPE", OptStkInsttype);
+				break;
+
+			default:
+				break;
+			}
+		}
+		catch(Exception ex)
+		{
+				
+		}
+		finally
+		{
+			
+		}
+		return insts;
+	}
+	public String [] VerifySymbol(String [] InstValues)
+	{
+		String [] st = null;
+		try
+		{
+			//ESBEXCHANGE = orderData.nextToken();
+			//ESBSYMBOL = orderData.nextToken();
+			//SEGMENT = orderData.nextToken();
+			//INSTRUMENTTYPE = orderData.nextToken();
+			//SYMBOLDETAIL = esbConnect.getSymbolDetailsForInstrType(
+			//		ESBEXCHANGE, ESBSYMBOL, INSTRUMENTTYPE, SEGMENT);
+		}
+		catch(Exception ex)
+		{
+			
+		}
+		finally
+		{
+			
+		}
+		return st;
 	}
 	
 	public boolean checkandLoginFinvasia()

@@ -52,6 +52,10 @@ public class Player {
 	db_commons dbobj=new db_commons();
 	
 	private int colid=0,colfeedsecid=1,colplayersecid =2, colscrib=3,colmtype=4,colexpdate=5,colprice=6,colrights=7,collotsize=8,colinfo=9;
+	private JLabel lblSegment;
+	private JComboBox<Object> comboBox;
+	private JLabel lblInsttype;
+	private JComboBox<Object> comboBox_1;
 	
 
 	/**
@@ -299,20 +303,20 @@ public class Player {
 		
 		playerframe = new JFrame();
 		playerframe.setTitle("Player - Details");
-		playerframe.setBounds(100, 100, 649, 404);
+		playerframe.setBounds(100, 100, 655, 489);
 		playerframe.getContentPane().setLayout(null);
 		playerframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		playerframe.getContentPane().setBackground(new Color(51, 51, 51));
 		playerframe.setVisible(true);
 		
 		JPanel innerpanel = new JPanel();
-		innerpanel.setBounds(6, 61, 620, 299);
+		innerpanel.setBounds(6, 61, 626, 378);
 		innerpanel.setBackground(new Color(80,75,78));
 		playerframe.getContentPane().add(innerpanel);
 		innerpanel.setLayout(null);
 		
 		txtscrib = new JTextField();
-		txtscrib.setBounds(21, 48, 166, 32);
+		txtscrib.setBounds(433, 17, 183, 32);
 		innerpanel.add(txtscrib);
 		txtscrib.setHorizontalAlignment(SwingConstants.LEFT);
 		txtscrib.setForeground(new Color(255, 220, 135));
@@ -322,13 +326,14 @@ public class Player {
 		txtscrib.setBackground(new Color(36, 34, 29));
 		
 		JLabel lblScrib = new JLabel("SCRIB");
-		lblScrib.setBounds(58, 0, 74, 49);
+		lblScrib.setBounds(339, 9, 74, 49);
 		innerpanel.add(lblScrib);
 		lblScrib.setHorizontalAlignment(SwingConstants.LEFT);
 		lblScrib.setForeground(Color.WHITE);
 		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 18));
 		
 		cmbmarkettype = new JComboBox<Object>(new String[] {"--Select--", "STOCK", "FUTURE", "OPTIONS", "INDEX"});
+		cmbmarkettype.setModel(new DefaultComboBoxModel(new String[] {"--Select--", "NSEFO", "NSECM", "NSECD", "MCX"}));
 		cmbmarkettype.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Logger.info("Market type set to --> "+cmbmarkettype.getSelectedItem().toString());
@@ -355,7 +360,7 @@ public class Player {
 			}
 		});
 		cmbmarkettype.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbmarkettype.setBounds(197, 49, 183, 31);
+		cmbmarkettype.setBounds(129, 18, 183, 31);
 		
 		
 		innerpanel.add(cmbmarkettype);
@@ -363,7 +368,7 @@ public class Player {
 		futopt_panel = new JPanel();
 		futopt_panel.setBackground(Color.DARK_GRAY);
 		futopt_panel.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		futopt_panel.setBounds(6, 96, 606, 89);
+		futopt_panel.setBounds(10, 163, 606, 89);
 		innerpanel.add(futopt_panel);
 		futopt_panel.setLayout(null);
 		
@@ -504,7 +509,7 @@ public class Player {
 			}
 		});
 		btnDelete.setPreferredSize(new Dimension(180, 50));
-		btnDelete.setBounds(77, 256, 166, 37);
+		btnDelete.setBounds(76, 322, 166, 37);
 		innerpanel.add(btnDelete);
 		
 		JButton btnSave = new JButton("SAVE");
@@ -526,18 +531,18 @@ public class Player {
 			}
 		});
 		btnSave.setPreferredSize(new Dimension(180, 50));
-		btnSave.setBounds(364, 256, 166, 37);
+		btnSave.setBounds(373, 322, 166, 37);
 		innerpanel.add(btnSave);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
 		panel_1.setBorder(new LineBorder(new Color(192, 192, 192), 2, true));
-		panel_1.setBounds(44, 197, 530, 49);
+		panel_1.setBounds(10, 262, 606, 49);
 		innerpanel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		loadHeadCombo();
-		cmbheadfeed.setBounds(160, 7, 362, 32);
+		cmbheadfeed.setBounds(185, 8, 362, 32);
 		panel_1.add(cmbheadfeed);
 		cmbheadfeed.setFont(new Font("Verdana", Font.PLAIN, 18));
 		
@@ -545,14 +550,14 @@ public class Player {
 		lblHeadFeed.setHorizontalAlignment(SwingConstants.LEFT);
 		lblHeadFeed.setForeground(Color.WHITE);
 		lblHeadFeed.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblHeadFeed.setBounds(23, 10, 127, 28);
+		lblHeadFeed.setBounds(48, 10, 127, 28);
 		panel_1.add(lblHeadFeed);
 		
 		JLabel label = new JLabel("SEC-ID");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Verdana", Font.PLAIN, 18));
-		label.setBounds(425, 0, 82, 49);
+		label.setBounds(339, 60, 82, 49);
 		innerpanel.add(label);
 		
 		txtsecId = new JTextField();
@@ -562,19 +567,45 @@ public class Player {
 		txtsecId.setColumns(10);
 		txtsecId.setCaretColor(Color.WHITE);
 		txtsecId.setBackground(new Color(36, 34, 29));
-		txtsecId.setBounds(403, 48, 127, 31);
+		txtsecId.setBounds(433, 68, 183, 31);
 		innerpanel.add(txtsecId);
 		
-		JLabel lblMarket = new JLabel("MARKET");
+		JLabel lblMarket = new JLabel("EXCHANGE");
 		lblMarket.setHorizontalAlignment(SwingConstants.LEFT);
 		lblMarket.setForeground(Color.WHITE);
 		lblMarket.setFont(new Font("Verdana", Font.PLAIN, 18));
-		lblMarket.setBounds(258, 0, 100, 49);
+		lblMarket.setBounds(10, 9, 100, 49);
 		innerpanel.add(lblMarket);
 		
 		JButton button = new JButton("Check");
-		button.setBounds(532, 48, 61, 32);
+		button.setBounds(338, 120, 278, 32);
 		innerpanel.add(button);
+		
+		lblSegment = new JLabel("SEGMENT");
+		lblSegment.setHorizontalAlignment(SwingConstants.LEFT);
+		lblSegment.setForeground(Color.WHITE);
+		lblSegment.setFont(new Font("Verdana", Font.PLAIN, 18));
+		lblSegment.setBounds(10, 60, 100, 49);
+		innerpanel.add(lblSegment);
+		
+		comboBox = new JComboBox<Object>(new Object[]{});
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"--Select--", "FUT", "OPT", "CM"}));
+		comboBox.setFont(new Font("Verdana", Font.PLAIN, 18));
+		comboBox.setBounds(129, 69, 183, 31);
+		innerpanel.add(comboBox);
+		
+		lblInsttype = new JLabel("INST-TYPE");
+		lblInsttype.setHorizontalAlignment(SwingConstants.LEFT);
+		lblInsttype.setForeground(Color.WHITE);
+		lblInsttype.setFont(new Font("Verdana", Font.PLAIN, 18));
+		lblInsttype.setBounds(10, 111, 100, 49);
+		innerpanel.add(lblInsttype);
+		
+		comboBox_1 = new JComboBox<Object>(new Object[]{});
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"--Select--", "FUTIDX", "FUTSTK", "OPTIDX", "OPTSTK", "Equities", "FUTCOM"}));
+		comboBox_1.setFont(new Font("Verdana", Font.PLAIN, 18));
+		comboBox_1.setBounds(129, 120, 183, 31);
+		innerpanel.add(comboBox_1);
 		
 		JLabel lblHead = new JLabel("Player Details");
 		lblHead.setHorizontalAlignment(SwingConstants.CENTER);
