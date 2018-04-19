@@ -122,73 +122,6 @@ public class presto_commons {
 	    }
 		return connected;
 	}
-	public Hashtable InstValues_inter(String [] InstValues)
-	{
-		Hashtable insts = new Hashtable();
-		try
-		{
-			switch (InstValues[1]) {
-			case "STOCK":
-				insts.put("ESBEXCHANGE", EquExchange);
-				insts.put("ESBSYMBOL", InstValues[0]);
-				insts.put("SEGMENT", EquSegment);
-				insts.put("INSTRUMENTTYPE", EquInsttype);
-				break;
-			
-			case "INDEX":
-				//Need to be implemented
-				break;
-				
-			case "FUTURE":
-				insts.put("ESBEXCHANGE", FutOptExchange);
-				insts.put("ESBSYMBOL", InstValues[0]);
-				insts.put("SEGMENT", FutSegment);
-				insts.put("INSTRUMENTTYPE", FutStkInsttype);
-				break;
-			
-			case "OPTIONS":
-				insts.put("ESBEXCHANGE", FutOptExchange);
-				insts.put("ESBSYMBOL", InstValues[0]);
-				insts.put("SEGMENT", optSegment);
-				insts.put("INSTRUMENTTYPE", OptStkInsttype);
-				break;
-
-			default:
-				break;
-			}
-		}
-		catch(Exception ex)
-		{
-				
-		}
-		finally
-		{
-			
-		}
-		return insts;
-	}
-	public String [] VerifySymbol(String [] InstValues)
-	{
-		String [] st = null;
-		try
-		{
-			//ESBEXCHANGE = orderData.nextToken();
-			//ESBSYMBOL = orderData.nextToken();
-			//SEGMENT = orderData.nextToken();
-			//INSTRUMENTTYPE = orderData.nextToken();
-			//SYMBOLDETAIL = esbConnect.getSymbolDetailsForInstrType(
-			//		ESBEXCHANGE, ESBSYMBOL, INSTRUMENTTYPE, SEGMENT);
-		}
-		catch(Exception ex)
-		{
-			
-		}
-		finally
-		{
-			
-		}
-		return st;
-	}
 	
 	public boolean checkandLoginFinvasia()
 	{
@@ -236,22 +169,15 @@ public class presto_commons {
 			if (constate == false)
 			{
 			  checkandLoginFinvasia();
-			  strClientId = userPlaceOrderNSE(ESB_EXCHANGE,
-						SECURITY_TYPE, ESB_SYMBOL, ESB_SECURITYID, EXP_DATE,
-						ESB_ACCOUNT, QUAN_TITY, T_PRICE, STOP_PRICE,
-						ESB_OPTIONTYPE, ESB_STRIKEPPRICE, ORDER_TYPE,
-						INSTANCEID_CUSTOMFIELD, T_REMARK, TIME_INFORCE, T_SIDE);
-				 System.out.print("Order Client ID - " + strClientId);
 			}
-			else
-			{
+			
 				strClientId = userPlaceOrderNSE(ESB_EXCHANGE,
 						SECURITY_TYPE, ESB_SYMBOL, ESB_SECURITYID, EXP_DATE,
 						ESB_ACCOUNT, QUAN_TITY, T_PRICE, STOP_PRICE,
 						ESB_OPTIONTYPE, ESB_STRIKEPPRICE, ORDER_TYPE,
 						INSTANCEID_CUSTOMFIELD, T_REMARK, TIME_INFORCE, T_SIDE);
 				 System.out.print("Order Client ID - " + strClientId);
-			}
+		
 		}
 		catch(Exception ex)
 		{
@@ -346,18 +272,71 @@ public class presto_commons {
 		}
 		return clientID;
 	}
-	public String getEquities(String scrib)
+	
+	public String [][] getMatchedScrib_CM_FUT(String exchange,String symbol,String segment, String instype )
 	{
-		String validSecData = null;
-		try
-		{
-			
-		}
-		catch(Exception ex)
-		{
-			
-		}
-		return validSecData;
+		String [][] ScribDetails = null;
+	 try
+	 {
+		 if (!instype.contains("OPT"))
+		 {
+			 boolean constate = false;
+				
+				try
+				{
+					constate = esbConnect.getConnectionStatus(USERNAME);
+				}
+				catch(Exception ex)
+				{
+					
+				}
+				if (constate == false)
+				{
+				  checkandLoginFinvasia();
+				}
+			 ESBEXCHANGE = exchange;
+			 ESBSYMBOL = symbol;
+			 SEGMENT = segment;
+			 INSTRUMENTTYPE = instype;
+			 SYMBOLDETAIL = esbConnect.getSymbolDetailsForInstrType(ESBEXCHANGE, ESBSYMBOL, INSTRUMENTTYPE, SEGMENT);
+			 if (SYMBOLDETAIL != null)
+			 {
+				 
+				 if (instype.equals("Equities"))
+				 {
+					 ScribDetails = new String[SYMBOLDETAIL.size()][10];
+					 for (int i=0;i<SYMBOLDETAIL.size();i++)
+					 {
+						 ScribDetails[i][0] = SYMBOLDETAIL.get(i).getSecID().toString();
+						 ScribDetails[i][1] = SYMBOLDETAIL.get(i).getSymbol().toString();
+						 ScribDetails[i][2] = SYMBOLDETAIL.get(i).getExchange().toString();
+						 ScribDetails[i][3] = SYMBOLDETAIL.get(i).getInstrumenttype().toString();
+						 ScribDetails[i][4] = SYMBOLDETAIL.get(i).getLotsize().toString();
+						 ScribDetails[i][5] = SYMBOLDETAIL.get(i).getTicksize().toString();
+						 ScribDetails[i][6] = SYMBOLDETAIL.get(i).getExpiryDay().toString();
+						 ScribDetails[i][7] = SYMBOLDETAIL.get(i).getExpiryMonth().toString();
+						 ScribDetails[i][8] = SYMBOLDETAIL.get(i).getOpType().toString();
+						 ScribDetails[i][9] = SYMBOLDETAIL.get(i).getStrikePrice().toString();
+						 
+					 }
+				 }
+				 else if ((instype =="FUTSTK") || (instype =="FUTSTK") || (instype =="FUTCOM") )
+				 {
+					 
+				 }
+				 
+			 }
+		 }
+	 }
+	 catch(Exception ex)
+	 {
+		 System.out.println(exchange.toString());
+	 }
+	 finally
+	 {
+		 
+	 }
+	 return ScribDetails;
 	}
 
 }

@@ -624,7 +624,7 @@ public class TradeBoard {
 						if (e.isControlDown() && e.getKeyCode() == 72) 
 						{
 							// CTRL + h
-							HeadFeeds hf=new HeadFeeds(null);
+							HeadFeeds hf=new HeadFeeds(objPresto,null);
 			            }
 						else if (e.isControlDown() && e.getKeyCode() == 80)
 						{
