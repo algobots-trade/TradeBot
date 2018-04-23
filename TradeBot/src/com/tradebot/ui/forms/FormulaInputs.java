@@ -110,10 +110,10 @@ public class FormulaInputs {
 		try
 		{
 			int count = 0;
-			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedid+"'");
+			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
 			if (count != 0)
 			{
-					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedid+"'");
+					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
 					Logger.info(existingdata.toString());
 					if (existingdata[0][colFname] != null)
 					{
@@ -673,8 +673,8 @@ public class FormulaInputs {
 			public void actionPerformed(ActionEvent e) {
 				try
 				{
-					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
-					int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
+					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
+					int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
 					if (count == 0)
 					{
 						JOptionPane.showMessageDialog(contentPane,"Formula Deleted Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
@@ -716,7 +716,7 @@ public class FormulaInputs {
 			}
 			else
 			{
-				int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
+				int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
 				if (count == 0)
 				{
 					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
@@ -732,7 +732,7 @@ public class FormulaInputs {
 				}
 				else 
 				{
-					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
+					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
 					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
 					if (isSucess ==true)
 					{
@@ -760,11 +760,14 @@ public class FormulaInputs {
 		String [] colval =new String[2];
 		try {
 			String colbuilder="", valueBuilder="";
-			colbuilder=colbuilder+"FEEDSUBJECTID,";
+			colbuilder=colbuilder+"FEEDSECID,";
 			valueBuilder = valueBuilder + "'"+feedsecid.trim()+"'"+",";
 			
-			colbuilder=colbuilder+"TRADESUBJECTID,";
+			colbuilder=colbuilder+"TRADESECID,";
 			valueBuilder = valueBuilder + "'"+playersecid.trim()+"'"+",";
+			
+			colbuilder=colbuilder+"ISEND,";
+			valueBuilder = valueBuilder + "'false'"+",";
 			
 			
 			if (!txtX.getText().equals(""))

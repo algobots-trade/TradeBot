@@ -12,15 +12,16 @@ import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
 import com.tradebot.presto.presto_commons;
 
-public class F1_HRun_Algo 
-{
+public class F4_HCapture_Algo {
+
+
 	public double x,y,z,C=0,LC=0,S=0;
 	public Date t1,t2,t3,t4;
 	public int maxtradecount =0, TCount=0, Lcount=0;
 	public boolean isBought =false, isSell = false, isShotsell=false, istradeswitch=false;
 	public double buyPrice,sellPrice,low=0.0,high=0.0,Mpoint,stopl=0.0;
 	public Date fst1, fst2;
-	final static String Fname="F1";
+	final static String Fname="F4";
 	private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
 	String tradelogpath;
     tradebot_utility utils = new tradebot_utility();
@@ -36,9 +37,9 @@ public class F1_HRun_Algo
     public int askvolume, bidvolume;
     presto_commons objPresto;
 
-	public F1_HRun_Algo(presto_commons objconnect,  String feedid, double tradeprice, int asksize,int bidsize ,String tickdatetime) 
+	public F4_HCapture_Algo(presto_commons objconnect,  String feedid, double tradeprice, int asksize,int bidsize ,String tickdatetime) 
 	{
-		tradelogpath = utils.configlogfile("F1HRUN_LOG");
+		tradelogpath = utils.configlogfile("F4HCAP_LOG");
 		askvolume = asksize;
 		bidvolume = bidsize;		 
 		objPresto =objconnect;
@@ -50,22 +51,22 @@ public class F1_HRun_Algo
 			 {
 				 if (dbObj.getSingleCell("SELECT ISEND FROM TBL_FORMULA WHERE FEEDSECID ='"+feedid+"' AND TRADESECID ='"+tradeplayers.get(i)+"' AND FORMULANAME ='"+Fname+"'").trim() != "true")
 				 {
-					 if (dbObj.getRowCount("SELECT * FROM TBL_F1_HRUN_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") == 0)
+					 if (dbObj.getRowCount("SELECT * FROM TBL_F4_HCAPTURE_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") == 0)
 					 {
-						 dbObj.executeNonQuery("insert into TBL_F1_HRUN_TRADES (FEEDSECID, TRADESECID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE,ENTRYID,EXITID,C,LC,S) values "
+						 dbObj.executeNonQuery("insert into TBL_F4_HCAPTURE_TRADES (FEEDSECID, TRADESECID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE,ENTRYID,EXITID,C,LC,S) values "
 						 		+ "('"+feedid+"', '"+tradeplayers.get(i)+"', null, 0.0,0.0,null,'false',0.0,0.0,'false','false',0.0,null,0,'false',null,null,0,0,0)");
 					 }
-					 else if(dbObj.getRowCount("SELECT * FROM TBL_F1_HRUN_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") > 0)
+					 else if(dbObj.getRowCount("SELECT * FROM TBL_F4_HCAPTURE_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") > 0)
 					 {
-						String[][] lasttransac =  dbObj.getMultiColumnRecords("SELECT high, low, mpoint, C, LC, S FROM TBL_F1_HRUN_TRADES WHERE id = (SELECT MAX(id) FROM TBL_F1_HRUN_TRADES ) and FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"';");
+						String[][] lasttransac =  dbObj.getMultiColumnRecords("SELECT high, low, mpoint, C, LC, S FROM TBL_F4_HCAPTURE_TRADES WHERE id = (SELECT MAX(id) FROM TBL_F4_HCAPTURE_TRADES ) and FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"';");
 						
-						dbObj.executeNonQuery("insert into TBL_F1_HRUN_TRADES (FEEDSECID, TRADESECID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE,ENTRYID,EXITID,C,LC,S) values "
+						dbObj.executeNonQuery("insert into TBL_F4_HCAPTURE_TRADES (FEEDSECID, TRADESECID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE,ENTRYID,EXITID,C,LC,S) values "
 						 		+ "('"+feedid+"', '"+tradeplayers.get(i)+"', null, 0.0,0.0,null,'false',"+Integer.parseInt(lasttransac[0][0])+","+Integer.parseInt(lasttransac[0][1])+",'false','false',"+Integer.parseInt(lasttransac[0][2])+",null,0,'false',null,null,"+Integer.parseInt(lasttransac[0][3])+","+Integer.parseInt(lasttransac[0][4])+","+Integer.parseInt(lasttransac[0][5])+")");
 					
 					 }
-					 assginF1Variables(feedid, tradeplayers.get(i),tickdatetime);
+					 assginFVariables(feedid, tradeplayers.get(i),tickdatetime);
 					 
-					 int tradec =Integer.parseInt(dbObj.getSingleCell("SELECT SUM(TCOUNT) as \"count\" FROM TBL_F1_HRUN_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"'"));
+					 int tradec =Integer.parseInt(dbObj.getSingleCell("SELECT SUM(TCOUNT) as \"count\" FROM TBL_F4_HCAPTURE_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"'"));
 					 TCount = tradec;
 					 if (tradec < maxtradecount)
 					 {
@@ -178,41 +179,41 @@ public class F1_HRun_Algo
 		}
 		return OrderId;
 	}
-  	public void assginF1Variables(String feedid, String tradeid, String livedate)
+  	public void assginFVariables(String feedid, String tradeid, String livedate)
 	{
-		String [][] F1inputdata;
-		String [][] F1tradedata;
+		String [][] Finputdata;
+		String [][] Ftradedata;
 		try
 		{
-			F1inputdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and FORMULANAME ='"+Fname+"'");
-			if (F1inputdata !=null)
+			Finputdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and FORMULANAME ='"+Fname+"'");
+			if (Finputdata !=null)
 			{
-				x = ((F1inputdata[0][colx] == null) ? 0.0 : Double.parseDouble(F1inputdata[0][colx]));
-				y = ((F1inputdata[0][coly] == null) ? 0.0 : Double.parseDouble(F1inputdata[0][coly]));
-				z = ((F1inputdata[0][colz] == null) ? 0.0 : Double.parseDouble(F1inputdata[0][colz]));
+				x = ((Finputdata[0][colx] == null) ? 0.0 : Double.parseDouble(Finputdata[0][colx]));
+				y = ((Finputdata[0][coly] == null) ? 0.0 : Double.parseDouble(Finputdata[0][coly]));
+				z = ((Finputdata[0][colz] == null) ? 0.0 : Double.parseDouble(Finputdata[0][colz]));
 				datefmt=new SimpleDateFormat("yyyyMMdd HH:mm:ss");
-				t1 = ((F1inputdata[0][colt1] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+F1inputdata[0][colt1]));
-				t2 = ((F1inputdata[0][colt2] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+F1inputdata[0][colt2]));
-				t3 = ((F1inputdata[0][colt3] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+F1inputdata[0][colt3]));
-				t4 = ((F1inputdata[0][colt4] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+F1inputdata[0][colt4]));
-				maxtradecount = ((F1inputdata[0][collount] == null ? 2 : Integer.parseInt(F1inputdata[0][collount])));
-				stopl=((F1inputdata[0][colstopl] == null ? 0.0 : Double.parseDouble(F1inputdata[0][colstopl])));
-				istradeswitch=((F1inputdata[0][coltradeswitch] == null ? false : Boolean.parseBoolean(F1inputdata[0][coltradeswitch])));
+				t1 = ((Finputdata[0][colt1] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+Finputdata[0][colt1]));
+				t2 = ((Finputdata[0][colt2] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+Finputdata[0][colt2]));
+				t3 = ((Finputdata[0][colt3] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+Finputdata[0][colt3]));
+				t4 = ((Finputdata[0][colt4] == null) ? null : datefmt.parse(livedate.split(" ")[0]+" "+Finputdata[0][colt4]));
+				maxtradecount = ((Finputdata[0][collount] == null ? 2 : Integer.parseInt(Finputdata[0][collount])));
+				stopl=((Finputdata[0][colstopl] == null ? 0.0 : Double.parseDouble(Finputdata[0][colstopl])));
+				istradeswitch=((Finputdata[0][coltradeswitch] == null ? false : Boolean.parseBoolean(Finputdata[0][coltradeswitch])));
 			 }
-			F1tradedata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_F1_HRUN_TRADES where FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and ISBUYSELLDONE='false'");
-			if (F1tradedata != null)
+			Ftradedata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_F4_HCAPTURE_TRADES where FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and ISBUYSELLDONE='false'");
+			if (Ftradedata != null)
 			{
-				isBought=((F1tradedata[0][tisbought] == null ? false : Boolean.parseBoolean(F1tradedata[0][tisbought])));
-				isSell=((F1tradedata[0][tissell] == null ? false : Boolean.parseBoolean(F1tradedata[0][tissell])));
-				isShotsell=((F1tradedata[0][tisshotsell] == null ? false : Boolean.parseBoolean(F1tradedata[0][tisshotsell])));
-				buyPrice = ((F1tradedata[0][tbuyprice] == null) ? 0.0 : Double.parseDouble(F1tradedata[0][tbuyprice]));
-				sellPrice = ((F1tradedata[0][tsellprice] == null) ? 0.0 : Double.parseDouble(F1tradedata[0][tsellprice]));
-				low =  ((F1tradedata[0][tlow] == null) ? 0.0 : Double.parseDouble(F1tradedata[0][tlow]));
-				high =  ((F1tradedata[0][thigh] == null) ? 0.0 : Double.parseDouble(F1tradedata[0][thigh]));
-				Mpoint = ((F1tradedata[0][tmpoint] == null) ? 0.0 : Double.parseDouble(F1tradedata[0][tmpoint]));
-				C = ((F1tradedata[0][tC] == null) ? 0.0 : Integer.parseInt(F1tradedata[0][tC]));
-				LC= ((F1tradedata[0][tLC] == null) ? 0.0 : Integer.parseInt(F1tradedata[0][tLC]));
-				S= ((F1tradedata[0][tS] == null) ? 0.0 : Integer.parseInt(F1tradedata[0][tS]));
+				isBought=((Ftradedata[0][tisbought] == null ? false : Boolean.parseBoolean(Ftradedata[0][tisbought])));
+				isSell=((Ftradedata[0][tissell] == null ? false : Boolean.parseBoolean(Ftradedata[0][tissell])));
+				isShotsell=((Ftradedata[0][tisshotsell] == null ? false : Boolean.parseBoolean(Ftradedata[0][tisshotsell])));
+				buyPrice = ((Ftradedata[0][tbuyprice] == null) ? 0.0 : Double.parseDouble(Ftradedata[0][tbuyprice]));
+				sellPrice = ((Ftradedata[0][tsellprice] == null) ? 0.0 : Double.parseDouble(Ftradedata[0][tsellprice]));
+				low =  ((Ftradedata[0][tlow] == null) ? 0.0 : Double.parseDouble(Ftradedata[0][tlow]));
+				high =  ((Ftradedata[0][thigh] == null) ? 0.0 : Double.parseDouble(Ftradedata[0][thigh]));
+				Mpoint = ((Ftradedata[0][tmpoint] == null) ? 0.0 : Double.parseDouble(Ftradedata[0][tmpoint]));
+				C = ((Ftradedata[0][tC] == null) ? 0.0 : Integer.parseInt(Ftradedata[0][tC]));
+				LC= ((Ftradedata[0][tLC] == null) ? 0.0 : Integer.parseInt(Ftradedata[0][tLC]));
+				S= ((Ftradedata[0][tS] == null) ? 0.0 : Integer.parseInt(Ftradedata[0][tS]));
 			}
 			
 			
@@ -232,21 +233,21 @@ public class F1_HRun_Algo
 			int alreadyEntered = 0;
 			if (ticktime.after(t1))
 			{
-				alreadyEntered = dbObj.getRowCount("SELECT * FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID = '"+feedid+"' and TRADESECID = '"+tradeid+"' and ISBUYSELLDONE ='true'");
+				alreadyEntered = dbObj.getRowCount("SELECT * FROM TBL_F4_HCAPTURE_TRADES WHERE FEEDSECID = '"+feedid+"' and TRADESECID = '"+tradeid+"' and ISBUYSELLDONE ='true'");
 				if (alreadyEntered == 0)
 				{
 					if ((low == 0.0) && (high == 0.0))
 		    	    {
 		    	    	low = tickprice;
 		    	    	high =tickprice;
-		    	    	dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES SET LOW = "+low+" , HIGH ="+ high +""
+		    	    	dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES SET LOW = "+low+" , HIGH ="+ high +""
 		    	    			+ " WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
 		    	    }
 				}
 				if ((isBought==false)&&(isSell==false))
 				{
-					if(tickprice > high){high = tickprice;dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET HIGH ="+ high +" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}
-					if(tickprice < low) {low = tickprice;dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET LOW ="+ low +" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}   
+					if(tickprice > high){high = tickprice;dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET HIGH ="+ high +" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}
+					if(tickprice < low) {low = tickprice;dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET LOW ="+ low +" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}   
 				}
 				
 				if (isBought == true)
@@ -258,27 +259,35 @@ public class F1_HRun_Algo
 						String orderid = null;
 						sellPrice =tickprice;				    	    			
     	    			fst2 = ticktime;
-    	    			Logger.info("long buy and sell Condition3:"+ticktime);
-    	    			TCount =TCount +1;
-    	    			if (istradeswitch ==true)
+    	    			if (C <= 1)
     	    			{
-    	    				if (bidvolume >= 1)
-        	    			{
-    	    					orderid = LoadDataandOrder(feedid, tradeid, "SELL");
-    	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", "
-    	    							+ "Tcount="+TCount+", ISBUYSELLDONE = 'true',LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , EXITID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
-    	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
-    	    				}
+    	    				//Ending Execution for HEAD FEED and trade id
+        	    			dbObj.executeNonQuery("UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEESECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
+        	    			Logger.info("Head Feed - "+feedid+" & Trade ID - "+tradeid+" && Formula Name - "+Fname+" Achived End point.");
     	    			}
     	    			else 
     	    			{
-    	    				dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+	    	    			Logger.info("long buy and sell Condition3:"+ticktime);
+	    	    			TCount =TCount +1;
+	    	    			if (istradeswitch ==true)
+	    	    			{
+	    	    				if (bidvolume >= 1)
+	        	    			{
+	    	    					orderid = LoadDataandOrder(feedid, tradeid, "SELL");
+	    	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", "
+	    	    							+ "Tcount="+TCount+", ISBUYSELLDONE = 'true',LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , EXITID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+	    	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
+	    	    				}
+	    	    			}
+	    	    			else 
+	    	    			{
+	    	    				dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+	    	    			}
+	    	    			calculatefigure(feedid,tradeid);
+	    	    			dbObj.executeNonQuery("UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEESECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
+        	    			Logger.info("Head Feed - "+feedid+" & Trade ID - "+tradeid+" && Formula Name - "+Fname+" Achived End point.");
     	    			}
-    	    			calculatefigure(feedid,tradeid);
-    	    			//Ending Execution for HEAD FEED
-    	    			dbObj.executeNonQuery("UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEESECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
-    	    			Logger.info("Head Feed - "+feedid+" & Trade ID - "+tradeid+" && Formula Name - "+Fname+" Achived End point.");
-					}
+    	    		}
 					// Box 3
 					else if(tickprice < Mpoint - (Mpoint*(y/100)))
 					{
@@ -320,14 +329,14 @@ public class F1_HRun_Algo
     	    				if (bidvolume >= 1)
         	    			{
     	    					orderid = LoadDataandOrder(feedid, tradeid, "SELL");
-    	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='2nd Condition',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", "
+    	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='2nd Condition',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", "
     	    							+ "Tcount="+TCount+", ISBUYSELLDONE = 'true' , LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+",  EXITID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
     	    				}
     	    			}
     	    			else 
     	    			{
-    	    				dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+    	    				dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    			}
     	    			calculatefigure(feedid,tradeid);
     	    			
@@ -338,7 +347,7 @@ public class F1_HRun_Algo
 					{
 						Mpoint= Mpoint + (Mpoint*(z/100));
 						C=C+1;
-						dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES SET LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+						dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES SET LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    			
 					}
 					
@@ -349,7 +358,7 @@ public class F1_HRun_Algo
 					{
 						Mpoint = Mpoint - (Mpoint*(z/100));
 						C=C+1;
-						dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES SET LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+						dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES SET LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
 					}
 					else if(tickprice > (Mpoint + (Mpoint*(y/100))))
 					{
@@ -390,14 +399,14 @@ public class F1_HRun_Algo
     	    				if (askvolume >= 1)
         	    			{
     	    					orderid = LoadDataandOrder(feedid, tradeid, "BUY");
-    	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='2nd Condition',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", "
+    	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='2nd Condition',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", "
     	    							+ "Tcount="+TCount+", ISBUYSELLDONE = 'true' , LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+",  EXITID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
     	    				}
     	    			}
     	    			else 
     	    			{
-    	    				dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+    	    				dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+", WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    			}
     	    			calculatefigure(feedid,tradeid);
 					}
@@ -413,14 +422,14 @@ public class F1_HRun_Algo
     	    				if (askvolume >= 1)
         	    			{
     	    					orderid = LoadDataandOrder(feedid, tradeid, "BUY");
-    	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", "
+    	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", "
     	    							+ "Tcount="+TCount+", ISBUYSELLDONE = 'true',LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , EXITID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
     	    				}
     	    			}
     	    			else 
     	    			{
-    	    				dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+    	    				dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
     	    			}
     	    			calculatefigure(feedid,tradeid);
     	    			//Ending Execution for HEAD FEED
@@ -459,7 +468,7 @@ public class F1_HRun_Algo
         	    				if (askvolume >= 1)
 	        	    			{
         	    					orderid = LoadDataandOrder(feedid, tradeid, "BUY");
-        	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
+        	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
         	    							+ "BUYPRICE="+buyPrice+",ISSHOTSELL='"+isShotsell+"',  isBought='"+isBought+"', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" ,Tcount="+TCount+", ENTRYID='"+orderid+"' WHERE FEEDSECID='"+feedid+"'"
         	    									+ " and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");   
         	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
@@ -468,7 +477,7 @@ public class F1_HRun_Algo
         	    			else
         	    			{
         	    				Logger.info("Trade Switch is OFF, paper order");
-        	    				dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
+        	    				dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
         	    						+"BUYPRICE="+buyPrice+",ISSHOTSELL='"+isShotsell+"',  isBought='"+isBought+"', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" ,Tcount="+TCount+" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
         	    			}
         	    		}
@@ -500,7 +509,7 @@ public class F1_HRun_Algo
 	        	    				if (bidvolume >= 1)
 		        	    			{
 	        	    					orderid = LoadDataandOrder(feedid, tradeid, "SELL");
-	        	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
+	        	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
 	    	        	    					+ ", isSell='"+isSell+"',Tcount="+TCount+",LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , ENTRYID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' "
 	    	        	    							+ "and ISBUYSELLDONE ='false'");   
 	        	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
@@ -508,7 +517,7 @@ public class F1_HRun_Algo
 	        	    			}
 	        	    			else
 	        	    			{
-	        	    			dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
+	        	    			dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
 	        	    					+ ", isSell='"+isSell+"',Tcount="+TCount+", LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' "
 	        	    							+ "and ISBUYSELLDONE ='false'");
 	        	    			}
@@ -546,7 +555,7 @@ public class F1_HRun_Algo
         	    				if (askvolume >= 1)
 	        	    			{
         	    					orderid = LoadDataandOrder(feedid, tradeid, "BUY");
-        	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
+        	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
         	    							+ "BUYPRICE="+buyPrice+",ISSHOTSELL='"+isShotsell+"',  isBought='"+isBought+"', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" ,Tcount="+TCount+", ENTRYID='"+orderid+"' WHERE FEEDSECID='"+feedid+"'"
         	    									+ " and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");   
         	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
@@ -555,7 +564,7 @@ public class F1_HRun_Algo
         	    			else
         	    			{
         	    				Logger.info("Trade Switch is OFF, paper order");
-        	    				dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
+        	    				dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ENTRYTIME = '"+ticktime.toString()+"',"
         	    						+"BUYPRICE="+buyPrice+",ISSHOTSELL='"+isShotsell+"',  isBought='"+isBought+"', LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" ,Tcount="+TCount+" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
         	    			}
         	    		}
@@ -585,7 +594,7 @@ public class F1_HRun_Algo
 	        	    				if (bidvolume >= 1)
 		        	    			{
 	        	    					orderid = LoadDataandOrder(feedid, tradeid, "SELL");
-	        	    					dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
+	        	    					dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
 	    	        	    					+ ", isSell='"+isSell+"',Tcount="+TCount+",LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , ENTRYID='"+orderid+"' WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' "
 	    	        	    							+ "and ISBUYSELLDONE ='false'");   
 	        	    					Logger.info("Trade Switch is ON, Order Palced : "+orderid);
@@ -593,7 +602,7 @@ public class F1_HRun_Algo
 	        	    			}
 	        	    			else
 	        	    			{
-	        	    			dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
+	        	    			dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+", "
 	        	    					+ ", isSell='"+isSell+"',Tcount="+TCount+", LOW ="+low+", HIGH="+high+", Mpoint="+Mpoint+",C="+C+", LC="+LC+", S="+S+" , WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' "
 	        	    							+ "and ISBUYSELLDONE ='false'");
 	        	    			}
@@ -640,7 +649,7 @@ public class F1_HRun_Algo
 		{
 			sellPrice = CalculateTax(sellPrice);
 			buyPrice = CalculateTax(buyPrice);
-			dbObj.executeNonQuery("UPDATE TBL_F1_HRUN_TRADES  SET SELLPRICE="+sellPrice+", BUYPRICE ="+buyPrice+" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='true'");
+			dbObj.executeNonQuery("UPDATE TBL_F4_HCAPTURE_TRADES  SET SELLPRICE="+sellPrice+", BUYPRICE ="+buyPrice+" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='true'");
 			UpdateTradeBoard(feedid, tradeid);
 		}
 		catch(Exception ex)
@@ -655,7 +664,7 @@ public class F1_HRun_Algo
 		DecimalFormat f = new DecimalFormat("##.00");
 		try
 		{
-			pldata = dbObj.getMultiColumnRecords("SELECT SUM(SELLPRICE) as \"TOTAL_SELL\",SUM(BUYPRICE) as \"TOTAL_BUY\",  SUM(TCOUNT) as \"TOTAL_TRADE\" FROM TBL_F1_HRUN_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and ISBUYSELLDONE='true';");
+			pldata = dbObj.getMultiColumnRecords("SELECT SUM(SELLPRICE) as \"TOTAL_SELL\",SUM(BUYPRICE) as \"TOTAL_BUY\",  SUM(TCOUNT) as \"TOTAL_TRADE\" FROM TBL_F4_HCAPTURE_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and ISBUYSELLDONE='true';");
 			if (pldata != null)
 			{
 				fpl = Double.parseDouble(pldata[0][0]) - Double.parseDouble(pldata[0][1]);
@@ -672,5 +681,8 @@ public class F1_HRun_Algo
 			Logger.error(ex);
 		}
 	}
+
+
+
 
 }

@@ -63,3 +63,139 @@ drop from TBL_FORMULA [42001-175]
 03-30 01:28:40 jdbc[6]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP *[*] TBL_FORMULA "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
 drop * TBL_FORMULA [42001-175]
+04-20 12:21:32 jdbc[110]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TBL_HEAD (ID BIGINT AUTO_INCREMENT, FEEDSECID VARCHAR(255) NOT NUL[*], SYMBOL VARCHAR(255) NOT NULL, LOTSIZE VARCHAR(255) NULL, TICKSIZE VARCHAR(255) NULL, EXCHANGE VARCHAR(255) NULL, INSTTYPE VARCHAR(255) NULL, EXPIRYDATE VARCHAR(255) NULL
+, EXPIRYMMMYY VARCHAR (255) NULL,  OPTTYPE VARCHAR(255) NULL, STRIKEPRICE VARCHAR(255) NULL) "; expected "NULL"; SQL statement:
+create table tbl_Head (id bigint auto_increment, feedsecid varchar(255) not nul, symbol varchar(255) not null, lotsize varchar(255) null, ticksize varchar(255) null, exchange varchar(255) null, insttype varchar(255) null, expirydate varchar(255) null
+, expirymmmyy varchar (255) null,  opttype varchar(255) null, strikeprice varchar(255) null) [42001-175]
+04-20 12:28:12 jdbc[110]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_PLAYERS" already exists; SQL statement:
+create table tbl_players (id bigint auto_increment, feedsecid varchar(255) not null, playersecid varchar(255) not null, symbol varchar(255) not null, lotsize varchar(255) null, ticksize varchar(255) null, exchange varchar(255) null, insttype varchar(255) null, expirydate varchar(255) null, expirymmmyy varchar (255) null,  opttype varchar(255) null, strikeprice varchar(255) null) [42101-175]
+04-20 15:44:34 jdbc[112]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_TRADERS" already exists; SQL statement:
+create table tbl_traders (id bigint auto_increment, feedsecid varchar(255) not null, playersecid varchar(255) not null, symbol varchar(255) not null, lotsize varchar(255) null, ticksize varchar(255) null, exchange varchar(255) null, insttype varchar(255) null, expirydd varchar(255) null, expirymmmyy varchar (255) null,  opttype varchar(255) null, strikeprice varchar(255) null) [42101-175]
+04-20 16:29:11 jdbc[115]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_HEADS" not found; SQL statement:
+INSERT INTO TBL_HEADS (FEEDSECID,SYMBOL,LOTSIZE,TICKSIZE,EXCHANGE,INSTTYPE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('INFY','INFY','INFY','INFY','INFY','INFY','INFY','INFY','INFY','INFY') [42102-175]
+04-23 15:16:15 jdbc[44]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 14 more
+04-23 16:40:20 jdbc[45]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 14 more
+04-23 17:07:51 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM TBL_TRADERS"; expected "identifier"; SQL statement:
+DELETE * FROM TBL_TRADERS [42001-175]
+04-23 17:07:51 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM TBL_HEAD"; expected "identifier"; SQL statement:
+DELETE * FROM TBL_HEAD [42001-175]
+04-23 17:07:51 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM TBL_TRADEBOARD"; expected "identifier"; SQL statement:
+DELETE * FROM TBL_TRADEBOARD [42001-175]
+04-23 19:43:53 jdbc[124]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:99)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:117)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 14 more
+04-23 21:15:23 jdbc[132]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP FROM[*] TBL_HEADFEEDS"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+DROP FROM TBL_HEADFEEDS [42001-175]
+04-23 22:17:08 jdbc[133]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:99)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:117)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 14 more
+04-23 23:16:41 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM TBL_TRADEBOARD"; expected "identifier"; SQL statement:
+DELETE * FROM TBL_TRADEBOARD [42001-175]
+04-23 23:44:20 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TBL_F1_HRUN_TRADES"; expected "TRUNCATE, {"; SQL statement:
+TBL_F1_HRUN_TRADES [42001-175]
+04-24 00:31:27 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLException: Table "TBL_F3_HRUN_TRADES" already exists; SQL statement:
+CREATE TABLE tbl_F3_HRun_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
+SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null ) [42101-175]

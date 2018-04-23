@@ -87,7 +87,6 @@ public class TradeBoard {
 	private ClockLabel dayLable;
 	private JPanel mainTable;
 	private Connection con;
-	//C:\Users\admin\Desktop\Workspace\TradeBot\resource\DB_TRADE_BOT;AUTO_SERVER=TRUE
 	public static String dbName= System.getProperty("user.dir")+"/resource/DB_TRADE_BOT;AUTO_SERVER=TRUE";
 	public static String url = "jdbc:h2:"+System.getProperty("user.dir")+File.separator+"/resource/DB_TRADE_BOT;AUTO_SERVER=TRUE";
 	private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
@@ -121,37 +120,19 @@ public class TradeBoard {
 			}
 		});
 	}
-   public void dummyclean()
-   {
-     try
-     {
-    	 String [] cleanstmts = new String[4];
-    	 cleanstmts[0]="Update TBL_F1_TRADES set Buyprice = null , sellprice=null where tradesubjectid=11536;";
-    	 cleanstmts[1]="Update TBL_F1_TRADES set Buyprice = null , sellprice=null where tradesubjectid=57025;";
-    	 cleanstmts[2]="update TBL_TRADEBOARD set F1PC = null, F1TC=null, f1pl=null where tradesecid=11536;";
-    	 cleanstmts[3]="update TBL_TRADEBOARD set F1PC = null, F1TC=null, f1pl=null where tradesecid=57025;";
-    	 dbobj.executeBatchStatement(cleanstmts);
-     }
-     catch(Exception ex)
-     {
-    	 
-     }
-   }
 	/**
 	 * Create the application.
 	 */
 	public TradeBoard() 
 	{
 		//frmTradeBoard.setVisible(true);
-		//dummyclean();
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 		USER = utils.readconfigprop("DB_USER");
 		PASS = utils.readconfigprop("DB_PASS");
 		dbName =System.getProperty("user.dir")+ utils.readconfigprop("DB_HOST_PATH");
 		objPresto = new presto_commons();
 		url= "jdbc:h2:"+System.getProperty("user.dir")+ utils.readconfigprop("DB_HOST_PATH");
-		headfeeditems = dbobj.getMultiColumnRecords("SELECT  TBL_HEADFEEDS.FEEDSUBJECTID, TBL_HEADFEEDS.SCRIB FROM TBL_HEADFEEDS " + 
-				"INNER JOIN TBL_PLAYERS ON TBL_HEADFEEDS.FEEDSUBJECTID = TBL_PLAYERS.FEEDSUBJECTID;");
+		headfeeditems = dbobj.getMultiColumnRecords("SELECT TBL_HEAD.FEEDSECID, TBL_HEAD.SYMBOL FROM TBL_HEAD INNER JOIN TBL_TRADERS ON TBL_HEAD.FEEDSECID = TBL_TRADERS.FEEDSECID;");
 		try {
 			initialize();
 		} catch (SQLException e) {
@@ -534,8 +515,7 @@ public class TradeBoard {
 						table.addMouseListener(new MouseAdapter(){
 						     public void mouseClicked(MouseEvent e){
 						      if (e.getClickCount() == 2){
-						    	  Player pl=new Player((table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2]));
-						         //loadExistingData(table.getValueAt(table.getSelectedRow(), 0).toString());
+						    	  traders pl=new traders(objPresto);
 						         }
 						      }
 						     } );
@@ -586,7 +566,14 @@ public class TradeBoard {
 									            {
 											    	 if (model.getRowCount() > 0)
 											    	 {
-									            		table.setRowSelectionInterval(selectedrow, selectedrow);
+											    		 try
+											    		 {
+											    			 table.setRowSelectionInterval(selectedrow, selectedrow);
+											    		 }
+											    		 catch(Exception ex)
+											    		 {
+											    			 
+											    		 }
 											    	 }
 									            } 
 											} catch (SQLException ex) {
@@ -624,13 +611,13 @@ public class TradeBoard {
 						if (e.isControlDown() && e.getKeyCode() == 72) 
 						{
 							// CTRL + h
-							HeadFeeds hf=new HeadFeeds(objPresto,null);
+							HeadFeeds hf=new HeadFeeds(objPresto);
 			            }
 						else if (e.isControlDown() && e.getKeyCode() == 80)
 						{
 							// CTRL + P
 							// Add new player
-							Player pl=new Player(null);
+							traders pl=new traders(objPresto);
 						}
 						else if (e.isControlDown() && e.getKeyCode() == 68)
 						{
@@ -639,7 +626,7 @@ public class TradeBoard {
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
 							if (opcion == 0) { //The ISSUE is here
-								dbobj.executeNonQuery("DELETE FROM TBL_PLAYERS WHERE TRADESUBJECTID='"+playerid+"'");
+								dbobj.executeNonQuery("DELETE FROM TBL_TRADERS WHERE TRADESECID='"+playerid+"'");
 								dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+playerid+"'");
 							} 
 						}
