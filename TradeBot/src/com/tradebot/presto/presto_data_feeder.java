@@ -33,7 +33,6 @@ public class presto_data_feeder implements FeedService {
 		{
 			executor = new Executor();
 			executor.start(this);
-			
 			for(int i =0; i<headfeedsecid.length; i++)
 			{
 				executor.subscribe(headfeedsecid[i][0], headfeedsecid[i][1]);
@@ -55,7 +54,6 @@ public class presto_data_feeder implements FeedService {
 	public void presto_stop_data_feeder(String headfeedsecid[][]) 
 	{
 		// TODO Auto-generated constructor stub
-		
 		try
 		{
 			for(int i =0; i<headfeedsecid.length; i++)

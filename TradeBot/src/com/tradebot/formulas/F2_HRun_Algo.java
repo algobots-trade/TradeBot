@@ -49,7 +49,7 @@ public class F2_HRun_Algo
 			 datefmt=new SimpleDateFormat("yyyyMMdd HH:mm:ss");
 			 for(int i =0; i < tradeplayers.size(); i++)
 			 {
-				 if (dbObj.getSingleCell("SELECT ISEND FROM TBL_FORMULA WHERE FEEDSECID ='"+feedid+"' AND TRADESECID ='"+tradeplayers.get(i)+"' AND FORMULANAME ='"+Fname+"'").trim() != "true")
+				 if ((dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FEEDSECID ='"+feedid+"' AND TRADESECID ='"+tradeplayers.get(i)+"'") !=0 )&&(dbObj.getSingleCell("SELECT ISEND FROM TBL_FORMULA WHERE FEEDSECID ='"+feedid+"' AND TRADESECID ='"+tradeplayers.get(i)+"' AND FORMULANAME ='"+Fname+"'").trim() != "true"))
 				 {
 					 if (dbObj.getRowCount("SELECT * FROM TBL_F2_HRUN_TRADES  WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") == 0)
 					 {

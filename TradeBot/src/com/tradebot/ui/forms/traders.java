@@ -426,19 +426,19 @@ public class traders {
 		lblh.setHorizontalAlignment(SwingConstants.LEFT);
 		lblh.setForeground(Color.WHITE);
 		lblh.setFont(new Font("Verdana", Font.PLAIN, 16));
-		lblh.setBounds(295, 0, 101, 49);
+		lblh.setBounds(309, 0, 101, 49);
 		innerpanel.add(lblh);
 		
 		cmbhead = new JComboBox();
 		cmbhead.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbhead.setBounds(406, 10, 240, 31);
+		cmbhead.setBounds(432, 8, 256, 31);
 		innerpanel.add(cmbhead);
 		
 		lblTraderDetails = new JLabel("TRADER DETAILS");
 		lblTraderDetails.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTraderDetails.setForeground(new Color(255, 220, 135));
 		lblTraderDetails.setFont(new Font("Verdana", Font.BOLD, 22));
-		lblTraderDetails.setBounds(0, 0, 1016, 43);
+		lblTraderDetails.setBounds(0, 0, 1023, 49);
 		trader.getContentPane().add(lblTraderDetails);
 		btnVerfiy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -728,8 +728,9 @@ public class traders {
 							
 								if (sectable.getSelectedRowCount() != 0)
 								{
-									dbobj.executeNonQuery("INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[0][0]+"','"+Secs[0][1]+"','"+Secs[0][2]+"','"+Secs[0][3]+"','"+Secs[0][4]+"','"+Secs[0][5]+"','"+Secs[0][6]+"','"+Secs[0][7]+"','"+Secs[0][8]+"','"+Secs[0][9]+"');");
-									dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[0][1]+"','"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[0][0]+"');");
+									int selrow = sectable.getSelectedRow();
+									dbobj.executeNonQuery("INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+									dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"');");
 									innerpanel.setVisible(true);
 									secPanel.setVisible(false);
 									records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS;");

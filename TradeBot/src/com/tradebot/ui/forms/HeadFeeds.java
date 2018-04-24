@@ -697,13 +697,13 @@ public class HeadFeeds {
 							
 								if (sectable.getSelectedRowCount() != 0)
 								{
-									
-										dbobj.executeNonQuery("INSERT INTO TBL_HEAD (FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[0][0]+"','"+Secs[0][1]+"','"+Secs[0][2]+"','"+Secs[0][3]+"','"+Secs[0][4]+"','"+Secs[0][5]+"','"+Secs[0][6]+"','"+Secs[0][7]+"','"+Secs[0][8]+"','"+Secs[0][9]+"');");
+										int selrow = sectable.getSelectedRow();
+										dbobj.executeNonQuery("INSERT INTO TBL_HEAD (FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
 										innerpanel.setVisible(true);
 										if (chksameplayer.isSelected())
 										{
-											dbobj.executeNonQuery("INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[0][0]+"','"+Secs[0][0]+"','"+Secs[0][1]+"','"+Secs[0][2]+"','"+Secs[0][3]+"','"+Secs[0][4]+"','"+Secs[0][5]+"','"+Secs[0][6]+"','"+Secs[0][7]+"','"+Secs[0][8]+"','"+Secs[0][9]+"');");
-											dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[0][1]+"','"+Secs[0][0]+"','"+Secs[0][0]+"');");
+											dbobj.executeNonQuery("INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[selrow][0]+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+											dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+Secs[selrow][0]+"','"+Secs[selrow][0]+"');");
 											JOptionPane.showMessageDialog(headFeed,"Created Head & Associate player !!", "Info",JOptionPane.INFORMATION_MESSAGE);	
 											
 										}
