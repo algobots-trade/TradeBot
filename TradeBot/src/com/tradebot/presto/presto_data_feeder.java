@@ -16,6 +16,12 @@ import com.sft.feedprovider.MarketDataProvider;
 import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
 import com.tradebot.formulas.F1Algo;
+import com.tradebot.formulas.F1_HRun_Algo;
+import com.tradebot.formulas.F2_HRun_Algo;
+import com.tradebot.formulas.F3_HRun_Algo;
+import com.tradebot.formulas.F4_HCapture_Algo;
+import com.tradebot.formulas.F5_HCapture_Algo;
+import com.tradebot.formulas.F6_HCapture_Algo;
 
 public class presto_data_feeder implements FeedService {
 	private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
@@ -111,10 +117,16 @@ public class presto_data_feeder implements FeedService {
 		
 		System.out.print("\n"+symbol + " , LTP : " + ltp + " , ASK VOLUME : " + asksize +  " , BID VALOUME : " + bidsize +" , LTT :  " + monthyearDayCon.format(dtformat));
 		
-		if  ("true" == dbobj.getSingleCell("SELECT ISPLAYING  FROM TBL_HEADFEEDS WHERE FEEDSUBJECTID ='"+symbol+"'"))
-		{
-			F1Algo f1obj =new F1Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-		}
+		//if  ("true" == dbobj.getSingleCell("SELECT ISPLAYING  FROM TBL_HEADFEEDS WHERE FEEDSUBJECTID ='"+symbol+"'"))
+	//	{
+			//F1Algo f1obj =new F1Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat)
+			F1_HRun_Algo f1algo = new F1_HRun_Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			//F2_HRun_Algo f2algo = new F2_HRun_Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			//F3_HRun_Algo f3algo = new F3_HRun_Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			//F4_HCapture_Algo f4algo = new F4_HCapture_Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			//F5_HCapture_Algo f5algo = new F5_HCapture_Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			//F6_HCapture_Algo f6algo = new F6_HCapture_Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		//}
 	}
 
 }

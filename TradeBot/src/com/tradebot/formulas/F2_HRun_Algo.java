@@ -665,7 +665,7 @@ public class F2_HRun_Algo
 				Logger.info("Selling Price : "+ pldata[0][0] );
 	        	Logger.info("Buying Price : "+pldata[0][1] );
 	        	Logger.info("Trade End of the Dau P&L : "+fpl +", Percentage % :"+fpercent +", Trade Count : "+pldata[0][2]);
-	        	dbObj.executeNonQuery("UPDATE  TBL_TRADEBOARD SET F1PC="+f.format(fpercent)+", F1TC="+Integer.parseInt(pldata[0][2])+", F1PL="+ f.format(fpl)+" WHERE FEEDSECID ='"+feedid+"' and TRADESECID = '"+tradeid+"'");
+	        	dbObj.executeNonQuery("UPDATE  TBL_TRADEBOARD SET F2PC="+f.format(fpercent)+", F2TC="+Integer.parseInt(pldata[0][2])+", F2PL="+ f.format(fpl)+" WHERE FEEDSECID ='"+feedid+"' and TRADESECID = '"+tradeid+"'");
 			}
 		}
 		catch(Exception ex)

@@ -1,0 +1,4 @@
+2018-04-26 15:23:59 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50496 , NIFTY
+2018-04-26 15:27:22 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@4511fb6f

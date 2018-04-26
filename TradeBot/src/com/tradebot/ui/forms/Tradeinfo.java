@@ -36,7 +36,7 @@ public class Tradeinfo {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tradeinfo window = new Tradeinfo("1233","1244","F1");
+					Tradeinfo window = new Tradeinfo("50496","52380","F1");
 					window.TradeInfofrm.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -81,7 +81,7 @@ public class Tradeinfo {
 
 		
 		}
-    	return Qstr ="SELECT FEEDSECID ,TRADESECID ,BUYPRICE ,SELLPRICE,ISSHOTSELL ,ENTRYTIME ,EXITTIME ,ENTRYID ,EXITID ,EXITCONDITION   FROM '"+strtblName+"' WHERE FEEDSECID = '"+feedid+"' AND TRADESECID='"+tradeid+"'" ;
+    	return Qstr ="SELECT FEEDSECID ,TRADESECID ,BUYPRICE ,SELLPRICE,ISSHOTSELL ,ENTRYTIME ,EXITTIME ,ENTRYID ,EXITID ,EXITCONDITION   FROM "+strtblName+" WHERE FEEDSECID = '"+feedid+"' AND TRADESECID='"+tradeid+"'" ;
     }
 	/**
 	 * Initialize the contents of the frame.
