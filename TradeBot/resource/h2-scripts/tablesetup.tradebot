@@ -80,37 +80,9 @@ CREATE TABLE tbl_F1_HRun_TRADES (ID bigint auto_increment, FEEDSECID varchar(255
 SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
 
 ***********************************************************
-#Create table tbl_F2_HRun_TRADES
 
-CREATE TABLE tbl_F2_HRun_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
+#Create table tbl_F2_HCapture_TRADES
+
+CREATE TABLE tbl_F2_HCapture_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
 SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
-
-
-***********************************************************
-#Create table tbl_F3_HRun_TRADES
-
-CREATE TABLE tbl_F3_HRun_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
-SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
-
-
-***********************************************************
-#Create table tbl_F4_HCapture_TRADES
-
-CREATE TABLE tbl_F4_HCapture_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
-SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
-
-***********************************************************
-#Create table tbl_F5_HCapture_TRADES
-
-CREATE TABLE tbl_F5_HCapture_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
-SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
-
-***********************************************************
-
-#Create table tbl_F6_HCapture_TRADES
-
-CREATE TABLE tbl_F6_HCapture_TRADES (ID bigint auto_increment, FEEDSECID varchar(255) null, TRADESECID  varchar(255) not null, ENTRYTIME  varchar(255) null, BUYPRICE double null,
-SELLPRICE double null, EXITTIME varchar(255) null, ISSHOTSELL varchar(255) null, HIGH double null, LOW double null, ISBOUGHT varchar(255) null, ISSELL varchar(255) null, MPOINT double null, EXITCONDITION varchar(255) null, TCOUNT int null, isbuyselldone varchar(255) null, ENTRYID varchar(255) null, EXITID varchar(255) null, C int null, LC int null, S int null );
-
-
 
