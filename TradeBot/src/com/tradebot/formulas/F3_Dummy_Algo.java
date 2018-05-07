@@ -13,6 +13,7 @@ import org.pmw.tinylog.Logger;
 import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
 import com.tradebot.presto.presto_commons;
+import java.sql.Connection;
 
 public class F3_Dummy_Algo {
 	public double x,y,z;
@@ -37,29 +38,31 @@ public class F3_Dummy_Algo {
     presto_commons objPresto;
     public Formula_Commons funcom=new Formula_Commons();
     public String dbtable = "TBL_F3_DUMMY_TRADES";
+    public Connection conn;
     
-	public F3_Dummy_Algo(presto_commons objconnect,  String feedid, double tradeprice, int asksize,int bidsize ,String tickdatetime) 
+	public F3_Dummy_Algo(Connection connect, presto_commons objconnect,  String feedid, double tradeprice, int asksize,int bidsize ,String tickdatetime) 
 	{
 		// TODO Auto-generated constructor stub
+		 conn = connect;
 		 tradelogpath = utils.configlogfile("F3_LOG");
 		 askvolume = asksize;
 		 bidvolume = bidsize;		 
 		 objPresto =objconnect;
 		 try
 		 {
-			 ArrayList<String> tradeplayers = dbObj.getSingleColumnRecords("SELECT TRADESUBJECTID FROM TBL_PLAYERS WHERE FEEDSUBJECTID = '"+feedid+"';");	
+			 ArrayList<String> tradeplayers = dbObj.getSingleColumnRecords(conn, "SELECT TRADESUBJECTID FROM TBL_PLAYERS WHERE FEEDSUBJECTID = '"+feedid+"';");	
 			 datefmt=new SimpleDateFormat("yyyyMMdd HH:mm:ss");
 			 for(int i =0; i < tradeplayers.size(); i++)
 			 {
-				 if (dbObj.getRowCount("SELECT * FROM TBL_F3_DUMMY_TRADES  WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") == 0)
+				 if (dbObj.getRowCount(conn,"SELECT * FROM TBL_F3_DUMMY_TRADES  WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeplayers.get(i)+"' and ISBUYSELLDONE ='false'") == 0)
 				 {
-					 dbObj.executeNonQuery("insert into TBL_F3_DUMMY_TRADES (FEEDSUBJECTID, TRADESUBJECTID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE ) values "
+					 dbObj.executeNonQuery(conn,"insert into TBL_F3_DUMMY_TRADES (FEEDSUBJECTID, TRADESUBJECTID,ENTRYTIME,BUYPRICE,SELLPRICE,EXITTIME,ISSHOTSELL,HIGH,LOW,ISBOUGHT, ISSELL,MPOINT,EXITCONDITION,TCOUNT,ISBUYSELLDONE ) values "
 					 		+ "('"+feedid+"', '"+tradeplayers.get(i)+"', null, 0.0,0.0,null,'false',0.0,0.0,'false','false',0.0,null,0,'false')");
 				 }
 				 
 				 assginF1variables(feedid, tradeplayers.get(i),tickdatetime);
 				 
-				 int tradec =Integer.parseInt(dbObj.getSingleCell("SELECT SUM(TCOUNT) as \"count\" FROM TBL_F3_DUMMY_TRADES  WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeplayers.get(i)+"'"));
+				 int tradec =Integer.parseInt(dbObj.getSingleCell(conn,"SELECT SUM(TCOUNT) as \"count\" FROM TBL_F3_DUMMY_TRADES  WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeplayers.get(i)+"'"));
 				 TCount = tradec;
 				 if (tradec < maxtradecount)
 				 {
@@ -86,7 +89,7 @@ public class F3_Dummy_Algo {
 		String [][] F1tradedata;
 		try
 		{
-			F1inputdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeid+"' and FORMULANAME ='"+Fname+"'");
+			F1inputdata = dbObj.getMultiColumnRecords(conn,"SELECT * FROM TBL_FORMULA WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeid+"' and FORMULANAME ='"+Fname+"'");
 			if (F1inputdata !=null)
 			{
 				x = ((F1inputdata[0][colx] == null) ? 0.0 : Double.parseDouble(F1inputdata[0][colx]));
@@ -101,7 +104,7 @@ public class F3_Dummy_Algo {
 				stopl=((F1inputdata[0][colstopl] == null ? 0.0 : Double.parseDouble(F1inputdata[0][colstopl])));
 				istradeswitch=((F1inputdata[0][coltradeswitch] == null ? false : Boolean.parseBoolean(F1inputdata[0][coltradeswitch])));
 			 }
-			F1tradedata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_F3_DUMMY_TRADES  where FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeid+"' and ISBUYSELLDONE='false'");
+			F1tradedata = dbObj.getMultiColumnRecords(conn ,"SELECT * FROM TBL_F3_DUMMY_TRADES  where FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID='"+tradeid+"' and ISBUYSELLDONE='false'");
 			if (F1tradedata != null)
 			{
 				isBought=((F1tradedata[0][tisbought] == null ? false : Boolean.parseBoolean(F1tradedata[0][tisbought])));
@@ -136,12 +139,12 @@ public class F3_Dummy_Algo {
 		    	    {
 		    	    	low = tickprice;
 		    	    	high =tickprice;
-		    	    	dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES SET LOW = "+low+" , HIGH ="+ high +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+		    	    	dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES SET LOW = "+low+" , HIGH ="+ high +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
 		    	    }
 					if ((isBought==false)&&(isSell==false))
 					{
-						if(tickprice > high){high = tickprice;dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET HIGH ="+ high +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}
-						if(tickprice < low) {low = tickprice;dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET LOW ="+ low +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}   
+						if(tickprice > high){high = tickprice;dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET HIGH ="+ high +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}
+						if(tickprice < low) {low = tickprice;dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET LOW ="+ low +" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");}   
 					}
 					if (isBought == true)
 			    	{
@@ -159,9 +162,9 @@ public class F3_Dummy_Algo {
 	    	    					objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 	        	    			}
         	    			}
-	    	    			dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='PROFIT',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"'and ISBUYSELLDONE ='false'");
-	    	    			funcom.calculatefigure(sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
-	    	    			//calculatefigure(feedid,tradeid);
+	    	    			dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='PROFIT',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"'and ISBUYSELLDONE ='false'");
+	    	    			funcom.calculatefigure(conn,sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
+	    	    			//calculatefigure(conn,feedid,tradeid);
 	    	    			//break;
 	    	    		}
 	    	    		else if(tickprice < Mpoint - (Mpoint*(z/100)))
@@ -178,9 +181,9 @@ public class F3_Dummy_Algo {
 	    	    					objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 	        	    			}
         	    			}
-	    	    			dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='LOSS',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
-	    	    			funcom.calculatefigure(sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
-	    	    			//calculatefigure(feedid,tradeid);
+	    	    			dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='LOSS',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+	    	    			funcom.calculatefigure(conn,sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
+	    	    			//calculatefigure(conn,feedid,tradeid);
 	    	    			//break;
 	    	    		}
 	    	    		else if(ticktime.after(t4))
@@ -197,9 +200,9 @@ public class F3_Dummy_Algo {
 	    	    					objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 	        	    			}
         	    			}
-	    	    			dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
-	    	    			funcom.calculatefigure(sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
-	    	    			//calculatefigure(feedid,tradeid);
+	    	    			dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',SELLPRICE ="+sellPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+	    	    			funcom.calculatefigure(conn,sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
+	    	    			//calculatefigure(conn,feedid,tradeid);
 	    	    			//break;	
 	    	    		}
 			    	    		
@@ -220,9 +223,9 @@ public class F3_Dummy_Algo {
 		        	    				objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 		        	    			}
 	        	    			}
-		        	    		dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='PROFIT',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
-		        	    		funcom.calculatefigure(sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
-		        	    		//calculatefigure(feedid,tradeid);
+		        	    		dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='PROFIT',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+		        	    		funcom.calculatefigure(conn,sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
+		        	    		//calculatefigure(conn,feedid,tradeid);
 		    	    		}
 		    	    		else if(tickprice > Mpoint + (Mpoint*(z/100)))
 		    	    		{
@@ -238,9 +241,9 @@ public class F3_Dummy_Algo {
 		        	    				objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 		        	    			}
 	        	    			}
-		        	    		dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='LOSS',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
-		        	    		funcom.calculatefigure(sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
-		        	    		//calculatefigure(feedid,tradeid);
+		        	    		dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='LOSS',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+		        	    		funcom.calculatefigure(conn,sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
+		        	    		//calculatefigure(conn,feedid,tradeid);
 		    	    		}
 		    	    		else if(ticktime.after(t4))
 		    	    		{
@@ -256,9 +259,9 @@ public class F3_Dummy_Algo {
 		        	    				objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 		        	    			}
 	        	    			}
-		        	    		dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
-		        	    		funcom.calculatefigure(sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
-		        	    		//calculatefigure(feedid,tradeid);
+		        	    		dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET EXITCONDITION='Validity Expires',EXITTIME='"+ticktime.toString()+"',BUYPRICE ="+buyPrice+", Tcount="+TCount+", ISBUYSELLDONE = 'true' WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+		        	    		funcom.calculatefigure(conn,sellPrice, buyPrice, feedid, tradeid, Fname, dbtable);
+		        	    		//calculatefigure(conn,feedid,tradeid);
 		    	    		}	
 		    	    }
 					else if ((isBought==false)&&(isSell==false))
@@ -291,7 +294,7 @@ public class F3_Dummy_Algo {
 				        	    					objPresto.PlaceOrder("omnesys","CM",tradeid,String.valueOf(tradeid) ,"22-02-2018","FA9749","1","0.0","0.0","na","0.0","MARKET","Presto_Mathsartz_Strategy","TestOrders","DAY","BUY");
 					        	    			}
 					        	    		}
-				        	    			dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME = '"+ticktime.toString()+"',BUYPRICE="+buyPrice+", Mpoint="+Mpoint+", isBought='"+isBought+"',Tcount="+TCount+" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+				        	    			dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME = '"+ticktime.toString()+"',BUYPRICE="+buyPrice+", Mpoint="+Mpoint+", isBought='"+isBought+"',Tcount="+TCount+" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
 				        	    			//executequery("update TBL_F1_TRADEINFO  set ISSHOTSELL='"+isShotsell+"', ENTRYTIME = '"+ticktime.toString()+"',BUYPRICE="+buyPrice+", Mpoint="+Mpoint+", isBought='"+isBought+"',Tcount="+TCount+" where symbol='"+instrument+"'");
 			        	    			
 			        	    		}
@@ -325,7 +328,7 @@ public class F3_Dummy_Algo {
 				        	    			
 					        	    			}
 				        	    			}
-				        	    			dbObj.executeNonQuery("UPDATE TBL_F3_DUMMY_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+",Mpoint="+Mpoint+", isSell='"+isSell+"',Tcount="+TCount+" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
+				        	    			dbObj.executeNonQuery(conn,"UPDATE TBL_F3_DUMMY_TRADES  SET ISSHOTSELL='"+isShotsell+"', ENTRYTIME='"+ticktime.toString()+"',SELLPRICE="+sellPrice+",Mpoint="+Mpoint+", isSell='"+isSell+"',Tcount="+TCount+" WHERE FEEDSUBJECTID='"+feedid+"' and TRADESUBJECTID ='"+tradeid+"' and ISBUYSELLDONE ='false'");
 			        	    			}
 			        	    		
 			        	    }

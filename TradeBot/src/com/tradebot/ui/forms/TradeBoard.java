@@ -112,7 +112,7 @@ public class TradeBoard {
 		dbName =System.getProperty("user.dir")+ utils.readconfigprop("DB_HOST_PATH");
 		objPresto = new presto_commons();
 		url= "jdbc:h2:"+System.getProperty("user.dir")+ utils.readconfigprop("DB_HOST_PATH");
-		headfeeditems = dbobj.getMultiColumnRecords("SELECT TBL_HEAD.FEEDSECID, TBL_HEAD.SYMBOL FROM TBL_HEAD INNER JOIN TBL_TRADERS ON TBL_HEAD.FEEDSECID = TBL_TRADERS.FEEDSECID;");
+		headfeeditems = dbobj.getMultiColumnRecords(null,"SELECT TBL_HEAD.FEEDSECID, TBL_HEAD.SYMBOL FROM TBL_HEAD INNER JOIN TBL_TRADERS ON TBL_HEAD.FEEDSECID = TBL_TRADERS.FEEDSECID;");
 		try {
 			initialize();
 		} catch (SQLException e) {
@@ -288,7 +288,7 @@ public class TradeBoard {
 				pfd = new presto_data_feeder();
 			    Thread pfdsubscriber = new Thread(new Runnable() {
 			         public void run() {
-			        	 String [][] uniquefeeds =dbobj.getMultiColumnRecords("SELECT DISTINCT(TBL_HEAD.FEEDSECID), TBL_HEAD.SYMBOL FROM TBL_HEAD INNER JOIN TBL_TRADERS ON TBL_HEAD.FEEDSECID = TBL_TRADERS.FEEDSECID;");
+			        	 String [][] uniquefeeds =dbobj.getMultiColumnRecords(null,"SELECT DISTINCT(TBL_HEAD.FEEDSECID), TBL_HEAD.SYMBOL FROM TBL_HEAD INNER JOIN TBL_TRADERS ON TBL_HEAD.FEEDSECID = TBL_TRADERS.FEEDSECID;");
 			        	 pfd.presto_start_data_feeder(uniquefeeds);
 			         }
 			    });  
@@ -303,7 +303,7 @@ public class TradeBoard {
 				try
 				{
 					db_commons dbobj=new db_commons();
-					String [][] recs = dbobj.getMultiColumnRecords("SELECT TSCRIB as SCRIB , Feedsecid, Tradesecid" +
+					String [][] recs = dbobj.getMultiColumnRecords(null,"SELECT TSCRIB as SCRIB , Feedsecid, Tradesecid" +
 							", F1PL as \"F1 P/L\", F1PC as \"F1 %\", F1TC as \"F1 COUNT\"" + 
 							", F2PL as \"F2 P/L\",F2PC as \"F2 %\", F2TC as \"F2 COUNT\"" + 
 							", F3PL as \"F3 P/L\",F3PC as \"F3 %\", F3TC as \"F3 COUNT\"" + 
@@ -607,8 +607,8 @@ public class TradeBoard {
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
 							if (opcion == 0) { //The ISSUE is here
-								dbobj.executeNonQuery("DELETE FROM TBL_TRADERS WHERE TRADESECID='"+playerid+"'");
-								dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+playerid+"'");
+								dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE TRADESECID='"+playerid+"'");
+								dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+playerid+"'");
 							} 
 						}
 						else if (e.getKeyCode() == 112)
@@ -1008,9 +1008,9 @@ public class TradeBoard {
 			                this.f5Percent = f5Percent;
 			                this.f5Trade = f5Trade;
 			                
-			                this.f6PL = f7PL;
-			                this.f6Percent = f7Percent;
-			                this.f6Trade = f7Trade;
+			                this.f6PL = f6PL;
+			                this.f6Percent = f6Percent;
+			                this.f6Trade = f6Trade;
 			                
 			                this.f7PL = f7PL;
 			                this.f7Percent = f7Percent;

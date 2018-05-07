@@ -85,7 +85,7 @@ public class Tradeinfo {
 
 		
 		}
-    	return Qstr ="SELECT ENTRYTIME, BUYPRICE, SELLPRICE, EXITTIME, ISSHOTSELL, ENTRYID, EXITID  FROM "+strtblName+" WHERE FEEDSECID = '"+feedid+"' AND TRADESECID='"+tradeid+"'" ;
+    	return Qstr ="SELECT ENTRYTIME, BUYPRICE, SELLPRICE, EXITTIME, ISSHOTSELL, ENTRYID, EXITID  FROM "+strtblName+" WHERE FEEDSECID = '"+feedid+"' AND TRADESECID='"+tradeid+"' AND TCOUNT !=0" ;
     }
     
     public String [][] gettradeinfo(String feedid, String tradeid, String formulaname)
@@ -93,7 +93,7 @@ public class Tradeinfo {
     	String [][] info = null;
     	try
     	{
-    		records = dbobj.getMultiColumnRecords(gettradeinfoquery(feedid,tradeid, formulaname));
+    		records = dbobj.getMultiColumnRecords(null,gettradeinfoquery(feedid,tradeid, formulaname));
     		info = new String[records.length][4];
     		for(int i=0; i<records.length; i++) 
     		{
@@ -103,9 +103,17 @@ public class Tradeinfo {
     			
     			//Tue, 02 Jan 2018 18:07:59 IST  E, dd MMM yyyy HH:mm:ss z
     			SimpleDateFormat dt = new SimpleDateFormat("E MMM dd hh:mm:ss z yyyy"); 
-				Date d = dt.parse(records[i][3]); 
+				Date d = null;
+				if (records[i][3] !=null)
+				{
+					dt.parse(records[i][3]); 
+				}
 				SimpleDateFormat dt1 = new SimpleDateFormat("hh:mm:ss");
-				Date d1 = dt.parse(records[i][0]); 
+				Date d1 = null;
+				if (records[i][0] !=null)
+				{
+					dt.parse(records[i][0]); 
+				}
     			if(records[i][4].equals("true"))
     			{
     				info[i][0] =dt1.format(d).toString();

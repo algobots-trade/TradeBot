@@ -276,7 +276,7 @@ public class HeadFeeds {
 		separator.setBounds(10, 216, 983, 20);
 		innerpanel.add(separator);
 		
-		records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
+		records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
 		TableModel model = new DefaultTableModel(records, col);
 		table = new JTable(model){
 		    public Component prepareRenderer(TableCellRenderer renderer, int row, int column){
@@ -523,13 +523,13 @@ public class HeadFeeds {
 		        	int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
 					if (opcion == 0) 
 					{ 
-				          dbobj.executeNonQuery("DELETE FROM TBL_HEAD WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
-				          dbobj.executeNonQuery("DELETE FROM TBL_TRADERS WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
-				          dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_HEAD WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
 				          resetfields();
 				          JOptionPane.showMessageDialog(headFeed,"Head Feed Deleted & Corrsponding Player Got Removed!!", "Success",JOptionPane.WARNING_MESSAGE);	
 				          records=null;
-						  records = dbobj.getMultiColumnRecords("SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
+						  records = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
 				          TableModel newmodel = new DefaultTableModel(records, col);
 						  table.setModel(newmodel);
 						  table.clearSelection();
@@ -673,7 +673,7 @@ public class HeadFeeds {
 							{
 								innerpanel.setVisible(true);
 								secPanel.setVisible(false);
-								records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
+								records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
 								TableModel model = new DefaultTableModel(records, col);
 								table.setModel(model);
 							}
@@ -698,12 +698,12 @@ public class HeadFeeds {
 								if (sectable.getSelectedRowCount() != 0)
 								{
 										int selrow = sectable.getSelectedRow();
-										dbobj.executeNonQuery("INSERT INTO TBL_HEAD (FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+										dbobj.executeNonQuery(null,"INSERT INTO TBL_HEAD (FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
 										innerpanel.setVisible(true);
 										if (chksameplayer.isSelected())
 										{
-											dbobj.executeNonQuery("INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[selrow][0]+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
-											dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+Secs[selrow][0]+"','"+Secs[selrow][0]+"');");
+											dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+Secs[selrow][0]+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+											dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+Secs[selrow][0]+"','"+Secs[selrow][0]+"');");
 											JOptionPane.showMessageDialog(headFeed,"Created Head & Associate player !!", "Info",JOptionPane.INFORMATION_MESSAGE);	
 											
 										}
@@ -713,7 +713,7 @@ public class HeadFeeds {
 										}
 										secPanel.setVisible(false);
 										
-										records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
+										records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
 										TableModel model = new DefaultTableModel(records, col);
 										table.setModel(model);
 								}

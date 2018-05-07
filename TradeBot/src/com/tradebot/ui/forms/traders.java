@@ -270,7 +270,7 @@ public class traders {
 		separator.setBounds(10, 228, 983, 20);
 		innerpanel.add(separator);
 		
-		records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
+		records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
 		TableModel model = new DefaultTableModel(records, col);
 		table = new JTable(model){
 		    public Component prepareRenderer(TableCellRenderer renderer, int row, int column){
@@ -528,12 +528,12 @@ public class traders {
 		        	int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
 					if (opcion == 0) 
 					{ 
-				          dbobj.executeNonQuery("DELETE FROM TBL_TRADERS WHERE TRADESECID ='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
-				          dbobj.executeNonQuery("DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE TRADESECID ='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
 				          resetfields();
 				          JOptionPane.showMessageDialog(trader,"Head Feed Deleted & Corrsponding Player Got Removed!!", "Success",JOptionPane.WARNING_MESSAGE);	
 				          records=null;
-						  records = dbobj.getMultiColumnRecords("SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
+						  records = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
 				          TableModel newmodel = new DefaultTableModel(records, col);
 						  table.setModel(newmodel);
 						  table.clearSelection();
@@ -605,7 +605,7 @@ public class traders {
 		String [] head;
 		try
 		{
-			headdata = dbobj.getMultiColumnRecords("SELECT FEEDSECID,SYMBOL,INSTTYPE FROM TBL_HEAD WHERE FEEDSECID IS NOT NULL ORDER BY ID");
+			headdata = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,INSTTYPE FROM TBL_HEAD WHERE FEEDSECID IS NOT NULL ORDER BY ID");
 			head = new String[headdata.length + 1];
 			head[0] = "--Select--";
 			for(int i =0; i < headdata.length ; i++)
@@ -704,7 +704,7 @@ public class traders {
 							{
 								innerpanel.setVisible(true);
 								secPanel.setVisible(false);
-								records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
+								records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
 								TableModel model = new DefaultTableModel(records, col);
 								table.setModel(model);
 							}
@@ -729,11 +729,11 @@ public class traders {
 								if (sectable.getSelectedRowCount() != 0)
 								{
 									int selrow = sectable.getSelectedRow();
-									dbobj.executeNonQuery("INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
-									dbobj.executeNonQuery("INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"');");
+									dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+									dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"');");
 									innerpanel.setVisible(true);
 									secPanel.setVisible(false);
-									records =dbobj.getMultiColumnRecords("SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS;");
+									records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS;");
 									TableModel model = new DefaultTableModel(records, col);
 									table.setModel(model);
 									JOptionPane.showMessageDialog(trader,"Trader Added Sucessfully !!", "INFO",JOptionPane.INFORMATION_MESSAGE);

@@ -216,7 +216,7 @@ public class LogIn {
 		try
 		{
 			com.tradebot.dbcommons.db_commons dbObj=new com.tradebot.dbcommons.db_commons();
-			int count = dbObj.getRowCount("select * from tbl_passcode where passcode='"+passcode.toString()+"'");
+			int count = dbObj.getRowCount(null,"select * from tbl_passcode where passcode='"+passcode.toString()+"'");
 			if (count == 1)
 			{
 				Logger.info("Logged in Sucessfully !!");

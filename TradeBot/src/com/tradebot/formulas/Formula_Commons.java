@@ -5,13 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.pmw.tinylog.Logger;
-
+import java.sql.Connection;
 import com.tradebot.dbcommons.db_commons;
 import com.tradebot.presto.presto_commons;
 
+
 public class Formula_Commons 
 {
-	
+	public Connection conn;
 	db_commons dbObj=new db_commons();
 	public double CalculateTax(double price)
 	{
@@ -33,14 +34,14 @@ public class Formula_Commons
 		return finalcost;
 	}
 	
-	public void UpdateTradeBoard(String feedid, String tradeid, String fname, String dbtable)
+	public void UpdateTradeBoard(Connection conn, String feedid, String tradeid, String fname, String dbtable)
 	{
 		String [][] pldata;
 		double fpl=0.00, fpercent=0;
 		DecimalFormat f = new DecimalFormat("##.00");
 		try
 		{
-			pldata = dbObj.getMultiColumnRecords("SELECT SUM(SELLPRICE) as \"TOTAL_SELL\",SUM(BUYPRICE) as \"TOTAL_BUY\",  SUM(TCOUNT) as \"TOTAL_TRADE\" FROM "+dbtable+" WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and TCOUNT=2;");
+			pldata = dbObj.getMultiColumnRecords(conn,"SELECT SUM(SELLPRICE) as \"TOTAL_SELL\",SUM(BUYPRICE) as \"TOTAL_BUY\",  SUM(TCOUNT) as \"TOTAL_TRADE\" FROM "+dbtable+" WHERE FEEDSECID='"+feedid+"' and TRADESECID='"+tradeid+"' and TCOUNT=2;");
 			if (pldata != null)
 			{
 				fpl = Double.parseDouble(pldata[0][0]) - Double.parseDouble(pldata[0][1]);
@@ -50,7 +51,7 @@ public class Formula_Commons
 				Logger.info("Selling Price : "+ pldata[0][0] );
 	        	Logger.info("Buying Price : "+pldata[0][1] );
 	        	Logger.info("Trade End of the Dau P&L : "+fpl +", Percentage % :"+fpercent +", Trade Count : "+pldata[0][2]);
-	        	dbObj.executeNonQuery("UPDATE  TBL_TRADEBOARD SET "+fname+"PC="+f.format(fpercent)+", "+fname+"TC="+Integer.parseInt(pldata[0][2])+", "+fname+"PL="+ f.format(fpl)+" WHERE FEEDSECID ='"+feedid+"' and TRADESECID = '"+tradeid+"'");
+	        	dbObj.executeNonQuery(conn, "UPDATE  TBL_TRADEBOARD SET "+fname+"PC="+f.format(fpercent)+", "+fname+"TC="+Integer.parseInt(pldata[0][2])+", "+fname+"PL="+ f.format(fpl)+" WHERE FEEDSECID ='"+feedid+"' and TRADESECID = '"+tradeid+"'");
 			}
 		}
 		catch(Exception ex)
@@ -59,8 +60,9 @@ public class Formula_Commons
 		}
 	}
 
-	public double[] calculatefigure(double sellprice, double buyprice, String feedid, String tradeid, String fname, String dbtable)
+	public double[] calculatefigure(Connection connect, double sellprice, double buyprice, String feedid, String tradeid, String fname, String dbtable)
 	{
+		conn = connect;
 		double [] buysell= new double[2];
 		try
 		{
@@ -68,7 +70,7 @@ public class Formula_Commons
 			//buysell[0] = CalculateTax(sellprice);
 			//buysell[1] = CalculateTax(buyprice);
 			//dbObj.executeNonQuery("UPDATE "+dbtable+" SET SELLPRICE="+sellprice+", BUYPRICE ="+buyprice+" WHERE FEEDSECID='"+feedid+"' and TRADESECID ='"+tradeid+"' and ISBUYSELLDONE ='true'");
-			UpdateTradeBoard(feedid, tradeid,fname,dbtable);
+			UpdateTradeBoard(conn, feedid, tradeid,fname,dbtable);
 		}
 		catch(Exception ex)
 		{
@@ -106,7 +108,7 @@ public class Formula_Commons
 		return secCode;
 	}
 
-	public String LoadDataandOrder(presto_commons objPresto, String feedid, String tradeid, String order)
+	public String LoadDataandOrder(Connection conn, presto_commons objPresto, String feedid, String tradeid, String order)
 	{
 		String OrderId = null;
 		try
@@ -119,7 +121,7 @@ public class Formula_Commons
 			 TIME_INFORCE, T_SIDE;
 			
 			ESB_EXCHANGE = "omnesys";
-			String [][] playerdet = dbObj.getMultiColumnRecords("SELECT FEEDSECID ,TRADESECID ,SYMBOL ,INSTTYPE ,EXPIRYDD ,EXPIRYMMMYY ,OPTTYPE ,STRIKEPRICE FROM TBL_TRADERS WHERE TRADESECID='"+tradeid+"' AND FEEDSECID ='"+feedid+"' ;");
+			String [][] playerdet = dbObj.getMultiColumnRecords(conn,"SELECT FEEDSECID ,TRADESECID ,SYMBOL ,INSTTYPE ,EXPIRYDD ,EXPIRYMMMYY ,OPTTYPE ,STRIKEPRICE FROM TBL_TRADERS WHERE TRADESECID='"+tradeid+"' AND FEEDSECID ='"+feedid+"' ;");
 			SECURITY_TYPE = getseccode(playerdet[0][3].toString().trim());
 			ESB_SYMBOL = playerdet[0][2].toString().trim();
 			ESB_SECURITYID = tradeid;
@@ -140,7 +142,7 @@ public class Formula_Commons
 				EXP_DATE = format2.format(date).toString();
 			}
 			ESB_ACCOUNT = "FA9749";
-			QUAN_TITY = dbObj.getSingleCell("SELECT LOTSIZE FROM TBL_FORMULA WHERE TRADESECID = '"+tradeid+"' AND FEEDSECID= '"+feedid+"'");
+			QUAN_TITY = dbObj.getSingleCell(conn,"SELECT LOTSIZE FROM TBL_FORMULA WHERE TRADESECID = '"+tradeid+"' AND FEEDSECID= '"+feedid+"'");
 			T_PRICE="0.0";
 			STOP_PRICE="0.0";
 			ESB_OPTIONTYPE=playerdet[0][6].toString().trim();
