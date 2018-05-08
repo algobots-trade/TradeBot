@@ -129,6 +129,7 @@ public class presto_data_feeder implements FeedService {
 			Logger.error(e);
 			e.printStackTrace();
 		}
+	
 		F1_HRun_Algo f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
 		F2_HCapture_Algo f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
 		F4_HRun_Algo f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));

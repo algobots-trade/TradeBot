@@ -40,7 +40,7 @@ public class Tradeinfo {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tradeinfo window = new Tradeinfo("3045","3045","F2");
+					Tradeinfo window = new Tradeinfo("1594","1594","F1");
 					window.TradeInfofrm.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -106,13 +106,13 @@ public class Tradeinfo {
 				Date d = null;
 				if (records[i][3] !=null)
 				{
-					dt.parse(records[i][3]); 
+					d = dt.parse(records[i][3]); 
 				}
 				SimpleDateFormat dt1 = new SimpleDateFormat("hh:mm:ss");
 				Date d1 = null;
 				if (records[i][0] !=null)
 				{
-					dt.parse(records[i][0]); 
+					d1 = dt.parse(records[i][0]); 
 				}
     			if(records[i][4].equals("true"))
     			{
