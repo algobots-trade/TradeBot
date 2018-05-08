@@ -13,6 +13,9 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -56,7 +59,7 @@ public class traders {
 	private JButton btnDelete;
 	private JTable table;
 	String records[][];//"FEED-ID","SYMBOL","EXCHANGE","INSTRUMENTS","LOT-SIZE","TICK-SIZE","EXPIRY-DD","EXPIRY-MMMYY","OPT-TYPE","STRIKE"
-	String col[]= {"FEEDSECID","TRADESECID","SYMBOL","EXCHANGE","INSTRUMENTS","LOT-SIZE","TICK-SIZE","EXPIRY-DD","EXPIRY-MMMYY","OPT-TYPE","STRIKE"};
+	String col[]= {"HEAD-ID","PLAYER-ID","SYMBOL","EXCHANGE","INSTRUMENTS","LOT-SIZE","TICK-SIZE","EXPIRY-DD","EXPIRY-MMMYY","OPT-TYPE","STRIKE"};
 	String colsearch[]= {"TRADESECID","SYMBOL","EXCHANGE","INSTRUMENTS","LOT-SIZE","TICK-SIZE","EXPIRY-DD","EXPIRY-MMMYY","OPT-TYPE","STRIKE"};
 	
 	//FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE
@@ -72,6 +75,9 @@ public class traders {
 	private JLabel lblTraderDetails;
 	private JLabel lblh;
 	private JComboBox cmbhead;
+	private String task ="CREATE";
+	private String updateheadid="",updatetradeid="";
+	JPanel secPanel;
 
 	/**
 	 * Launch the application.
@@ -80,7 +86,7 @@ public class traders {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					traders window = new traders(null);
+					traders window = new traders(null, null, null);
 					window.trader.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -92,7 +98,7 @@ public class traders {
 	/**
 	 * Create the application.
 	 */
-	public traders(presto_commons Presto) {
+	public traders(presto_commons Presto, String headsecid, String tradesecid) {
 		if (Presto !=null)
 		{
 			objPresto = Presto;
@@ -100,6 +106,12 @@ public class traders {
 		else
 		{
 			objPresto = new presto_commons();
+		}
+		if (headsecid !=null)
+		{
+			task = "UPDATE";
+			updateheadid=headsecid.trim();
+			updatetradeid = tradesecid.trim();
 		}
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
 		initialize();
@@ -191,7 +203,7 @@ public class traders {
 	 */
 	private void initialize() {
 		trader = new JFrame();
-		trader.setTitle("TRADERS DETAILS");
+		trader.setTitle("PLAYER'S");
 		trader.setBounds(100, 100, 1039, 662);
 		trader.getContentPane().setLayout(null);
 		trader.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -230,32 +242,19 @@ public class traders {
 		lblScrib.setHorizontalAlignment(SwingConstants.LEFT);
 		lblScrib.setForeground(Color.WHITE);
 		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 16));
+
 		cmbsegment = new JComboBox(new DefaultComboBoxModel(new String[] {"--Select--", "CM", "FO"}));
+		cmbsegment.setSelectedIndex(2);
 		cmbsegment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Logger.info("Market type set to --> "+cmbsegment.getSelectedItem().toString());
-			
-				switch (cmbsegment.getSelectedItem().toString()) {
-				case "CM":
-					String [] CMValues = new String[] {"--Select--","Equities"};
-					DefaultComboBoxModel cmmodel = new DefaultComboBoxModel(CMValues);
-					cmbinstrument.setModel( cmmodel );
-					builtSTKControls();
-					break;
-				case "FO":
-					String [] FOValues = new String[] {"--Select--","FUTIDX","FUTSTK","OPTIDX","OPTSTK","FUTCOM"};
-					DefaultComboBoxModel fomodel = new DefaultComboBoxModel(FOValues);
-					cmbinstrument.setModel( fomodel );
-					builtFUTControls();
-					break;
-				default:
-					builtSTKControls();
-					break;
-				}
+				cmbsegmentAction();
 			}
 		});
 		cmbsegment.setFont(new Font("Verdana", Font.PLAIN, 18));
 		cmbsegment.setBounds(468, 60, 178, 31);
+		
+		innerpanel.add(cmbsegment);
 		
 		innerpanel.add(cmbsegment);
 		
@@ -269,8 +268,8 @@ public class traders {
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 228, 983, 20);
 		innerpanel.add(separator);
-		
-		records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
+		//"HEAD-ID","PLAYER-ID"
+		records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID as \"HEAD-ID\",TRADESECID as \"PLAYER-ID\",SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
 		TableModel model = new DefaultTableModel(records, col);
 		table = new JTable(model){
 		    public Component prepareRenderer(TableCellRenderer renderer, int row, int column){
@@ -295,9 +294,12 @@ public class traders {
 		table.setBackground(new Color(51, 51, 51));
 		table.setFillsViewportHeight(true);
 		table.setModel(model);	
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		table.setRowHeight(23);
 		JTableHeader header = table.getTableHeader();
 		header.setForeground(new Color(36,34,29));
-	    header.setFont(new Font("Tahoma", Font.BOLD, 13));
+	    header.setFont(new Font("Tahoma", Font.BOLD, 15));
+	   
 	    JScrollPane scrollPane = new JScrollPane(table);
 	    scrollPane.setBounds(10, 237, 983, 318);
 	    innerpanel.add(scrollPane);
@@ -315,38 +317,30 @@ public class traders {
 		btnclear.setPreferredSize(new Dimension(180, 50));
 		btnclear.setBounds(131, 180, 279, 37);
 		innerpanel.add(btnclear);
+
 		
-		cmbexchange = new JComboBox(new DefaultComboBoxModel(new String[] {"--Select--", "NSEFO", "NSECM", "NSECD", "MCX"}));
+		cmbexchange = new JComboBox(new DefaultComboBoxModel(new String[] {"--Select--", "NSEFO", "NSECM"}));//"NSECD", "MCX"
 		cmbexchange.setFont(new Font("Verdana", Font.PLAIN, 18));
 		cmbexchange.setBounds(132, 60, 170, 31);
+		cmbexchange.setSelectedIndex(1);
+		cmbexchange.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cmbexchangeAction();
+			}
+		});
 		innerpanel.add(cmbexchange);
+		
+
+		
 		cmbinstrument = new JComboBox<String>();
 		cmbinstrument.setFont(new Font("Verdana", Font.PLAIN, 18));
 		cmbinstrument.setBounds(805, 60, 188, 31);
 		innerpanel.add(cmbinstrument);
-		
+		cmbsegmentAction();
+		cmbinsttypeAction();
 		cmbinstrument.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Logger.info("Market type set to --> "+cmbinstrument.getSelectedItem().toString());
-				switch (cmbinstrument.getSelectedItem().toString()) {
-				case "FUTIDX":
-				case "FUTSTK":
-					builtFUTControls();
-					break;
-				case "OPTIDX":
-				case "OPTSTK":
-					builtOPTControls();
-					break;
-				case "Equities":
-					builtSTKControls();
-					break;
-				case "FUTCOM":
-					builtFUTControls();
-					break;
-				default:
-					builtSTKControls();
-					break;
-				}
+				cmbinsttypeAction();
 			}
 		});
 		
@@ -405,6 +399,12 @@ public class traders {
 		txtExpyyyy.setCaretColor(Color.WHITE);
 		txtExpyyyy.setBackground(new Color(36, 34, 29));
 		
+		DateFormat df = new SimpleDateFormat("MMM-yy"); // Just the year, with 2 digits
+		String formattedDate = df.format(Calendar.getInstance().getTime());
+		
+		txtExpmm.setText(formattedDate.split("-")[0].toUpperCase());
+		txtExpyyyy.setText(formattedDate.split("-")[1]);
+		
 		lblRight = new JLabel("RIGHT");
 		lblRight.setBounds(688, 123, 70, 26);
 		innerpanel.add(lblRight);
@@ -416,9 +416,10 @@ public class traders {
 		cmbright.setBounds(805, 117, 188, 37);
 		innerpanel.add(cmbright);
 		cmbright.setModel(new DefaultComboBoxModel(new String[] {"--Select--", "PE", "CE"}));
+		cmbright.setSelectedIndex(2);
 		cmbright.setFont(new Font("Verdana", Font.PLAIN, 18));
 		
-		JButton btnVerfiy = new JButton("Validate");
+		JButton btnVerfiy = new JButton("CHECK");
 		btnVerfiy.setBounds(581, 180, 279, 37);
 		innerpanel.add(btnVerfiy);
 		
@@ -426,15 +427,15 @@ public class traders {
 		lblh.setHorizontalAlignment(SwingConstants.LEFT);
 		lblh.setForeground(Color.WHITE);
 		lblh.setFont(new Font("Verdana", Font.PLAIN, 16));
-		lblh.setBounds(309, 0, 101, 49);
+		lblh.setBounds(263, 0, 101, 49);
 		innerpanel.add(lblh);
 		
 		cmbhead = new JComboBox();
 		cmbhead.setFont(new Font("Verdana", Font.PLAIN, 18));
-		cmbhead.setBounds(432, 8, 256, 31);
+		cmbhead.setBounds(403, 8, 400, 31);
 		innerpanel.add(cmbhead);
 		
-		lblTraderDetails = new JLabel("TRADER DETAILS");
+		lblTraderDetails = new JLabel("PLAYER'S DETAILS");
 		lblTraderDetails.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTraderDetails.setForeground(new Color(255, 220, 135));
 		lblTraderDetails.setFont(new Font("Verdana", Font.BOLD, 22));
@@ -528,10 +529,11 @@ public class traders {
 		        	int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
 					if (opcion == 0) 
 					{ 
-				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE TRADESECID ='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
-				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"' AND TRADESECID ='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"' AND TRADESECID ='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_FORMULA WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"' AND TRADESECID ='"+table.getValueAt(table.getSelectedRow(), 1)+"'");
 				          resetfields();
-				          JOptionPane.showMessageDialog(trader,"Head Feed Deleted & Corrsponding Player Got Removed!!", "Success",JOptionPane.WARNING_MESSAGE);	
+				          JOptionPane.showMessageDialog(trader,"Playe Deleted & Corrsponding Formula Data Got Removed!!", "Success",JOptionPane.WARNING_MESSAGE);	
 				          records=null;
 						  records = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
 				          TableModel newmodel = new DefaultTableModel(records, col);
@@ -605,7 +607,14 @@ public class traders {
 		String [] head;
 		try
 		{
-			headdata = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,INSTTYPE FROM TBL_HEAD WHERE FEEDSECID IS NOT NULL ORDER BY ID");
+		    if (task=="UPDATE")
+		    {
+		    	headdata = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,INSTTYPE FROM TBL_HEAD WHERE FEEDSECID ='"+updateheadid+"' ORDER BY ID;");
+			}
+		    else
+		    {
+		    	headdata = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,INSTTYPE FROM TBL_HEAD WHERE FEEDSECID IS NOT NULL ORDER BY ID");
+		    }
 			head = new String[headdata.length + 1];
 			head[0] = "--Select--";
 			for(int i =0; i < headdata.length ; i++)
@@ -617,6 +626,10 @@ public class traders {
 			
 			DefaultComboBoxModel cmmodel = new DefaultComboBoxModel(head);
 			cmbhead.setModel( cmmodel );
+			if (task=="UPDATE")
+		    {
+				cmbhead.setSelectedIndex(1);
+		    }
 			
 		}
 		catch(Exception ex)
@@ -634,7 +647,7 @@ public class traders {
 		{	
 				if (Secs.length !=0)
 				{
-					JPanel secPanel = new JPanel();
+					secPanel = new JPanel();
 					innerpanel.setVisible(false);
 					secPanel.setVisible(true);
 					secPanel.setBackground(new Color(51, 51, 51));
@@ -671,11 +684,13 @@ public class traders {
 					sectable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 					sectable.setFillsViewportHeight(true);
 					sectable.setFont(new Font("Tahoma", Font.PLAIN, 15));
-					sectable.setModel(model);	
+					sectable.setRowHeight(23);
+					sectable.setModel(model);
+					
 					
 					JTableHeader header = sectable.getTableHeader();
 					header.setForeground(new Color(36,34,29));
-				    header.setFont(new Font("Tahoma", Font.BOLD, 13));
+				    header.setFont(new Font("Tahoma", Font.BOLD, 15));
 				    secPanel.setLayout(null);
 				    JScrollPane scrollPane = new JScrollPane(sectable);
 				    scrollPane.setBounds(10, 45, 980, 400);	    
@@ -702,11 +717,7 @@ public class traders {
 						{
 							try 
 							{
-								innerpanel.setVisible(true);
-								secPanel.setVisible(false);
-								records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
-								TableModel model = new DefaultTableModel(records, col);
-								table.setModel(model);
+								cancelmatchedsec();
 							}
 							catch(Exception ex)
 							{
@@ -719,7 +730,16 @@ public class traders {
 						}
 						});
 					
-					JButton btnSave = new JButton("Save");
+					JButton btnSave;
+					if (task == "UPDATE")
+					{
+						btnSave = new JButton("Update");
+					}
+					else
+					{
+						btnSave = new JButton("Save");
+					}
+					
 					btnSave.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) 
 						{
@@ -728,15 +748,36 @@ public class traders {
 							
 								if (sectable.getSelectedRowCount() != 0)
 								{
-									int selrow = sectable.getSelectedRow();
-									dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
-									dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"');");
-									innerpanel.setVisible(true);
-									secPanel.setVisible(false);
-									records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS;");
-									TableModel model = new DefaultTableModel(records, col);
-									table.setModel(model);
-									JOptionPane.showMessageDialog(trader,"Trader Added Sucessfully !!", "INFO",JOptionPane.INFORMATION_MESSAGE);
+									if (cmbhead.getSelectedIndex() != 0)
+									{
+										int selrow = sectable.getSelectedRow();
+										if (task == "UPDATE")
+										{
+											dbobj.executeNonQuery(null,"UPDATE TBL_FORMULA SET TRADESECID = '"+Secs[selrow][0]+"'  WHERE FEEDSECID = '"+updateheadid+"' AND TRADESECID = '"+updatetradeid+"';");
+											dbobj.executeNonQuery(null,"UPDATE TBL_TRADEBOARD SET TRADESECID = '"+Secs[selrow][0]+"' , TSCRIB = '"+Secs[selrow][1]+"' WHERE FEEDSECID = '"+updateheadid+"' AND TRADESECID = '"+updatetradeid+"';");
+											dbobj.executeNonQuery(null, "DELETE fROM TBL_TRADERS WHERE FEEDSECID = '"+updateheadid+"' AND TRADESECID = '"+updatetradeid+"';");
+											dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+											
+											JOptionPane.showMessageDialog(trader,"Trader Update Sucessfully !!", "INFO",JOptionPane.INFORMATION_MESSAGE);
+										}
+										else
+										{
+											dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADERS (FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE) VALUES ('"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"','"+Secs[selrow][1]+"','"+Secs[selrow][2]+"','"+Secs[selrow][3]+"','"+Secs[selrow][4]+"','"+Secs[selrow][5]+"','"+Secs[selrow][6]+"','"+Secs[selrow][7]+"','"+Secs[selrow][8]+"','"+Secs[selrow][9]+"');");
+											dbobj.executeNonQuery(null,"INSERT INTO TBL_TRADEBOARD (TSCRIB,FEEDSECID,TRADESECID) VALUES ('"+Secs[selrow][1]+"','"+cmbhead.getSelectedItem().toString().split("-")[0].trim()+"','"+Secs[selrow][0]+"');");
+											JOptionPane.showMessageDialog(trader,"Trader Added Sucessfully !!", "INFO",JOptionPane.INFORMATION_MESSAGE);
+								
+										}
+										innerpanel.setVisible(true);
+										secPanel.setVisible(false);
+										records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS;");
+										TableModel model = new DefaultTableModel(records, col);
+										table.setModel(model);
+									}
+									else
+									{
+										JOptionPane.showMessageDialog(trader,"Head Not Selected, pls select apropriate head from combo box !!", "ERROR",JOptionPane.ERROR_MESSAGE);
+										cancelmatchedsec();
+									}
 								}
 								else
 								{
@@ -746,6 +787,7 @@ public class traders {
 							}
 							catch(Exception ex)
 							{
+								Logger.error(ex);
 							}
 							finally
 							{
@@ -770,7 +812,79 @@ public class traders {
 			
 		}
 	}
-	
+	public void cancelmatchedsec()
+	{
+		innerpanel.setVisible(true);
+		secPanel.setVisible(false);
+		records =dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,TRADESECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ;");
+		TableModel model = new DefaultTableModel(records, col);
+		table.setModel(model);
+	}
+	public void cmbsegmentAction()
+	{
+
+		switch (cmbsegment.getSelectedItem().toString()) {
+		case "CM":
+			String [] CMValues = new String[] {"--Select--","Equities"};
+			DefaultComboBoxModel cmmodel = new DefaultComboBoxModel(CMValues);
+			cmbinstrument.setModel( cmmodel );
+			cmbinstrument.setSelectedIndex(1);
+			builtSTKControls();
+			break;
+		case "FO":
+			String [] FOValues = new String[] {"--Select--","FUTIDX","FUTSTK","OPTIDX","OPTSTK","FUTCOM"};
+			DefaultComboBoxModel fomodel = new DefaultComboBoxModel(FOValues);
+			cmbinstrument.setModel( fomodel );
+			cmbinstrument.setSelectedIndex(1);
+			builtFUTControls();
+			break;
+		default:
+			builtSTKControls();
+			break;
+		}
+	}
+	public void cmbexchangeAction()
+	{
+		switch (cmbexchange.getSelectedItem().toString()) {
+		case "NSEFO":
+			cmbsegment.setSelectedIndex(2);
+			cmbsegmentAction();
+			cmbinsttypeAction();
+			break;
+		case "NSECM":
+			cmbsegment.setSelectedIndex(1);
+			cmbsegmentAction();
+			cmbinsttypeAction();
+			break;
+		default:
+			builtSTKControls();
+			break;
+		}
+	}
+	public void cmbinsttypeAction()
+	{
+		Logger.info("Market type set to --> "+cmbinstrument.getSelectedItem().toString());
+		switch (cmbinstrument.getSelectedItem().toString()) {
+		case "FUTIDX":
+		case "FUTSTK":
+			builtFUTControls();
+			break;
+		case "OPTIDX":
+		case "OPTSTK":
+			builtOPTControls();
+			break;
+		case "Equities":
+			builtSTKControls();
+			break;
+		case "FUTCOM":
+			builtFUTControls();
+			break;
+		default:
+			builtSTKControls();
+			break;
+		}
+	}
+
 	public void resetfields()
 	{
 		

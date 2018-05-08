@@ -45,13 +45,14 @@ public class Formula_Commons
 			if (pldata != null)
 			{
 				fpl = Double.parseDouble(pldata[0][0]) - Double.parseDouble(pldata[0][1]);
-				double avg = (fpl*100) / (Integer.parseInt(pldata[0][2]));
+				int totalorders = ((Integer.parseInt(pldata[0][2]))/2);
+				double avg = (fpl*100) / totalorders;
 				fpercent = (fpl*100)/avg;
 				Logger.info("~~~~~~~~~~~~~~~");
 				Logger.info("Selling Price : "+ pldata[0][0] );
 	        	Logger.info("Buying Price : "+pldata[0][1] );
 	        	Logger.info("Trade End of the Dau P&L : "+fpl +", Percentage % :"+fpercent +", Trade Count : "+pldata[0][2]);
-	        	dbObj.executeNonQuery(conn, "UPDATE  TBL_TRADEBOARD SET "+fname+"PC="+f.format(fpercent)+", "+fname+"TC="+Integer.parseInt(pldata[0][2])+", "+fname+"PL="+ f.format(fpl)+" WHERE FEEDSECID ='"+feedid+"' and TRADESECID = '"+tradeid+"'");
+	        	dbObj.executeNonQuery(conn, "UPDATE  TBL_TRADEBOARD SET "+fname+"PC="+f.format(fpercent)+", "+fname+"TC="+totalorders+", "+fname+"PL="+ f.format(fpl)+" WHERE FEEDSECID ='"+feedid+"' and TRADESECID = '"+tradeid+"'");
 			}
 		}
 		catch(Exception ex)

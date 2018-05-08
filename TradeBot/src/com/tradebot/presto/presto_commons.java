@@ -272,7 +272,10 @@ public class presto_commons {
 		}
 		return clientID;
 	}
-	
+	public void forcelogout()
+	{
+		esbConnect.forceLogoutFromORS(USERNAME, PASSWORD);
+	}
 	public String [][] getMatchedScrib_CM_FUT(String exchange,String symbol,String segment, String instype )
 	{
 		String [][] ScribDetails = null;

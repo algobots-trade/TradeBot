@@ -14,6 +14,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
@@ -82,7 +84,6 @@ public class TradeBoard {
 	private JButton btnstop;
 	private String [][] headfeeditems;
 	presto_data_feeder pfd;
-	
 	presto_commons objPresto;
 	
 	/**
@@ -132,7 +133,16 @@ public class TradeBoard {
 		frmTradeBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTradeBoard.setBackground(new Color(36,34,29));
 		frmTradeBoard.getContentPane().setBackground(new Color(51, 51, 51));
-		
+		frmTradeBoard.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frmTradeBoard.addWindowListener(new WindowAdapter() {
+	        @Override
+	        public void windowClosing(WindowEvent event) {
+	        	objPresto.forcelogout();
+	        	System.out.println("Bye Bye ...");
+	        	frmTradeBoard.dispose();
+	            System.exit(0);
+	        }
+	    });
 		JdbcDataSource ds = new JdbcDataSource();
 		ds.setURL(url);
         con = ds.getConnection(USER,PASS);	
@@ -336,6 +346,22 @@ public class TradeBoard {
 		btnClear.setPreferredSize(new Dimension(150, 35));
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String[] queryset=new String[8];
+				queryset[0]="DELETE FROM TBL_F1_HRUN_TRADES;";
+				queryset[1]="DELETE FROM TBL_F2_HCAPTURE_TRADES;";
+				queryset[2]="DELETE FROM TBL_F4_HRUN_TRADES;";
+				queryset[3]="DELETE FROM TBL_F5_HCAPTURE_TRADES;";
+				queryset[4]="DELETE FROM TBL_F6_HRUN_TRADES;";
+				queryset[5]="DELETE FROM TBL_F7_HCAPTURE_TRADES;";
+				queryset[6]="UPDATE TBL_TRADEBOARD  set  F1PL = null ,F1PC = null ,F1TC = null , F2PL = null ,F2PC = null ,F2TC = null, F3PL = null ,F3PC = null ,F3TC = null,\n" + 
+						"F4PL = null ,F4PC = null ,F4TC = null, F5PL = null ,F5PC = null ,F5TC = null, F6PL = null ,F6PC = null ,F6TC = null, F7PL = null ,F7PC = null ,F7TC = null\n" + 
+						" WHERE ID > 0;";
+				queryset[7]="update TBL_FORMULA set ISend  = 'false' where id > 0";
+				dbobj.executeBatchStatement(null, queryset);
+
+				JOptionPane.showMessageDialog(frmTradeBoard,"Cleared all Trade info and trade board data ","INFO",JOptionPane.INFORMATION_MESSAGE);
+				
+				
 			}
 			});
 		pnlControls.add(btnClear);
@@ -351,6 +377,8 @@ public class TradeBoard {
 			         }
 			    });  
 				pfdunsubscriber.start();
+				JOptionPane.showMessageDialog(frmTradeBoard,"Run Stoped and unsubscribed all Head Feed","INFO",JOptionPane.INFORMATION_MESSAGE);
+				
 				
 			}
 		});
@@ -493,13 +521,13 @@ public class TradeBoard {
 						table.addKeyListener(this);
 						table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 						//table.setBackground(new Color(36,34,29));
-						table.addMouseListener(new MouseAdapter(){
-						     public void mouseClicked(MouseEvent e){
-						      if (e.getClickCount() == 2){
-						    	  traders pl=new traders(objPresto);
-						         }
-						      }
-						     } );
+//						table.addMouseListener(new MouseAdapter(){
+//						     public void mouseClicked(MouseEvent e){
+//						      if (e.getClickCount() == 2){
+//						    	  traders pl=new traders(objPresto);
+//						         }
+//						      }
+//						     } );
 						
 						JTableHeader header = table.getTableHeader();
 						//header.setBackground(new Color(36,34,29));
@@ -598,29 +626,38 @@ public class TradeBoard {
 						{
 							// CTRL + P
 							// Add new player
-							traders pl=new traders(objPresto);
+							traders pl=new traders(objPresto, null,null);
+						}
+						else if (e.isControlDown() && e.getKeyCode() == 85)
+						{
+							// CTRL + P
+							// Add new player
+							traders pl=new traders(objPresto, table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0],table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2]);
 						}
 						else if (e.isControlDown() && e.getKeyCode() == 68)
 						{
 							// CTRL + D 
 							// Delete Existing player
-							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
+							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2].trim();
+							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0].trim();
 							int opcion = JOptionPane.showConfirmDialog(null, "Are you sure ?", "Delete Player", JOptionPane.YES_NO_OPTION);
-							if (opcion == 0) { //The ISSUE is here
-								dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE TRADESECID='"+playerid+"'");
-								dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+playerid+"'");
+							if (opcion == 0) { 
+								dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE TRADESECID='"+playerid+"' AND FEEDSECID ='"+feedid+"'");
+								dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE TRADESECID='"+playerid+"' AND FEEDSECID ='"+feedid+"'");
+								dbobj.executeNonQuery(null,"DELETE FROM TBL_FORMULA WHERE TRADESECID='"+playerid+"' AND FEEDSECID ='"+feedid+"'");
+								
 							} 
 						}
 						else if (e.getKeyCode() == 112)
 						{
-							// CTRL + F1
+							//  F1
 							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F1");
 						}
 						else if (e.getKeyCode() == 113)
 						{
-							// CTRL + F2
+							//  F2
 							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F2");
@@ -643,21 +680,21 @@ public class TradeBoard {
 						}
 						else if (e.getKeyCode() == 116)
 						{
-							// CTRL + F5
+							//  F5
 							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F5");
 						}
 						else if (e.getKeyCode() == 117)
 						{
-							// CTRL + F6
+							//  F6
 							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F6");
 						}
 						else if (e.getKeyCode() == 118)
 						{
-							// CTRL + F7
+							//  F7
 							String feedid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[0];
 							String playerid = table.getValueAt(table.getSelectedRow(), 0).toString().split("-")[2];
 							FormulaInputs fobj=new FormulaInputs(feedid, playerid, "F7");

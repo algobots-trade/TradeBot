@@ -28,6 +28,9 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.awt.event.ActionEvent;
 import org.pmw.tinylog.*;
 import com.tradebot.dbcommons.db_commons;
@@ -230,27 +233,11 @@ public class HeadFeeds {
 		lblScrib.setForeground(Color.WHITE);
 		lblScrib.setFont(new Font("Verdana", Font.PLAIN, 16));
 		cmbsegment = new JComboBox(new DefaultComboBoxModel(new String[] {"--Select--", "CM", "FO"}));
+		cmbsegment.setSelectedIndex(2);
 		cmbsegment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Logger.info("Market type set to --> "+cmbsegment.getSelectedItem().toString());
-			
-				switch (cmbsegment.getSelectedItem().toString()) {
-				case "CM":
-					String [] CMValues = new String[] {"--Select--","Equities"};
-					DefaultComboBoxModel cmmodel = new DefaultComboBoxModel(CMValues);
-					cmbinstrument.setModel( cmmodel );
-					builtSTKControls();
-					break;
-				case "FO":
-					String [] FOValues = new String[] {"--Select--","FUTIDX","FUTSTK","OPTIDX","OPTSTK","FUTCOM"};
-					DefaultComboBoxModel fomodel = new DefaultComboBoxModel(FOValues);
-					cmbinstrument.setModel( fomodel );
-					builtFUTControls();
-					break;
-				default:
-					builtSTKControls();
-					break;
-				}
+				cmbsegmentAction();
 			}
 		});
 		cmbsegment.setFont(new Font("Verdana", Font.PLAIN, 18));
@@ -300,10 +287,12 @@ public class HeadFeeds {
 		};
 		table.setBackground(new Color(51, 51, 51));
 		table.setFillsViewportHeight(true);
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		table.setRowHeight(23);
 		table.setModel(model);	
 		JTableHeader header = table.getTableHeader();
 		header.setForeground(new Color(36,34,29));
-	    header.setFont(new Font("Tahoma", Font.BOLD, 13));
+	    header.setFont(new Font("Tahoma", Font.BOLD, 15));
 	    JScrollPane scrollPane = new JScrollPane(table);
 	    scrollPane.setBounds(10, 237, 983, 318);
 	    innerpanel.add(scrollPane);
@@ -322,37 +311,26 @@ public class HeadFeeds {
 		btnclear.setBounds(131, 168, 279, 37);
 		innerpanel.add(btnclear);
 		
-		cmbexchange = new JComboBox(new DefaultComboBoxModel(new String[] {"--Select--", "NSEFO", "NSECM", "NSECD", "MCX"}));
+		cmbexchange = new JComboBox(new DefaultComboBoxModel(new String[] {"--Select--", "NSEFO", "NSECM"}));//"NSECD", "MCX"
 		cmbexchange.setFont(new Font("Verdana", Font.PLAIN, 18));
 		cmbexchange.setBounds(132, 48, 170, 31);
+		cmbexchange.setSelectedIndex(1);
+		cmbexchange.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cmbexchangeAction();
+			}
+		});
+		
 		innerpanel.add(cmbexchange);
 		cmbinstrument = new JComboBox<String>();
 		cmbinstrument.setFont(new Font("Verdana", Font.PLAIN, 18));
 		cmbinstrument.setBounds(815, 48, 178, 31);
 		innerpanel.add(cmbinstrument);
-		
+		cmbsegmentAction();
+		cmbinsttypeAction();
 		cmbinstrument.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Logger.info("Market type set to --> "+cmbinstrument.getSelectedItem().toString());
-				switch (cmbinstrument.getSelectedItem().toString()) {
-				case "FUTIDX":
-				case "FUTSTK":
-					builtFUTControls();
-					break;
-				case "OPTIDX":
-				case "OPTSTK":
-					builtOPTControls();
-					break;
-				case "Equities":
-					builtSTKControls();
-					break;
-				case "FUTCOM":
-					builtFUTControls();
-					break;
-				default:
-					builtSTKControls();
-					break;
-				}
+				cmbinsttypeAction();
 			}
 		});
 		
@@ -410,6 +388,11 @@ public class HeadFeeds {
 		txtExpyyyy.setColumns(2);
 		txtExpyyyy.setCaretColor(Color.WHITE);
 		txtExpyyyy.setBackground(new Color(36, 34, 29));
+		DateFormat df = new SimpleDateFormat("MMM-yy"); // Just the year, with 2 digits
+		String formattedDate = df.format(Calendar.getInstance().getTime());
+		
+		txtExpmm.setText(formattedDate.split("-")[0].toUpperCase());
+		txtExpyyyy.setText(formattedDate.split("-")[1]);
 		
 		lblRight = new JLabel("RIGHT");
 		lblRight.setBounds(688, 111, 70, 26);
@@ -422,9 +405,10 @@ public class HeadFeeds {
 		cmbright.setBounds(805, 105, 188, 37);
 		innerpanel.add(cmbright);
 		cmbright.setModel(new DefaultComboBoxModel(new String[] {"--Select--", "PE", "CE"}));
+		cmbright.setSelectedIndex(2);
 		cmbright.setFont(new Font("Verdana", Font.PLAIN, 18));
 		
-		JButton btnVerfiy = new JButton("Validate");
+		JButton btnVerfiy = new JButton("CHECK");
 		btnVerfiy.setBounds(581, 168, 279, 37);
 		innerpanel.add(btnVerfiy);
 		
@@ -526,8 +510,9 @@ public class HeadFeeds {
 				          dbobj.executeNonQuery(null,"DELETE FROM TBL_HEAD WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
 				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADERS WHERE FEEDSECID ='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
 				          dbobj.executeNonQuery(null,"DELETE FROM TBL_TRADEBOARD WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
+				          dbobj.executeNonQuery(null,"DELETE FROM TBL_FORMULA  WHERE FEEDSECID='"+table.getValueAt(table.getSelectedRow(), 0)+"'");
 				          resetfields();
-				          JOptionPane.showMessageDialog(headFeed,"Head Feed Deleted & Corrsponding Player Got Removed!!", "Success",JOptionPane.WARNING_MESSAGE);	
+				          JOptionPane.showMessageDialog(headFeed,"Head Feed Deleted & Corrsponding Player and Formula Data are Removed!!", "Success",JOptionPane.WARNING_MESSAGE);	
 				          records=null;
 						  records = dbobj.getMultiColumnRecords(null,"SELECT FEEDSECID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_HEAD ;");
 				          TableModel newmodel = new DefaultTableModel(records, col);
@@ -539,6 +524,8 @@ public class HeadFeeds {
 		headFeed.setVisible(true);
 		builtSTKControls();
 	}
+	
+	
 	
 
 	public Boolean STKvalidations()
@@ -640,11 +627,12 @@ public class HeadFeeds {
 					sectable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 					sectable.setFillsViewportHeight(true);
 					sectable.setFont(new Font("Tahoma", Font.PLAIN, 15));
+					sectable.setRowHeight(23);
 					sectable.setModel(model);	
 					
 					JTableHeader header = sectable.getTableHeader();
 					header.setForeground(new Color(36,34,29));
-				    header.setFont(new Font("Tahoma", Font.BOLD, 13));
+				    header.setFont(new Font("Tahoma", Font.BOLD, 15));
 				    secPanel.setLayout(null);
 				    JScrollPane scrollPane = new JScrollPane(sectable);
 				    scrollPane.setBounds(10, 45, 980, 400);	    
@@ -749,7 +737,70 @@ public class HeadFeeds {
 			
 		}
 	}
-	
+	public void cmbsegmentAction()
+	{
+
+		switch (cmbsegment.getSelectedItem().toString()) {
+		case "CM":
+			String [] CMValues = new String[] {"--Select--","Equities"};
+			DefaultComboBoxModel cmmodel = new DefaultComboBoxModel(CMValues);
+			cmbinstrument.setModel( cmmodel );
+			cmbinstrument.setSelectedIndex(1);
+			builtSTKControls();
+			break;
+		case "FO":
+			String [] FOValues = new String[] {"--Select--","FUTIDX","FUTSTK","OPTIDX","OPTSTK","FUTCOM"};
+			DefaultComboBoxModel fomodel = new DefaultComboBoxModel(FOValues);
+			cmbinstrument.setModel( fomodel );
+			cmbinstrument.setSelectedIndex(1);
+			builtFUTControls();
+			break;
+		default:
+			builtSTKControls();
+			break;
+		}
+	}
+	public void cmbexchangeAction()
+	{
+		switch (cmbexchange.getSelectedItem().toString()) {
+		case "NSEFO":
+			cmbsegment.setSelectedIndex(2);
+			cmbsegmentAction();
+			cmbinsttypeAction();
+			break;
+		case "NSECM":
+			cmbsegment.setSelectedIndex(1);
+			cmbsegmentAction();
+			cmbinsttypeAction();
+			break;
+		default:
+			builtSTKControls();
+			break;
+		}
+	}
+	public void cmbinsttypeAction()
+	{
+		Logger.info("Market type set to --> "+cmbinstrument.getSelectedItem().toString());
+		switch (cmbinstrument.getSelectedItem().toString()) {
+		case "FUTIDX":
+		case "FUTSTK":
+			builtFUTControls();
+			break;
+		case "OPTIDX":
+		case "OPTSTK":
+			builtOPTControls();
+			break;
+		case "Equities":
+			builtSTKControls();
+			break;
+		case "FUTCOM":
+			builtFUTControls();
+			break;
+		default:
+			builtSTKControls();
+			break;
+		}
+	}
 	public void resetfields()
 	{
 		
