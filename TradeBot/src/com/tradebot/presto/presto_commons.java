@@ -278,55 +278,30 @@ public class presto_commons {
 		String [][] ScribDetails = null;
 	 try
 	 {
-		 if (!instype.contains("OPT"))
-		 {
-			 boolean constate = false;
-				
-				try
-				{
-					constate = esbConnect.getConnectionStatus(USERNAME);
-				}
-				catch(Exception ex)
-				{
-					
-				}
-				if (constate == false)
-				{
-				  checkandLoginFinvasia();
-				}
-			 ESBEXCHANGE = exchange;
-			 ESBSYMBOL = symbol;
-			 SEGMENT = segment;
-			 INSTRUMENTTYPE = instype;
-			 SYMBOLDETAIL = esbConnect.getSymbolDetailsForInstrType(ESBEXCHANGE, ESBSYMBOL, INSTRUMENTTYPE, SEGMENT);
-			 if (SYMBOLDETAIL != null)
-			 {
-				 
-				 if (instype.equals("Equities"))
+		 checkandLoginFinvasia();
+		 ESBEXCHANGE = exchange;
+		 ESBSYMBOL = symbol;
+		 SEGMENT = segment;
+		 INSTRUMENTTYPE = instype;
+		 SYMBOLDETAIL = esbConnect.getSymbolDetailsForInstrType(ESBEXCHANGE, ESBSYMBOL, INSTRUMENTTYPE, SEGMENT);
+		 if (SYMBOLDETAIL != null)
+		 { 
+				 ScribDetails = new String[SYMBOLDETAIL.size()][10];
+				 for (int i=0;i<SYMBOLDETAIL.size();i++)
 				 {
-					 ScribDetails = new String[SYMBOLDETAIL.size()][10];
-					 for (int i=0;i<SYMBOLDETAIL.size();i++)
-					 {
-						 ScribDetails[i][0] = SYMBOLDETAIL.get(i).getSecID().toString();
-						 ScribDetails[i][1] = SYMBOLDETAIL.get(i).getSymbol().toString();
-						 ScribDetails[i][2] = SYMBOLDETAIL.get(i).getExchange().toString();
-						 ScribDetails[i][3] = SYMBOLDETAIL.get(i).getInstrumenttype().toString();
-						 ScribDetails[i][4] = SYMBOLDETAIL.get(i).getLotsize().toString();
-						 ScribDetails[i][5] = SYMBOLDETAIL.get(i).getTicksize().toString();
-						 ScribDetails[i][6] = SYMBOLDETAIL.get(i).getExpiryDay().toString();
-						 ScribDetails[i][7] = SYMBOLDETAIL.get(i).getExpiryMonth().toString();
-						 ScribDetails[i][8] = SYMBOLDETAIL.get(i).getOpType().toString();
-						 ScribDetails[i][9] = SYMBOLDETAIL.get(i).getStrikePrice().toString();
-						 
-					 }
+					 ScribDetails[i][0] = SYMBOLDETAIL.get(i).getSecID().toString();
+					 ScribDetails[i][1] = SYMBOLDETAIL.get(i).getSymbol().toString();
+					 ScribDetails[i][2] = SYMBOLDETAIL.get(i).getExchange().toString();
+					 ScribDetails[i][3] = SYMBOLDETAIL.get(i).getInstrumenttype().toString();
+					 ScribDetails[i][4] = SYMBOLDETAIL.get(i).getLotsize().toString();
+					 ScribDetails[i][5] = SYMBOLDETAIL.get(i).getTicksize().toString();
+					 ScribDetails[i][6] = ((SYMBOLDETAIL.get(i).getExpiryDay().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getExpiryDay().toString()));
+					 ScribDetails[i][7] = ((SYMBOLDETAIL.get(i).getExpiryMonth().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getExpiryMonth().toString()));
+					 ScribDetails[i][8] = ((SYMBOLDETAIL.get(i).getOpType().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getOpType().toString()));
+					 ScribDetails[i][9] = ((SYMBOLDETAIL.get(i).getStrikePrice().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getStrikePrice().toString()));
 				 }
-				 else if ((instype =="FUTSTK") || (instype =="FUTSTK") || (instype =="FUTCOM") )
-				 {
-					 
-				 }
-				 
+
 			 }
-		 }
 	 }
 	 catch(Exception ex)
 	 {
@@ -334,9 +309,49 @@ public class presto_commons {
 	 }
 	 finally
 	 {
-		 
+		 	
 	 }
 	 return ScribDetails;
+	}
+	public String [][] getMatchedScrib_OPT(String exchange,String symbol,String expdate, String optType )
+	{
+		 String [][] ScribDetails = null;
+		 try
+		 {
+			 checkandLoginFinvasia();
+			 ESBEXCHANGE = exchange;
+			 ESBSYMBOL = symbol;
+			 EXPDATE = expdate;
+			 ESBOPTIONTYPE = optType;
+			 SYMBOLDETAIL = esbConnect.getSymbolDetailsDerivativeOPT(ESBEXCHANGE, ESBSYMBOL, EXPDATE, ESBOPTIONTYPE);
+			 if (SYMBOLDETAIL != null)
+			 { 
+				 ScribDetails = new String[SYMBOLDETAIL.size()][10];
+				 for (int i=0;i<SYMBOLDETAIL.size();i++)
+				 {
+					 ScribDetails[i][0] = SYMBOLDETAIL.get(i).getSecID().toString();
+					 ScribDetails[i][1] = SYMBOLDETAIL.get(i).getSymbol().toString();
+					 ScribDetails[i][2] = SYMBOLDETAIL.get(i).getExchange().toString();
+					 ScribDetails[i][3] = SYMBOLDETAIL.get(i).getInstrumenttype().toString();
+					 ScribDetails[i][4] = SYMBOLDETAIL.get(i).getLotsize().toString();
+					 ScribDetails[i][5] = SYMBOLDETAIL.get(i).getTicksize().toString();
+					 ScribDetails[i][6] = ((SYMBOLDETAIL.get(i).getExpiryDay().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getExpiryDay().toString()));
+					 ScribDetails[i][7] = ((SYMBOLDETAIL.get(i).getExpiryMonth().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getExpiryMonth().toString()));
+					 ScribDetails[i][8] = ((SYMBOLDETAIL.get(i).getOpType().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getOpType().toString()));
+					 ScribDetails[i][9] = ((SYMBOLDETAIL.get(i).getStrikePrice().toString() == "0" ? "null" : SYMBOLDETAIL.get(i).getStrikePrice().toString()));
+				 }
+			}
+			
+		 }
+		 catch(Exception ex)
+		 {
+			 System.out.println(exchange.toString());
+		 }
+		 finally
+		 {
+			 	
+		 }
+		 return ScribDetails;
 	}
 
 }

@@ -15,7 +15,14 @@ import com.sft.feedprovider.MCXMarketPicture.OrderByPrice;
 import com.sft.feedprovider.MarketDataProvider;
 import com.tradebot.dbcommons.db_commons;
 import com.tradebot.dbcommons.tradebot_utility;
-import com.tradebot.formulas.F1Algo;
+import com.tradebot.formulas.F1_HRun_Algo;
+import com.tradebot.formulas.F2_HCapture_Algo;
+import com.tradebot.formulas.F4_HRun_Algo;
+import com.tradebot.formulas.F5_HCapture_Algo;
+import com.tradebot.formulas.F6_HRun_Algo;
+import com.tradebot.formulas.F7_HCapture_Algo;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class presto_data_feeder implements FeedService {
 	private String configprop=System.getProperty("user.dir")+File.separator+"resource"+File.separator+"config.properties";
@@ -24,16 +31,18 @@ public class presto_data_feeder implements FeedService {
 	db_commons dbobj=new db_commons();
 	static String sleep = "1";
 	Executor executor;
-	 presto_commons objPresto;
+	presto_commons objPresto;
+	Connection conn;
+	
 	public void presto_start_data_feeder(String headfeedsecid[][]) 
 	{
 		// TODO Auto-generated constructor stub
 		tradelogpath = utils.configlogfile("TRADEBOT_LOG");
+		conn = dbobj.CheckandConnectDB(conn);
 		try
 		{
 			executor = new Executor();
 			executor.start(this);
-			
 			for(int i =0; i<headfeedsecid.length; i++)
 			{
 				executor.subscribe(headfeedsecid[i][0], headfeedsecid[i][1]);
@@ -55,7 +64,6 @@ public class presto_data_feeder implements FeedService {
 	public void presto_stop_data_feeder(String headfeedsecid[][]) 
 	{
 		// TODO Auto-generated constructor stub
-		
 		try
 		{
 			for(int i =0; i<headfeedsecid.length; i++)
@@ -109,14 +117,27 @@ public class presto_data_feeder implements FeedService {
 		{
 			bidsize = bidsize + (int) bid.quantity;
 		}
-		//System.out.print("\n"+symbol + " , " + ltp + " , " + subject.getAsk(symbol) +  " , " + subject.getBid(symbol) +" , " + monthyearDayCon.format(dtformat));
 		
 		System.out.print("\n"+symbol + " , LTP : " + ltp + " , ASK VOLUME : " + asksize +  " , BID VALOUME : " + bidsize +" , LTT :  " + monthyearDayCon.format(dtformat));
-		
-		if  ("true" == dbobj.getSingleCell("SELECT ISPLAYING  FROM TBL_HEADFEEDS WHERE FEEDSUBJECTID ='"+symbol+"'"))
-		{
-			F1Algo f1obj =new F1Algo(objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		try {
+			if (conn.isClosed())
+			{
+				conn = dbobj.CheckandConnectDB(conn);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			Logger.error(e);
+			e.printStackTrace();
 		}
+	
+		F1_HRun_Algo f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		F2_HCapture_Algo f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		F4_HRun_Algo f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		F5_HCapture_Algo f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		F6_HRun_Algo f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		F7_HCapture_Algo f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+		
+		
 	}
 
 }
