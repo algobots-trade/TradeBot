@@ -89,7 +89,7 @@ public class Tradeinfo {
     }
     
     public String [][] gettradeinfo(String feedid, String tradeid, String formulaname)
-    {
+    { 
     	String [][] info = null;
     	try
     	{
