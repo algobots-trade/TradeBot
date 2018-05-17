@@ -1,280 +1,259 @@
-2018-05-08 20:50:03 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
-INFO: [[Ljava.lang.String;@29b32244
-2018-05-08 21:00:03 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
-INFO: [[Ljava.lang.String;@1fe70d79
-2018-05-08 22:32:58 [AWT-EventQueue-0] com.tradebot.dbcommons.db_commons.getMultiColumnRecords()
-ERROR: org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT FEEDSECID AS HEAD-[*]ID,TRADESECID AS PLAYER-ID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ; "; SQL statement:
-SELECT FEEDSECID as HEAD-ID,TRADESECID as PLAYER-ID,SYMBOL,EXCHANGE,INSTTYPE,LOTSIZE,TICKSIZE,EXPIRYDD,EXPIRYMMMYY,OPTTYPE,STRIKEPRICE FROM TBL_TRADERS ; [42000-196]
-	at org.h2.engine.SessionRemote.done(SessionRemote.java:629)
-	at org.h2.command.CommandRemote.prepare(CommandRemote.java:83)
-	at org.h2.command.CommandRemote.<init>(CommandRemote.java:49)
-	at org.h2.engine.SessionRemote.prepareCommand(SessionRemote.java:499)
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
-	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
-	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
-	at com.tradebot.dbcommons.db_commons.getMultiColumnRecords(db_commons.java:252)
-	at com.tradebot.ui.forms.traders.initialize(traders.java:273)
-	at com.tradebot.ui.forms.traders.<init>(traders.java:105)
-	at com.tradebot.ui.forms.traders$1.run(traders.java:83)
-	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+2018-05-16 12:13:16 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50639 , NIFTY
+2018-05-16 12:13:16 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 43927 , BANKNIFTY
+2018-05-16 12:13:25 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 39666 , BANKNIFTY
+2018-05-16 12:13:26 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50139 , NIFTY
+2018-05-16 12:13:26 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 48337 , NIFTY
+2018-05-16 12:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-16 12:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
+INFO: Market type set to --> FUTIDX
+2018-05-16 12:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-16 12:20:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-16 12:20:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
+INFO: Market type set to --> FUTIDX
+2018-05-16 12:20:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-16 12:29:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-16 12:29:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
+INFO: Market type set to --> FUTIDX
+2018-05-16 12:29:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-16 13:13:27 [Thread-11] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 43927 , BANKNIFTY
+2018-05-16 13:13:28 [Thread-11] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50643 , NIFTY
+2018-05-16 13:21:54 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+	at java.util.Calendar.setTime(Unknown Source)
+	at java.text.SimpleDateFormat.format(Unknown Source)
+	at java.text.SimpleDateFormat.format(Unknown Source)
+	at java.text.DateFormat.format(Unknown Source)
+	at com.tradebot.ui.forms.Tradeinfo.gettradeinfo(Tradeinfo.java:125)
+	at com.tradebot.ui.forms.Tradeinfo.initialize(Tradeinfo.java:149)
+	at com.tradebot.ui.forms.Tradeinfo.<init>(Tradeinfo.java:56)
+	at com.tradebot.ui.forms.TradeBoard$Outerpane.keyPressed(TradeBoard.java:707)
+	at java.awt.AWTEventMulticaster.keyPressed(Unknown Source)
+	at java.awt.Component.processKeyEvent(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
 	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
 	at java.awt.EventQueue.access$500(Unknown Source)
 	at java.awt.EventQueue$3.run(Unknown Source)
 	at java.awt.EventQueue$3.run(Unknown Source)
 	at java.security.AccessController.doPrivileged(Native Method)
 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
 	at java.awt.EventQueue.dispatchEvent(Unknown Source)
 	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
 	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
-	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
-	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
-	at java.awt.EventDispatchThread.run(Unknown Source)
-2018-05-08 22:34:55 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 22:35:03 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> OPTSTK
-2018-05-08 22:35:51 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
+	...
+2018-05-16 13:22:05 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+	at java.util.Calendar.setTime(Unknown Source)
+	at java.text.SimpleDateFormat.format(Unknown Source)
+	at java.text.SimpleDateFormat.format(Unknown Source)
+	at java.text.DateFormat.format(Unknown Source)
+	at com.tradebot.ui.forms.Tradeinfo.gettradeinfo(Tradeinfo.java:125)
+	at com.tradebot.ui.forms.Tradeinfo.initialize(Tradeinfo.java:149)
+	at com.tradebot.ui.forms.Tradeinfo.<init>(Tradeinfo.java:56)
+	at com.tradebot.ui.forms.TradeBoard$Outerpane.keyPressed(TradeBoard.java:707)
+	at java.awt.AWTEventMulticaster.keyPressed(Unknown Source)
+	at java.awt.Component.processKeyEvent(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	...
+2018-05-16 14:02:02 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2cd82da4
+2018-05-16 14:02:05 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+	at java.util.Calendar.setTime(Unknown Source)
+	at java.text.SimpleDateFormat.format(Unknown Source)
+	at java.text.SimpleDateFormat.format(Unknown Source)
+	at java.text.DateFormat.format(Unknown Source)
+	at com.tradebot.ui.forms.Tradeinfo.gettradeinfo(Tradeinfo.java:119)
+	at com.tradebot.ui.forms.Tradeinfo.initialize(Tradeinfo.java:149)
+	at com.tradebot.ui.forms.Tradeinfo.<init>(Tradeinfo.java:56)
+	at com.tradebot.ui.forms.TradeBoard$Outerpane.keyPressed(TradeBoard.java:707)
+	at java.awt.AWTEventMulticaster.keyPressed(Unknown Source)
+	at java.awt.Component.processKeyEvent(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	...
+2018-05-16 14:05:39 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@672d5062
+2018-05-16 14:05:46 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2162e450
+2018-05-16 14:14:40 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2ff77efb
+2018-05-16 14:16:15 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:21:33 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2db8a28
+2018-05-16 14:21:54 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2519ca4e
+2018-05-16 14:22:13 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@6725e6c8
+2018-05-16 14:22:23 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@22c65867
+2018-05-16 14:22:36 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:23:43 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:46:45 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:47:01 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:47:05 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:47:14 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:47:18 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:49:31 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:52:13 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@40aae4d1
+2018-05-16 14:52:23 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:52:37 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@79b230d0
+2018-05-16 14:54:17 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 14:59:24 [AWT-EventQueue-0] com.tradebot.ui.forms.Tradeinfo.gettradeinfo()
+ERROR: java.lang.NullPointerException
+2018-05-16 19:40:22 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@7b002803
+2018-05-16 19:40:29 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@4894f408
+2018-05-17 14:06:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-17 14:06:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
+INFO: Market type set to --> FUTIDX
+2018-05-17 14:06:56 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+ERROR: java.lang.NullPointerException
+2018-05-17 14:07:04 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> --Select--
-2018-05-08 22:35:57 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 22:36:00 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> OPTSTK
-2018-05-08 22:36:24 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
+2018-05-17 14:07:10 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> --Select--
-2018-05-08 22:40:34 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-08 22:40:35 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 22:40:37 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> OPTSTK
-2018-05-08 23:16:52 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 23:16:53 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> OPTIDX
-2018-05-08 23:17:10 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
+2018-05-17 14:07:13 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> --Select--
-2018-05-08 23:17:12 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 23:17:14 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FUTSTK
-2018-05-08 23:17:15 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> OPTIDX
-2018-05-08 23:17:58 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 23:18:00 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 23:18:04 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> OPTSTK
-2018-05-08 23:36:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-08 23:36:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> Equities
-2018-05-08 23:54:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-08 23:54:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-08 23:54:00 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-08 23:54:07 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> OPTIDX
-2018-05-08 23:54:10 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-08 23:54:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-08 23:54:14 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-08 23:54:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-08 23:54:24 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-08 23:54:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-08 23:54:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-08 23:54:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:00:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:00:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:00:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:01:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:01:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:01:32 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:02:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:02:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:02:42 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:03:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:03:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:03:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:03:44 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-09 00:03:44 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:03:44 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:03:44 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:03:46 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-09 00:03:46 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:03:46 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:03:46 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:03:52 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> OPTIDX
-2018-05-09 00:11:07 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:11:07 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:11:07 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:11:34 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-09 00:11:34 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:11:34 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:11:34 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:11:37 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-09 00:11:37 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:11:37 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:11:37 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:11:39 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> OPTIDX
-2018-05-09 00:18:06 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:18:06 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:18:06 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:18:12 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> FO
-2018-05-09 00:18:12 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:18:14 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-09 00:18:14 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:18:25 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-09 00:18:25 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:18:25 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:18:25 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:19:18 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:19:18 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:19:18 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:19:21 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-09 00:19:21 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:19:21 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:19:21 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:20:51 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:20:51 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:20:51 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:20:57 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
-INFO: Market type set to --> CM
-2018-05-09 00:20:57 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:20:57 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:20:57 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> Equities
-2018-05-09 00:38:56 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:38:56 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 00:38:56 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 00:39:25 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.actionPerformed()
+2018-05-17 14:07:17 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
 INFO: Market type set to --> --Select--
-2018-05-09 00:41:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+2018-05-17 14:08:28 [Thread-11] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50639 , NIFTY
+2018-05-17 14:08:28 [Thread-11] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50139 , NIFTY
+2018-05-17 14:39:22 [Thread-7] com.tradebot.presto.presto_data_feeder.presto_start_data_feeder()
+INFO: Subscribed - 50139 , NIFTY
+2018-05-17 15:43:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
 ERROR: java.lang.NullPointerException
-2018-05-09 00:41:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
+2018-05-17 15:43:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
 INFO: Market type set to --> FUTIDX
-2018-05-09 00:41:18 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
+2018-05-17 15:43:23 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
 ERROR: java.lang.NullPointerException
-2018-05-09 00:41:28 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 01:32:19 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
+2018-05-17 15:49:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
 ERROR: java.lang.NullPointerException
-2018-05-09 01:32:19 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
+2018-05-17 15:49:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
 INFO: Market type set to --> FUTIDX
-2018-05-09 01:32:19 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
+2018-05-17 15:49:20 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
 ERROR: java.lang.NullPointerException
-2018-05-09 01:33:02 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 01:33:02 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 01:33:02 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 01:33:18 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> OPTSTK
-2018-05-09 01:34:14 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
-INFO: [[Ljava.lang.String;@2fe83b57
-2018-05-09 01:34:19 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
-INFO: [[Ljava.lang.String;@4a73bfe1
-2018-05-09 01:34:21 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
-INFO: [[Ljava.lang.String;@2c5e317d
-2018-05-09 01:34:25 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
-INFO: [[Ljava.lang.String;@4c45b514
-2018-05-09 01:40:12 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 01:40:12 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 01:40:12 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 02:35:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 02:35:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 02:35:35 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 02:35:40 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 02:35:49 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 02:35:53 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 02:35:57 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 02:36:01 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 02:36:03 [AWT-EventQueue-0] com.tradebot.ui.forms.HeadFeeds.actionPerformed()
-INFO: Market type set to --> --Select--
-2018-05-09 02:36:11 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
-2018-05-09 02:36:11 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.cmbinsttypeAction()
-INFO: Market type set to --> FUTIDX
-2018-05-09 02:36:11 [AWT-EventQueue-0] com.tradebot.ui.forms.traders.builtFUTControls()
-ERROR: java.lang.NullPointerException
+2018-05-17 15:50:26 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@646194e
+2018-05-17 15:50:45 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@2458c79b
+2018-05-17 15:59:21 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@a98a65e
+2018-05-17 16:10:21 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@1742e7a5
+2018-05-17 16:16:53 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@36ca389f
+2018-05-17 16:18:25 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@67569739
+2018-05-17 16:22:07 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@764ac372
+2018-05-17 16:29:45 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@1d240db6
+2018-05-17 16:29:46 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@5e7666cf

@@ -128,18 +128,26 @@ public class presto_data_feeder implements FeedService {
 			{
 				conn = dbobj.CheckandConnectDB(conn);
 			}
-			Thread threadF1 = new Thread(){
-			    public void run(){
-			    	f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-					f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-					f3algo = new F3_Dummy_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-					f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-					f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-					f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-					f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			    }
-			  };
-			threadF1.start();
+	    	f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			f3algo = new F3_Dummy_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+			f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//
+//			Thread threadF1 = new Thread(){
+//			    public void run(){
+//			    	f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//					f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//					f3algo = new F3_Dummy_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//					f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//					f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//					f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//					f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+//			    }
+//			  };
+//			threadF1.start();
 			
 		} 
 		catch (SQLException e) {
