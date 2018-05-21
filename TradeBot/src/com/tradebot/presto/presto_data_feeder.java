@@ -104,14 +104,7 @@ public class presto_data_feeder implements FeedService {
 			c.setTime(date);
 			time = subject.getLastTradeTime(symbol);
 			dtformat = new Date((time * 1000) + c.getTimeInMillis());
-			String value =String.valueOf(subject.getLastTradePrice(symbol)).replace(".0", "");//.split(".")[0];
-			int interval = value.length() - 2;
-			StringBuilder sb = new StringBuilder(value);
-			for(int i = 0; i < value.length() / interval; i++) {
-			    sb.insert(((i + 1) * interval) + i, separator);
-			}
-			Double ltp = Double.valueOf(sb.toString());
-			//System.out.println("------LTP: " + ltp);
+			Double ltp = Double.valueOf(subject.getLastTradePrice(symbol)/100);
 			//List <OrderByPrice> aksvalues =  subject.getAsk(symbol);
 			//int asksize=0, bidsize=0;
 			//for(OrderByPrice ask : aksvalues)
@@ -128,26 +121,18 @@ public class presto_data_feeder implements FeedService {
 			{
 				conn = dbobj.CheckandConnectDB(conn);
 			}
-	    	f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			f3algo = new F3_Dummy_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-			f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//
-//			Thread threadF1 = new Thread(){
-//			    public void run(){
-//			    	f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//					f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//					f3algo = new F3_Dummy_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//					f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//					f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//					f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//					f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
-//			    }
-//			  };
-//			threadF1.start();
+			Thread threadF1 = new Thread(){
+						    public void run(){
+						    	f1algo = new F1_HRun_Algo(conn, objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+								f2algo = new F2_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+								//f3algo = new F3_Dummy_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+								f4algo = new F4_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+								f5algo = new F5_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+								f6algo = new F6_HRun_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+								f7algo = new F7_HCapture_Algo(conn,objPresto, symbol,ltp, asksize,bidsize, monthyearDayCon.format(dtformat));
+						    }
+						  };
+			threadF1.start();
 			
 		} 
 		catch (SQLException e) {

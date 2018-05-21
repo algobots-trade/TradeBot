@@ -1165,3 +1165,149 @@ UPDATE TBL_FORMULA SET TRADESECID = '4963'  WHERE FEEDSCID = '4963 ' AND TRADESE
 	at org.h2.server.web.WebThread.process(WebThread.java:167)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.lang.Thread.run(Unknown Source)
+05-09 11:16:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "11:18:00" not found; SQL statement:
+update tbl_formula set t1="11:18:00" where id >0 [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Update.prepare(Update.java:187)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+05-09 12:31:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_FORMULA SET T1='12:33:00' WHERE ID >0
+
+SELECT[*] * FROM TBL_FORMULA "; SQL statement:
+update tbl_formula set t1='12:33:00' where id >0
+
+SELECT * FROM TBL_FORMULA [42000-175]
+2018-05-16 11:05:32 database: wrong user or password; user: "ADMIN"
+org.h2.message.DbException: Wrong user name or password [28000-196]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:148)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 9 more
+2018-05-16 11:05:37 database: wrong user or password; user: "ADMIN"
+org.h2.message.DbException: Wrong user name or password [28000-196]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:148)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 9 more
+2018-05-17 14:05:59 database: wrong user or password; user: "ADMIN"
+org.h2.message.DbException: Wrong user name or password [28000-196]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:148)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 9 more
+05-17 14:14:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * TBL_FORMULA"; SQL statement:
+SELECT * TBL_FORMULA [42000-175]
+05-17 14:38:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_FORMULA  SET T1 ='14:39:00' WHERE ID >0
+
+SELECT[*] * FROM TBL_F1_HRUN_TRADES "; SQL statement:
+update tbl_formula  set t1 ='14:39:00' where id >0
+
+SELECT * FROM TBL_F1_HRUN_TRADES [42000-175]
+05-18 10:45:59 jdbc[9299]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE TBL_FORMULA SET ISEND=FALSE WHERE FEEDID ='4963'
+
+SELECT[*] * FROM TBL_FORMULA "; SQL statement:
+update tbl_formula set isend=false where feedid ='4963'
+
+SELECT * FROM TBL_FORMULA [42000-175]
+05-18 10:46:03 jdbc[9299]: exception
+org.h2.jdbc.JdbcSQLException: Column "FEEDID" not found; SQL statement:
+update tbl_formula set isend=false where feedid ='4963' [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.expression.Comparison.optimize(Comparison.java:177)
+	at org.h2.command.dml.Update.prepare(Update.java:180)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+05-18 13:10:36 jdbc[9299]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT MAX(ID) FROM TBL_F2_HCAPTURE_TRADES FEEDSECID=[*]'14732' AND TRADESECID='14732' "; SQL statement:
+SELECT MAX(id) FROM TBL_F2_HCAPTURE_TRADES FEEDSECID='14732' and TRADESECID='14732' [42000-175]
+05-18 13:12:10 jdbc[9299]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT MAX(ID) FROM TBL_F2_HCAPTURE_TRADES FEEDSECID=[*]'14732' AND TRADESECID='14732' "; SQL statement:
+SELECT MAX(id) FROM TBL_F2_HCAPTURE_TRADES FEEDSECID='14732' and TRADESECID='14732' [42000-175]
+05-21 09:45:59 jdbc[55]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:656)
+	at org.h2.server.web.WebApp.login(WebApp.java:905)
+	at org.h2.server.web.WebApp.process(WebApp.java:209)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:168)
+	at org.h2.server.web.WebThread.process(WebThread.java:138)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 14 more
+05-21 10:00:54 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_F1_HRUN_TRADES WHERE ID = (SELECT MAX(ID) FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID='4963' AND TRADESECID='4963') FEEDSECID[*]='4963' AND TRADESECID='4963' AND ISBUYSELLDONE='false' "; SQL statement:
+SELECT * FROM TBL_F1_HRUN_TRADES where id = (SELECT MAX(id) FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID='4963' and TRADESECID='4963') FEEDSECID='4963' and TRADESECID='4963' and ISBUYSELLDONE='false' [42000-175]
+05-21 10:00:58 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_F1_HRUN_TRADES WHERE ID = (SELECT MAX(ID) FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID='4963' AND TRADESECID='4963') FEEDSECID[*]='4963' AND TRADESECID='4963' AND ISBUYSELLDONE='false' "; SQL statement:
+SELECT * FROM TBL_F1_HRUN_TRADES where id = (SELECT MAX(id) FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID='4963' and TRADESECID='4963') FEEDSECID='4963' and TRADESECID='4963' and ISBUYSELLDONE='false' [42000-175]
+05-21 12:22:41 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM TBL_F1_HRUN_TRADES where id = (SELECT MAX(id) FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID='14732' and TRADESECID='14732' ) and FEEDSECID='14732'  and TRADESECID='14732'  and ISBUYSELLDONE='false'[*]"""; SQL statement:
+SELECT * FROM TBL_F1_HRUN_TRADES where id = (SELECT MAX(id) FROM TBL_F1_HRUN_TRADES WHERE FEEDSECID='14732' and TRADESECID='14732' ) and FEEDSECID='14732'  and TRADESECID='14732'  and ISBUYSELLDONE='false'" [42000-175]
+05-21 12:36:39 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PDATE[*] TBL_FORMULA  SET T1='12:38:00' , T2 ='13:38:00' , T4='13:45:00' WHERE ID >1 "; expected "PREPARE, {"; SQL statement:
+pdate tbl_formula  set t1='12:38:00' , t2 ='13:38:00' , t4='13:45:00' where id >1 [42001-175]

@@ -29,7 +29,6 @@ public class db_commons {
 
 	public Connection CheckandConnectDB(Connection condb)
 	{
-		//Connection recon = null
 		try
 		{
 			if ((condb == null) || (condb.isClosed()))
@@ -62,6 +61,7 @@ public class db_commons {
 		catch(Exception ex)
 		{
 			Logger.error(ex);
+			System.out.println(ex.getMessage());
 		}
 		finally
 		{
@@ -79,9 +79,6 @@ public class db_commons {
 	{
 		int rowCount=0;
 		try {
-			//JdbcDataSource ds = new JdbcDataSource();
-	        //ds.setURL("jdbc:h2:"+dbName);
-	        //conn = ds.getConnection(USER,PASS);
 			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement(); 
 	         ResultSet rs = stmt.executeQuery(Query); 
@@ -91,19 +88,14 @@ public class db_commons {
 		}
 		catch(Exception ex){
 			Logger.error(ex);
-			
+			System.out.println(ex.getMessage() +"QUERY :"+Query);
 			
 		}
 		finally {
 			try { 
 	            if(stmt!=null) stmt.close(); 
 	         } catch(SQLException se2) { 
-	         } // nothing we can do 
-	         //try { 
-	           // if(conn!=null) conn.close(); 
-	         //} catch(SQLException se) { 
-	         //	 	Logger.error(se);
-	         //} // end finally try 		
+	         }		
 		}
 		return rowCount;
 	}
@@ -113,9 +105,6 @@ public class db_commons {
 		
 		List<FormulaData> set=new ArrayList<FormulaData>();  
 		try {
-			//JdbcDataSource ds = new JdbcDataSource();
-	        //ds.setURL("jdbc:h2:"+dbName);
-	         //conn = ds.getConnection(USER,PASS);
 			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
@@ -131,6 +120,7 @@ public class db_commons {
 	        
 		}
 		catch(Exception ex){
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 			Logger.error(ex);
 		}
 		finally {
@@ -139,9 +129,6 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-//	            if (conn != null) {
-//	                conn.close();
-//	            }
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -152,12 +139,8 @@ public class db_commons {
 	public ArrayList<String> getSingleColumnRecords(Connection conn, String Querystr)
 	{
 		ArrayList<String> data = new ArrayList<String>();
-		//String[][] result=null;
 		try
 		{
-			//JdbcDataSource ds = new JdbcDataSource();
-	        //ds.setURL("jdbc:h2:"+dbName);
-	         //conn = ds.getConnection(USER,PASS);
 			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
@@ -174,6 +157,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 			Logger.error(ex);
 		}
 		finally {
@@ -182,9 +166,7 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-	           // if (conn != null) {
-	           //     conn.close();
-	           // }
+	        
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -195,12 +177,8 @@ public class db_commons {
 	public String getSingleCell(Connection conn, String Querystr)
 	{
 		String data ="";
-		//String[][] result=null;
 		try
 		{
-			//JdbcDataSource ds = new JdbcDataSource();
-	        //ds.setURL("jdbc:h2:"+dbName);
-	         //conn = ds.getConnection(USER,PASS);
 			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
@@ -218,7 +196,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
-			
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 		}
 		finally {
 			try {
@@ -226,9 +204,7 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-	           // if (conn != null) {
-	           //     conn.close();
-	           // }
+	        
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -241,12 +217,9 @@ public class db_commons {
 	public String[][] getMultiColumnRecords(Connection conn, String Querystr)
 	{
 		String [][] data=null;
-		//String[][] result=null;
+		
 		try
 		{
-			//JdbcDataSource ds = new JdbcDataSource();
-	        //ds.setURL("jdbc:h2:"+dbName);
-	        //conn = ds.getConnection(USER,PASS);
 			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
@@ -274,6 +247,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 			Logger.error(ex);
 		}
 		finally {
@@ -282,9 +256,6 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-//	            if (conn != null) {
-//	                conn.close();
-//	            }
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -296,9 +267,6 @@ public class db_commons {
 	{
 		boolean isSucess = true;
 		try {
-			//JdbcDataSource ds = new JdbcDataSource();
-	        //ds.setURL("jdbc:h2:"+dbName);
-	         //conn = ds.getConnection(USER,PASS);
 			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement(); 
 	         stmt.execute(Query); 
@@ -307,6 +275,7 @@ public class db_commons {
 		{
 			isSucess = false;
 			Logger.error(ex);
+			System.out.println(ex.getMessage() +"QUERY :"+Query);
 		}
 		finally
 		{
@@ -314,21 +283,16 @@ public class db_commons {
 	            if(stmt!=null) stmt.close(); 
 	         } 
 			catch(SQLException se2) { 
-	         } // nothing we can do 
-//	         try { 
-//	            if(conn!=null) conn.close(); 
-//	         } catch(SQLException se) { 
-//	        	 	Logger.error(se);
-//	         } // end finally try 	
+	         } 
 		}
 		return isSucess;
 	}
 	public int executeBatchStatement(Connection conn, String [] statements){
-        //Connection connection = getDBConnection();
+       
         Statement stmt = null;
         int stmtscount=0;
         try {
-           // connection.setAutoCommit(false);
+         
         	 conn = CheckandConnectDB(conn);
             stmt = conn.createStatement();
             for(int i=0; i<statements.length; i++)
@@ -346,9 +310,9 @@ public class db_commons {
         } finally {
             try {
 				stmt.close();
-				//conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
+				System.out.println(e.getMessage() +"QUERY :"+statements);
 				e.printStackTrace();
 			}
             

@@ -386,7 +386,7 @@ public class TradeBoard {
 		pnlControls.add(btnstop);
 		pnlbody.add(pnlgridpanel);
 		pnlbody.setBackground(new Color(36,34,29));
-		
+		frmTradeBoard.setVisible(true);
     
 	}
 	
