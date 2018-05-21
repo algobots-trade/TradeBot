@@ -1,0 +1,12 @@
+DELETE FROM TBL_F1_HRUN_TRADES;
+DELETE FROM TBL_F2_HCAPTURE_TRADES; 
+DELETE FROM TBL_F4_HRUN_TRADES;
+DELETE FROM TBL_F5_HCAPTURE_TRADES; 
+DELETE FROM TBL_F6_HRUN_TRADES;
+DELETE FROM TBL_F7_HCAPTURE_TRADES; 
+
+UPDATE TBL_TRADEBOARD  set  F1PL = null ,F1PC = null ,F1TC = null , F2PL = null ,F2PC = null ,F2TC = null, F3PL = null ,F3PC = null ,F3TC = null,
+F4PL = null ,F4PC = null ,F4TC = null, F5PL = null ,F5PC = null ,F5TC = null, F6PL = null ,F6PC = null ,F6TC = null, F7PL = null ,F7PC = null ,F7TC = null
+ WHERE ID > 0;
+
+update TBL_FORMULA set ISend  = 'false' where id > 0

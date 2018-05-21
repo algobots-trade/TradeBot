@@ -1,0 +1,457 @@
+2018-05-21 18:10:10 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:10:10 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:10:10 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:11:36 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:11:36 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:11:36 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:14:14 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:14:27 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+WARNING: Wrong Passcode Attempt.. with passcode --> 123321
+2018-05-21 18:14:29 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+WARNING: Wrong Passcode Attempt.. with passcode --> 123321
+2018-05-21 18:15:07 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:15:07 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:15:07 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:19:50 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:19:50 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:19:50 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:23:01 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:23:01 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:23:01 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:23:09 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+WARNING: Wrong Passcode Attempt.. with passcode --> 123321
+2018-05-21 18:23:28 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:23:28 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:23:29 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:25:39 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:25:39 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:25:39 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:30:23 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:30:23 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:30:24 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:33:42 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:33:42 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:33:42 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:33:45 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:35:35 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:35:35 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:35:35 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:35:38 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:41:47 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:41:47 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:41:47 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:41:51 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:42:44 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:42:44 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:42:44 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:42:47 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:42:47 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$2.keyPressed(LogIn.java:159)
+	at java.awt.AWTEventMulticaster.keyPressed(Unknown Source)
+	at java.awt.Component.processKeyEvent(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:42:59 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:42:59 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:43:00 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:43:03 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:43:03 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$3.actionPerformed(LogIn.java:186)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:45:00 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:45:00 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:45:00 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:45:03 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:45:03 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$2.keyPressed(LogIn.java:159)
+	at java.awt.AWTEventMulticaster.keyPressed(Unknown Source)
+	at java.awt.Component.processKeyEvent(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:45:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:45:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$3.actionPerformed(LogIn.java:186)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:45:50 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:45:50 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:45:50 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:45:53 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:45:53 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:45:53 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:45:54 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:45:54 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$2.keyPressed(LogIn.java:159)
+	at java.awt.AWTEventMulticaster.keyPressed(Unknown Source)
+	at java.awt.Component.processKeyEvent(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:46:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:46:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:46:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:46:40 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:46:40 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$3.actionPerformed(LogIn.java:186)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:46:54 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:46:54 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:46:54 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:47:05 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:47:05 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+ERROR: java.lang.NullPointerException
+	at com.tradebot.ui.forms.TradeBoard.<init>(TradeBoard.java:109)
+	at com.tradebot.ui.forms.LogIn.validateLogin(LogIn.java:225)
+	at com.tradebot.ui.forms.LogIn.access$2(LogIn.java:215)
+	at com.tradebot.ui.forms.LogIn$3.actionPerformed(LogIn.java:186)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+2018-05-21 18:47:27 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:47:27 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:47:28 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:47:35 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:49:18 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:49:18 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:49:18 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:49:22 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:50:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialLoad()
+INFO: Log In Window Triggered
+2018-05-21 18:50:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.logindesign()
+INFO: Inizilized Log-In Form
+2018-05-21 18:50:15 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.initialize()
+INFO: Log-In Window Loaded
+2018-05-21 18:50:20 [AWT-EventQueue-0] com.tradebot.ui.forms.LogIn.validateLogin()
+INFO: Logged in Sucessfully !!
+2018-05-21 18:50:24 [AWT-EventQueue-0] com.tradebot.ui.forms.FormulaInputs.loadExistingData()
+INFO: [[Ljava.lang.String;@5ea6ba1e

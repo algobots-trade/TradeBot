@@ -123,7 +123,7 @@ public class LogIn {
 			lblNewLabel.setBounds(18, 52, 204, 171);
 			LoginFrame.getContentPane().add(lblNewLabel);
 			
-			JLabel lblCopyrightInteractiveBrokers = new JLabel("©  2017 Copyright Trade Bots - Beta V.0.1");
+			JLabel lblCopyrightInteractiveBrokers = new JLabel("\u00A9  2018 Copyright Trade Bots - Beta V.1");
 			lblCopyrightInteractiveBrokers.setFont(new Font("Verdana", Font.PLAIN, 11));
 			lblCopyrightInteractiveBrokers.setForeground(Color.WHITE);
 			lblCopyrightInteractiveBrokers.setBounds(147, 247, 294, 16);
@@ -176,6 +176,7 @@ public class LogIn {
 			separator.setForeground(Color.WHITE);
 			
 			JButton btnGetIn = new JButton("Get In");
+			btnGetIn.setForeground(Color.WHITE);
 			btnGetIn.addActionListener(new ActionListener() {
 				
 				public void actionPerformed(ActionEvent e) 
@@ -216,12 +217,13 @@ public class LogIn {
 		try
 		{
 			com.tradebot.dbcommons.db_commons dbObj=new com.tradebot.dbcommons.db_commons();
-			int count = dbObj.getRowCount("select * from tbl_passcode where passcode='"+passcode.toString()+"'");
+			int count =dbObj.getRowCount(null,"select * from tbl_passcode where passcode='"+passcode.toString()+"'");
 			if (count == 1)
 			{
 				Logger.info("Logged in Sucessfully !!");
 				LoginFrame.dispose();
 				TradeBoard tbd=new TradeBoard();
+				
 			}
 			else
 			{

@@ -110,10 +110,10 @@ public class FormulaInputs {
 		try
 		{
 			int count = 0;
-			count = dbObj.getRowCount("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedid+"'");
+			count = dbObj.getRowCount(null,"SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
 			if (count != 0)
 			{
-					existingdata = dbObj.getMultiColumnRecords("SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedid+"'");
+					existingdata = dbObj.getMultiColumnRecords(null,"SELECT * FROM TBL_FORMULA WHERE FORMULANAME='"+FName+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedid+"'");
 					Logger.info(existingdata.toString());
 					if (existingdata[0][colFname] != null)
 					{
@@ -234,7 +234,7 @@ public class FormulaInputs {
 		contentPane.getContentPane().setBackground(new Color(51, 51, 51));
 		contentPane.setVisible(true);
 		contentPane.setTitle("Formula Input For  "+strScrib+"-"+strFname);
-		contentPane.setBounds(100, 100, 379, 774);
+		contentPane.setBounds(100, 100, 394, 774);
 		contentPane.setBackground(new Color(36,34,29));
 		contentPane.getContentPane().setLayout(null);
 		contentPane.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -246,7 +246,7 @@ public class FormulaInputs {
 		lblFTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFTitle.setFont(new Font("Verdana", Font.BOLD, 22));
 		lblFTitle.setForeground(new Color(255, 220, 135));
-		lblFTitle.setBounds(6, 6, 377, 43);
+		lblFTitle.setBounds(0, 0, 371, 43);
 		contentPane.getContentPane().add(lblFTitle);
 		
 		JPanel pnlInput = new JPanel();
@@ -305,18 +305,18 @@ public class FormulaInputs {
 		lblT_3.setBounds(90, 314, 81, 49);
 		pnlInput.add(lblT_3);
 		
-		JLabel lblLcount = new JLabel("Loop  =");
+		JLabel lblLcount = new JLabel("LCOUNT  =");
 		lblLcount.setHorizontalAlignment(SwingConstants.LEFT);
 		lblLcount.setForeground(Color.WHITE);
 		lblLcount.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblLcount.setBounds(67, 363, 95, 49);
+		lblLcount.setBounds(28, 363, 143, 49);
 		pnlInput.add(lblLcount);
 		
-		JLabel lblStopl = new JLabel("STOPL  =");
+		JLabel lblStopl = new JLabel("ROUND  =");
 		lblStopl.setHorizontalAlignment(SwingConstants.LEFT);
 		lblStopl.setForeground(Color.WHITE);
 		lblStopl.setFont(new Font("Verdana", Font.PLAIN, 22));
-		lblStopl.setBounds(46, 416, 131, 49);
+		lblStopl.setBounds(38, 416, 139, 49);
 		pnlInput.add(lblStopl);
 		
 		txtX = new JTextField();
@@ -414,6 +414,7 @@ public class FormulaInputs {
 		pnlInput.add(txtT1M);
 		
 		txtT1S = new JTextField();
+		txtT1S.setText("00");
 		txtT1S.setHorizontalAlignment(SwingConstants.CENTER);
 		txtT1S.setForeground(new Color(255, 220, 135));
 		txtT1S.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -454,6 +455,7 @@ public class FormulaInputs {
 		pnlInput.add(label_3);
 		
 		txtT2S = new JTextField();
+		txtT2S.setText("00");
 		txtT2S.setHorizontalAlignment(SwingConstants.CENTER);
 		txtT2S.setForeground(new Color(255, 220, 135));
 		txtT2S.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -488,6 +490,7 @@ public class FormulaInputs {
 		pnlInput.add(label_5);
 		
 		txtT3S = new JTextField();
+		txtT3S.setText("00");
 		txtT3S.setHorizontalAlignment(SwingConstants.CENTER);
 		txtT3S.setForeground(new Color(255, 220, 135));
 		txtT3S.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -522,6 +525,7 @@ public class FormulaInputs {
 		pnlInput.add(label_7);
 		
 		txtT4S = new JTextField();
+		txtT4S.setText("00");
 		txtT4S.setHorizontalAlignment(SwingConstants.CENTER);
 		txtT4S.setForeground(new Color(255, 220, 135));
 		txtT4S.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -558,21 +562,21 @@ public class FormulaInputs {
 		label_8.setHorizontalAlignment(SwingConstants.LEFT);
 		label_8.setForeground(Color.WHITE);
 		label_8.setFont(new Font("Verdana", Font.PLAIN, 22));
-		label_8.setBounds(266, 6, 31, 49);
+		label_8.setBounds(276, 6, 31, 49);
 		pnlInput.add(label_8);
 		
 		JLabel label_9 = new JLabel("%");
 		label_9.setHorizontalAlignment(SwingConstants.LEFT);
 		label_9.setForeground(Color.WHITE);
 		label_9.setFont(new Font("Verdana", Font.PLAIN, 22));
-		label_9.setBounds(266, 56, 31, 49);
+		label_9.setBounds(276, 56, 31, 49);
 		pnlInput.add(label_9);
 		
 		JLabel label_10 = new JLabel("%");
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setForeground(Color.WHITE);
 		label_10.setFont(new Font("Verdana", Font.PLAIN, 22));
-		label_10.setBounds(266, 106, 31, 49);
+		label_10.setBounds(276, 106, 31, 49);
 		pnlInput.add(label_10);
 		
 		JButton btnSave = new JButton("SAVE");
@@ -633,7 +637,7 @@ public class FormulaInputs {
 		slitradeSwitch.setMinorTickSpacing(1);
 		slitradeSwitch.setMaximum(1);
 		slitradeSwitch.setValue(0);
-		slitradeSwitch.setBounds(0, 52, 321, 27);
+		slitradeSwitch.setBounds(10, 52, 301, 27);
 		tradetoggle.add(slitradeSwitch);
 		
 		JLabel lblOn = new JLabel("ON");
@@ -673,8 +677,8 @@ public class FormulaInputs {
 			public void actionPerformed(ActionEvent e) {
 				try
 				{
-					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
-					int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
+					dbObj.executeNonQuery(null,"DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
+					int count = dbObj.getRowCount(null,"select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
 					if (count == 0)
 					{
 						JOptionPane.showMessageDialog(contentPane,"Formula Deleted Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
@@ -716,10 +720,10 @@ public class FormulaInputs {
 			}
 			else
 			{
-				int count = dbObj.getRowCount("select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
+				int count = dbObj.getRowCount(null,"select * from TBL_FORMULA where FORMULANAME='"+Fname+"'and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
 				if (count == 0)
 				{
-					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
+					boolean isSucess = dbObj.executeNonQuery(null,"insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
 					if (isSucess ==true)
 					{
 						JOptionPane.showMessageDialog(contentPane,"Formula Added Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
@@ -732,8 +736,8 @@ public class FormulaInputs {
 				}
 				else 
 				{
-					dbObj.executeNonQuery("DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESUBJECTID = '"+playersecid+"' and FEEDSUBJECTID = '"+feedsecid+"'");
-					boolean isSucess = dbObj.executeNonQuery("insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
+					dbObj.executeNonQuery(null,"DELETE FROM TBL_FORMULA WHERE FORMULANAME ='"+Fname+"' and TRADESECID = '"+playersecid+"' and FEEDSECID = '"+feedsecid+"'");
+					boolean isSucess = dbObj.executeNonQuery(null,"insert into TBL_FORMULA ("+colvalue[0]+") values ("+colvalue[1]+")");
 					if (isSucess ==true)
 					{
 						JOptionPane.showMessageDialog(contentPane,"Formula Updated Successfully !!", "Message",JOptionPane.INFORMATION_MESSAGE);
@@ -760,11 +764,14 @@ public class FormulaInputs {
 		String [] colval =new String[2];
 		try {
 			String colbuilder="", valueBuilder="";
-			colbuilder=colbuilder+"FEEDSUBJECTID,";
+			colbuilder=colbuilder+"FEEDSECID,";
 			valueBuilder = valueBuilder + "'"+feedsecid.trim()+"'"+",";
 			
-			colbuilder=colbuilder+"TRADESUBJECTID,";
+			colbuilder=colbuilder+"TRADESECID,";
 			valueBuilder = valueBuilder + "'"+playersecid.trim()+"'"+",";
+			
+			colbuilder=colbuilder+"ISEND,";
+			valueBuilder = valueBuilder + "'false'"+",";
 			
 			
 			if (!txtX.getText().equals(""))

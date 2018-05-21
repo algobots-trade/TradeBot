@@ -27,6 +27,25 @@ public class db_commons {
     String tradelogpath;
 	tradebot_utility utils = new tradebot_utility(); 
 
+	public Connection CheckandConnectDB(Connection condb)
+	{
+		try
+		{
+			if ((condb == null) || (condb.isClosed()))
+			{
+				JdbcDataSource ds = new JdbcDataSource();
+		        ds.setURL("jdbc:h2:"+dbName);
+		        condb = ds.getConnection(USER,PASS);
+		        conn = condb;
+			}
+		}
+		catch(Exception ex)
+		{
+			Logger.info(ex);
+		}
+		return condb;
+	}
+	
 	public db_commons() {
 		Properties prop = new Properties();
 		InputStream input = null;
@@ -42,6 +61,7 @@ public class db_commons {
 		catch(Exception ex)
 		{
 			Logger.error(ex);
+			System.out.println(ex.getMessage());
 		}
 		finally
 		{
@@ -55,13 +75,11 @@ public class db_commons {
 		}
 	}
 	
-	public int getRowCount(String Query)
+	public int getRowCount(Connection conn,String Query)
 	{
 		int rowCount=0;
 		try {
-			JdbcDataSource ds = new JdbcDataSource();
-	        ds.setURL("jdbc:h2:"+dbName);
-	         conn = ds.getConnection(USER,PASS);
+			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement(); 
 	         ResultSet rs = stmt.executeQuery(Query); 
 	         rs.last();
@@ -70,31 +88,24 @@ public class db_commons {
 		}
 		catch(Exception ex){
 			Logger.error(ex);
-			
+			System.out.println(ex.getMessage() +"QUERY :"+Query);
 			
 		}
 		finally {
 			try { 
 	            if(stmt!=null) stmt.close(); 
 	         } catch(SQLException se2) { 
-	         } // nothing we can do 
-	         try { 
-	            if(conn!=null) conn.close(); 
-	         } catch(SQLException se) { 
-	        	 	Logger.error(se);
-	         } // end finally try 		
+	         }		
 		}
 		return rowCount;
 	}
 	
-	public List<FormulaData> getFormulaData(String Querystr)
+	public List<FormulaData> getFormulaData(Connection conn,String Querystr)
 	{
 		
 		List<FormulaData> set=new ArrayList<FormulaData>();  
 		try {
-			JdbcDataSource ds = new JdbcDataSource();
-	        ds.setURL("jdbc:h2:"+dbName);
-	         conn = ds.getConnection(USER,PASS);
+			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
 	         ResultSet rs =stmt.getResultSet(); 
@@ -109,6 +120,7 @@ public class db_commons {
 	        
 		}
 		catch(Exception ex){
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 			Logger.error(ex);
 		}
 		finally {
@@ -117,9 +129,6 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-	            if (conn != null) {
-	                conn.close();
-	            }
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -127,15 +136,12 @@ public class db_commons {
 		return set;
 	}
 	
-	public ArrayList<String> getSingleColumnRecords(String Querystr)
+	public ArrayList<String> getSingleColumnRecords(Connection conn, String Querystr)
 	{
 		ArrayList<String> data = new ArrayList<String>();
-		//String[][] result=null;
 		try
 		{
-			JdbcDataSource ds = new JdbcDataSource();
-	        ds.setURL("jdbc:h2:"+dbName);
-	         conn = ds.getConnection(USER,PASS);
+			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
 	         ResultSet rs =stmt.getResultSet(); 
@@ -151,6 +157,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 			Logger.error(ex);
 		}
 		finally {
@@ -159,9 +166,7 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-	            if (conn != null) {
-	                conn.close();
-	            }
+	        
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -169,15 +174,12 @@ public class db_commons {
 		return data;
 	}
 	
-	public String getSingleCell(String Querystr)
+	public String getSingleCell(Connection conn, String Querystr)
 	{
 		String data ="";
-		//String[][] result=null;
 		try
 		{
-			JdbcDataSource ds = new JdbcDataSource();
-	        ds.setURL("jdbc:h2:"+dbName);
-	         conn = ds.getConnection(USER,PASS);
+			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
 	         ResultSet rs =stmt.getResultSet(); 
@@ -194,7 +196,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
-			
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 		}
 		finally {
 			try {
@@ -202,9 +204,7 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-	            if (conn != null) {
-	                conn.close();
-	            }
+	        
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -214,15 +214,13 @@ public class db_commons {
 	
 	
 	
-	public String[][] getMultiColumnRecords(String Querystr)
+	public String[][] getMultiColumnRecords(Connection conn, String Querystr)
 	{
 		String [][] data=null;
-		//String[][] result=null;
+		
 		try
 		{
-			JdbcDataSource ds = new JdbcDataSource();
-	        ds.setURL("jdbc:h2:"+dbName);
-	         conn = ds.getConnection(USER,PASS);
+			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement();
 	         stmt.execute(Querystr);
 	         ResultSet rs =stmt.getResultSet(); 
@@ -249,6 +247,7 @@ public class db_commons {
 		}
 		catch(Exception ex)
 		{
+			System.out.println(ex.getMessage() +"QUERY :"+Querystr);
 			Logger.error(ex);
 		}
 		finally {
@@ -257,9 +256,6 @@ public class db_commons {
 	            if (stmt != null) {
 	                stmt.close();
 	            }
-	            if (conn != null) {
-	                conn.close();
-	            }
 	        } catch (SQLException e) {
 	            Logger.error("Ignored", e);
 	        }	
@@ -267,13 +263,11 @@ public class db_commons {
 		return data;
 	}
 	
-	public boolean executeNonQuery(String Query)
+	public boolean executeNonQuery(Connection conn, String Query)
 	{
 		boolean isSucess = true;
 		try {
-			JdbcDataSource ds = new JdbcDataSource();
-	        ds.setURL("jdbc:h2:"+dbName);
-	         conn = ds.getConnection(USER,PASS);
+			 conn = CheckandConnectDB(conn);
 	         stmt = conn.createStatement(); 
 	         stmt.execute(Query); 
 		}
@@ -281,6 +275,7 @@ public class db_commons {
 		{
 			isSucess = false;
 			Logger.error(ex);
+			System.out.println(ex.getMessage() +"QUERY :"+Query);
 		}
 		finally
 		{
@@ -288,29 +283,25 @@ public class db_commons {
 	            if(stmt!=null) stmt.close(); 
 	         } 
 			catch(SQLException se2) { 
-	         } // nothing we can do 
-	         try { 
-	            if(conn!=null) conn.close(); 
-	         } catch(SQLException se) { 
-	        	 	Logger.error(se);
-	         } // end finally try 	
+	         } 
 		}
 		return isSucess;
 	}
-	public int executeBatchStatement(String [] statements){
-        Connection connection = getDBConnection();
+	public int executeBatchStatement(Connection conn, String [] statements){
+       
         Statement stmt = null;
         int stmtscount=0;
         try {
-            connection.setAutoCommit(false);
-            stmt = connection.createStatement();
+         
+        	 conn = CheckandConnectDB(conn);
+            stmt = conn.createStatement();
             for(int i=0; i<statements.length; i++)
             {
             		stmt.addBatch(statements[i]);
             }          
             int[] countWithoutException = stmt.executeBatch();
             System.out.println("Inserted = " + countWithoutException.length);
-            connection.commit();
+            conn.commit();
             stmtscount = countWithoutException.length;
         } catch (BatchUpdateException e) {
             System.out.println("Exception Message " + e.getLocalizedMessage());
@@ -319,9 +310,9 @@ public class db_commons {
         } finally {
             try {
 				stmt.close();
-				connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
+				System.out.println(e.getMessage() +"QUERY :"+statements);
 				e.printStackTrace();
 			}
             
