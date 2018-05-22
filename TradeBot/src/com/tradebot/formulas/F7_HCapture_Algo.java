@@ -155,7 +155,7 @@ public class F7_HCapture_Algo {
     	    			if (C >= 1)
     	    			{
     	    				//Ending 
-        	    			dbObj.executeNonQuery(conn,"UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEESECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
+        	    			dbObj.executeNonQuery(conn,"UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEEDSECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
         	    			Logger.info("Head Feed - "+feedid+" & Trade ID - "+tradeid+" && Formula Name - "+Fname+" Achived End point.");
     	    			}
     	    			else
@@ -372,7 +372,7 @@ public class F7_HCapture_Algo {
     	    			if (C >= 1)
     	    			{
     	    				//Ending 
-	    	    			dbObj.executeNonQuery(conn,"UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEESECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
+	    	    			dbObj.executeNonQuery(conn,"UPDATE TBL_FORMULA  SET ISEND='true' WHERE FEEDSECID='"+feedid+"' AND TRADESECID='"+tradeid+"' AND FORMULANAME = '"+Fname+"';"); 
 	    	    			Logger.info("Head Feed - "+feedid+" & Trade ID - "+tradeid+" && Formula Name - "+Fname+" Achived End point.");
     	    			
     	    			}

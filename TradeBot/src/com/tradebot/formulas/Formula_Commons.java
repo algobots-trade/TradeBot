@@ -45,9 +45,9 @@ public class Formula_Commons
 			if (pldata != null)
 			{
 				fpl = Double.parseDouble(pldata[0][0]) - Double.parseDouble(pldata[0][1]);
-				int totalorders = ((Integer.parseInt(pldata[0][2]))/2);
+				int totalorders = ((Integer.parseInt(pldata[0][2])) / 2);
 				double avg = (fpl*100) / totalorders;
-				fpercent = (fpl*100)/avg;
+				fpercent = 0.00;//(fpl*100)/avg;
 				Logger.info("~~~~~~~~~~~~~~~");
 				Logger.info("Selling Price : "+ pldata[0][0] );
 	        	Logger.info("Buying Price : "+pldata[0][1] );
